@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>ArtCans — Home</title>
+
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- AOS -->
+        <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+        <!-- Bootstrap Icons -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light">
+            <div class="container">
+                <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+                    <span class="brand-bubble">AC</span>
+                    <span>ArtCans</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navMain">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="products.html">Latas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="products.html#customize">Diseña la tuya</a></li>
+                        <li class="nav-item ms-3">
+                            <button class="btn btn-outline-light position-relative" id="cartBtn" data-bs-toggle="modal" data-bs-target="#cartModal">
+                                <i class="bi bi-cart3"></i>
+                                <span id="cartCountBadge" class="badge bg-danger rounded-pill position-absolute top-0 start-100 translate-middle">0</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- HERO -->
+        <header class="hero-pop d-flex align-items-center">
+            <div class="container py-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <h1 class="display-4 fw-bold">El arte se bebe</h1>
+                        <p class="lead">Latas coleccionables con obras reinterpretadas en clave pop. Edición limitada.</p>
+                        <div class="mt-4 hero-buttons">
+                            <a href="products.html" class="btn btn-primary btn-lg me-2">Ver colección</a>
+                            <a href="products.html#customize" class="btn btn-outline-light btn-lg">Diseña la tuya</a>
+                        </div>
+                    </div>
+
+                    <!-- COLLAGE / IMAGEN -->
+                    <div class="col-lg-6 d-none d-lg-block position-relative" data-aos="fade-left" data-aos-duration="1200">
+                        <div class="hero-collage">
+                            <img src="https://picsum.photos/900/700?random=201" alt="lata collage" class="img-fluid rounded collage-main">
+                            
+                            <!-- Stickers animados -->
+                            <div class="sticker sticker-1" data-aos="zoom-in" data-aos-delay="500">Ed. limitada</div>
+                            <div class="sticker sticker-2" data-aos="zoom-in" data-aos-delay="700">330 ml</div>
+
+                            <!-- Elementos decorativos flotantes -->
+                            <div class="bubble bubble-1"></div>
+                            <div class="bubble bubble-2"></div>
+                            <div class="bubble bubble-3"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="hero-deco"></div>
+        </header>
+
+        <!-- DESTACADOS -->
+        <section class="py-5">
+            <div class="container">
+                <h2 data-aos="fade-up">Destacadas del mes</h2>
+                <p class="text-muted" data-aos="fade-up" data-aos-delay="60">Pop, color y obras reinterpretadas para beber y coleccionar.</p>
+
+                <!-- CARRUSEL POP-ART -->
+                <section class="collection-carousel py-5">
+                    <div class="container">
+                        <h2 class="text-center fw-bold mb-5" data-aos="fade-up">Colección Destacada</h2>
+                    
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                    
+                                <!-- Slides (ejemplo con 6 latas) -->
+                                <div class="swiper-slide">
+                                    <div class="carousel-card text-center shadow">
+                                        <img src="https://picsum.photos/500/500?random=91" alt="Lata 1">
+                                        <h5 class="mt-3 fw-bold">La Noche Estrellada Pop</h5>
+                                        <p class="small text-muted">Van Gogh reinterpretado</p>
+                                        <button class="btn btn-primary btn-sm add-to-cart" 
+                                            data-id="c1" data-title="La Noche Estrellada Pop" data-price="9.5" data-img="https://picsum.photos/500/500?random=91">
+                                            Añadir
+                                        </button>
+                                    </div>
+                                </div>
+                        
+                                <div class="swiper-slide">
+                                    <div class="carousel-card text-center shadow">
+                                        <img src="https://picsum.photos/500/500?random=92" alt="Lata 2">
+                                        <h5 class="mt-3 fw-bold">El Beso Pop</h5>
+                                        <p class="small text-muted">Klimt en clave colorida</p>
+                                        <button class="btn btn-primary btn-sm add-to-cart" 
+                                            data-id="c2" data-title="El Beso Pop" data-price="9.8" data-img="https://picsum.photos/500/500?random=92">
+                                            Añadir
+                                        </button>
+                                    </div>
+                                </div>
+                        
+                                <div class="swiper-slide">
+                                    <div class="carousel-card text-center shadow">
+                                        <img src="https://picsum.photos/500/500?random=93" alt="Lata 3">
+                                        <h5 class="mt-3 fw-bold">Sueño Daliniano</h5>
+                                        <p class="small text-muted">Dali surreal pop</p>
+                                        <button class="btn btn-primary btn-sm add-to-cart" 
+                                            data-id="c3" data-title="Sueño Daliniano" data-price="12" data-img="https://picsum.photos/500/500?random=93">
+                                            Añadir
+                                        </button>
+                                    </div>
+                                </div>
+                        
+                                <div class="swiper-slide">
+                                    <div class="carousel-card text-center shadow">
+                                        <img src="https://picsum.photos/500/500?random=94" alt="Lata 4">
+                                        <h5 class="mt-3 fw-bold">Retrato Viva</h5>
+                                        <p class="small text-muted">Frida Pop Edition</p>
+                                        <button class="btn btn-primary btn-sm add-to-cart" 
+                                            data-id="c4" data-title="Retrato Viva" data-price="10" data-img="https://picsum.photos/500/500?random=94">
+                                            Añadir
+                                        </button>
+                                    </div>
+                                </div>
+                        
+                                <div class="swiper-slide">
+                                    <div class="carousel-card text-center shadow">
+                                        <img src="https://picsum.photos/500/500?random=95" alt="Lata 5">
+                                        <h5 class="mt-3 fw-bold">Composición Neón</h5>
+                                        <p class="small text-muted">Mondrian remezclado</p>
+                                        <button class="btn btn-primary btn-sm add-to-cart" 
+                                            data-id="c5" data-title="Composición Neón" data-price="11" data-img="https://picsum.photos/500/500?random=95">
+                                            Añadir
+                                        </button>
+                                    </div>
+                                </div>
+                        
+                                <div class="swiper-slide">
+                                    <div class="carousel-card text-center shadow">
+                                        <img src="https://picsum.photos/500/500?random=96" alt="Lata 6">
+                                        <h5 class="mt-3 fw-bold">Pop Venus</h5>
+                                        <p class="small text-muted">Clásico moderno</p>
+                                        <button class="btn btn-primary btn-sm add-to-cart" 
+                                            data-id="c6" data-title="Pop Venus" data-price="10.5" data-img="https://picsum.photos/500/500?random=96">
+                                            Añadir
+                                        </button>
+                                    </div>
+                                </div>
+                    
+                            </div>
+                    
+                            <!-- Botones navegación -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-5 bg-accent text-white">
+            <div class="container text-center" data-aos="fade-up">
+                <h3 class="fw-bold">¿Quieres tu lata personalizada?</h3>
+                <p class="mb-4">Elige una obra, cambia colores, añade texto y la enviamos a tu casa.</p>
+                <a href="products.html#customize" class="btn btn-dark btn-lg">Diseña la tuya</a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="py-4 text-center">
+            <div class="container">
+                <p class="mb-1">© 2025 — ArtCans (Proyecto académico)</p>
+                <small class="text-muted">Mockup para práctica — usa imágenes con permiso</small>
+            </div>
+        </footer>
+
+        <!-- CART MODAL (reutilizable en todas las páginas) -->
+        <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Tu carrito</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body" id="cartModalBody">
+                    <!-- contenido inyectado por JS -->
+                    </div>
+                    <div class="modal-footer">
+                        <a href="checkout.html" class="btn btn-primary">Ir a pagar</a>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Seguir comprando</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCRIPTS -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+        <script src="js/script.js"></script>
+
+        <!-- Swiper CSS + JS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+        <script>
+        // Inicializa Swiper con efecto tipo Skiper
+        const swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            loop: true,
+            coverflowEffect: {
+            rotate: 35,
+            stretch: 0,
+            depth: 120,
+            modifier: 1.2,
+            slideShadows: false,
+            },
+            pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            },
+            navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+            },
+            breakpoints: {
+            0: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            },
+        });
+        </script>
+
+    </body>
+</html>
