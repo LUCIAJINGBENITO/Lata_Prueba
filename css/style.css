@@ -23,6 +23,8 @@ body{
     color: white;
     padding: .6rem 1rem;
     box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    position: fixed;
+    z-index: 10000 !important;
 }
 .navbar .navbar-brand{ color: #fff; }
 .brand-bubble{
@@ -40,13 +42,13 @@ body{
 
 /* HERO */
 .hero-pop{
-    min-height: 90vh;
-    padding-top:5.5rem;
+    min-height: 30vh;
+    padding-top: 5.5rem;
     color: white;
-    position:relative;
-    overflow:hidden;
+    position: relative;
+    overflow: hidden;
     background: linear-gradient(45deg, #ff5f6d, #ffc371, #47c6ff);
-    background-size: 600% 600%;
+    /*background-size: 600% 600%;*/
     animation: gradientBG 20s ease infinite;
     z-index: 0;
 }
@@ -61,52 +63,12 @@ body{
     background: linear-gradient(45deg, rgba(255,255,255,.06), rgba(0,0,0,.03));
     transform: rotate(25deg);
 }
-.hero-collage{
-    position:relative;
-    border-radius: 16px;
-    overflow:hidden;
-}
-  
 
 /* Texto encima del fondo */
 .hero-pop .container {
     position: relative;
     z-index: 2;
 }
-  
-
-/* Tipografía */
-.hero-title {
-    text-shadow: 3px 3px 5px rgba(0,0,0,0.3);
-}
-.hero-subtitle {
-    font-weight: 500;
-}
- 
-
-/* Botones */
-.hero-buttons .btn {
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.hero-buttons .btn:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-  
-
-/* Collage */
-.hero-collage {
-    position: relative;
-}
-.hero-collage .collage-main {
-    border-radius: 15px;
-    transform: translateY(0);
-    transition: transform 0.5s ease;
-}
-.hero-collage:hover .collage-main {
-    transform: translateY(-10px) scale(1.02);
-}
-  
 
 /* Stickers */
 .sticker {
@@ -123,26 +85,6 @@ body{
 .sticker-1 { top: 5%; left: 5%; }
 .sticker-2 { bottom: 5%; right: 5%; }
   
-
-/* Burbujas decorativas */
-.bubble {
-    position: absolute;
-    width: 15px; height: 15px;
-    background: rgba(255,255,255,0.7);
-    border-radius: 50%;
-    animation: floatBubble 6s ease-in-out infinite;
-}
-.bubble-1 { top: 20%; left: 60%; animation-delay: 0s; }
-.bubble-2 { top: 50%; left: 80%; animation-delay: 2s; }
-.bubble-3 { top: 70%; left: 30%; animation-delay: 4s; }
-  
-@keyframes floatBubble {
-    0% { transform: translateY(0) scale(1); opacity: 1; }
-    50% { transform: translateY(-20px) scale(1.2); opacity: 0.7; }
-    100% { transform: translateY(0) scale(1); opacity: 1; }
-}
-  
-
 /* Product card */
 .product-card{ border-radius: var(--card-radius); overflow:hidden; }
 .product-visual{ position:relative; overflow:hidden; }
@@ -213,17 +155,31 @@ body{
     .hero-pop{ padding-top:6.5rem; text-align:center; }
 }
   
+
+/* ---------- Debug / Fix: swiper no debe recortarse ---------- */
+
+/* Asegura que los ancestros no recorten el slider */
+header.hero-pop,
+section.py-5,
+.container,
+.collection-carousel {
+  overflow: visible !important;
+}
   
 /* === CARRUSEL POP-ART === */
 .collection-carousel {
-    background: radial-gradient(circle at 10% 20%, rgba(255,161,61,0.08), transparent 60%), var(--bg);
-    overflow: hidden;
-}
-  
-.collection-carousel h2 {
-    color: var(--blue);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    position: relative;
+    z-index: 9000 !important; /* más alto que el hero */
+    margin-top: -15rem; /* sube sobre el hero */
+    width: 100vw; /* ocupa todo el ancho */
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: transparent !important;
+    overflow: visible;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
 }
   
 .carousel-card {
@@ -231,7 +187,10 @@ body{
     overflow: hidden;
     background: #fff;
     padding: 1rem;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform-origin: center bottom;
+    margin-top: 0; /* por si hay márgenes negativos heredados */
+    will-change: transform;
 }
   
 .carousel-card img {
@@ -243,7 +202,7 @@ body{
 }
   
 .carousel-card:hover img {
-    transform: scale(1.05) rotate(-2deg);
+    transform: scale(1) rotate(-1deg);
 }
   
 .carousel-card:hover {
@@ -254,27 +213,32 @@ body{
 
 /* Swiper settings */
 .swiper {
-    padding: 40px 0 80px;
+    padding-top: 2rem;    /* espacio para la parte superior de la tarjeta */
+    padding-bottom: 4rem; /* espacio para bullets / parte baja */
+    width: 90%;
+    box-sizing: border-box;
 } 
 .swiper-slide {
     display: flex;
     justify-content: center;
+    overflow: visible;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 } 
 .swiper-button-next,
 .swiper-button-prev {
     color: var(--accent);
-    transition: all .3s ease;
+    transition: color .3s ease;
 }
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
     color: var(--red);
 }
-.swiper-pagination-bullet {
-    background: var(--accent);
-    opacity: .6;
-} 
-.swiper-pagination-bullet-active {
-    background: var(--red);
-    opacity: 1;
+
+/* Asegura que el propio swiper y sus hijos permitan overflow */
+.swiper,
+.swiper-wrapper,
+.swiper-slide {
+  overflow: visible !important;
+  -webkit-overflow-scrolling: touch;
 }
-  
