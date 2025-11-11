@@ -24,7 +24,7 @@ body{
     padding: .6rem 1rem;
     box-shadow: 0 10px 30px rgba(0,0,0,.08);
     position: fixed;
-    z-index: 10000 !important;
+    z-index: 1100;
 }
 .navbar .navbar-brand{ color: #fff; }
 .brand-bubble{
@@ -169,7 +169,7 @@ section.py-5,
 /* === CARRUSEL POP-ART === */
 .collection-carousel {
     position: relative;
-    z-index: 9000 !important; /* más alto que el hero */
+    z-index: 1040; /* más alto que el hero */
     margin-top: -15rem; /* sube sobre el hero */
     width: 100vw; /* ocupa todo el ancho */
     left: 50%;
