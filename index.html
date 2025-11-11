@@ -61,8 +61,8 @@
                                 <div class="swiper-slide">
                                     <div class="carousel-card text-center shadow">
                                         <img src="https://picsum.photos/500/500?random=91" alt="Lata 1">
-                                        <h5 class="mt-3 fw-bold">La Noche Estrellada Pop</h5>
-                                        <p class="small text-muted">Van Gogh reinterpretado</p>
+                                        <h5 class="mt-3 fw-bold">Impresión, sol naciente</h5>
+                                        <p class="small text-muted">Claude Monet</p>
                                         <button class="btn btn-primary btn-sm add-to-cart" 
                                             data-id="c1" data-title="La Noche Estrellada Pop" data-price="9.5" data-img="https://picsum.photos/500/500?random=91">
                                             Añadir
@@ -73,8 +73,8 @@
                                 <div class="swiper-slide">
                                     <div class="carousel-card text-center shadow">
                                         <img src="https://picsum.photos/500/500?random=92" alt="Lata 2">
-                                        <h5 class="mt-3 fw-bold">El Beso Pop</h5>
-                                        <p class="small text-muted">Klimt en clave colorida</p>
+                                        <h5 class="mt-3 fw-bold">Danza en el Moulin Rouge</h5>
+                                        <p class="small text-muted">Toulouse Lautrec</p>
                                         <button class="btn btn-primary btn-sm add-to-cart" 
                                             data-id="c2" data-title="El Beso Pop" data-price="9.8" data-img="https://picsum.photos/500/500?random=92">
                                             Añadir
@@ -85,8 +85,8 @@
                                 <div class="swiper-slide">
                                     <div class="carousel-card text-center shadow">
                                         <img src="https://picsum.photos/500/500?random=93" alt="Lata 3">
-                                        <h5 class="mt-3 fw-bold">Sueño Daliniano</h5>
-                                        <p class="small text-muted">Dali surreal pop</p>
+                                        <h5 class="mt-3 fw-bold">Lirios de agua</h5>
+                                        <p class="small text-muted">Claude Monet</p>
                                         <button class="btn btn-primary btn-sm add-to-cart" 
                                             data-id="c3" data-title="Sueño Daliniano" data-price="12" data-img="https://picsum.photos/500/500?random=93">
                                             Añadir
@@ -97,8 +97,8 @@
                                 <div class="swiper-slide">
                                     <div class="carousel-card text-center shadow">
                                         <img src="https://picsum.photos/500/500?random=94" alt="Lata 4">
-                                        <h5 class="mt-3 fw-bold">Retrato Viva</h5>
-                                        <p class="small text-muted">Frida Pop Edition</p>
+                                        <h5 class="mt-3 fw-bold">Los girasoles</h5>
+                                        <p class="small text-muted">Vincent van Gogh</p>
                                         <button class="btn btn-primary btn-sm add-to-cart" 
                                             data-id="c4" data-title="Retrato Viva" data-price="10" data-img="https://picsum.photos/500/500?random=94">
                                             Añadir
@@ -109,8 +109,8 @@
                                 <div class="swiper-slide">
                                     <div class="carousel-card text-center shadow">
                                         <img src="https://picsum.photos/500/500?random=95" alt="Lata 5">
-                                        <h5 class="mt-3 fw-bold">Composición Neón</h5>
-                                        <p class="small text-muted">Mondrian remezclado</p>
+                                        <h5 class="mt-3 fw-bold">La noche estrellada</h5>
+                                        <p class="small text-muted">Vincent van Gogh</p>
                                         <button class="btn btn-primary btn-sm add-to-cart" 
                                             data-id="c5" data-title="Composición Neón" data-price="11" data-img="https://picsum.photos/500/500?random=95">
                                             Añadir
@@ -121,8 +121,8 @@
                                 <div class="swiper-slide">
                                     <div class="carousel-card text-center shadow">
                                         <img src="https://picsum.photos/500/500?random=96" alt="Lata 6">
-                                        <h5 class="mt-3 fw-bold">Pop Venus</h5>
-                                        <p class="small text-muted">Clásico moderno</p>
+                                        <h5 class="mt-3 fw-bold">El almendro en flor</h5>
+                                        <p class="small text-muted">Vincent van Gogh</p>
                                         <button class="btn btn-primary btn-sm add-to-cart" 
                                             data-id="c6" data-title="Pop Venus" data-price="10.5" data-img="https://picsum.photos/500/500?random=96">
                                             Añadir
@@ -185,38 +185,50 @@
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
         <script>
-        // Inicializa Swiper con efecto tipo Skiper
-        const swiper = new Swiper(".mySwiper", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            loop: true,
-            coverflowEffect: {
-            rotate: 35,
-            stretch: 0,
-            depth: 120,
-            modifier: 1.2,
-            slideShadows: false,
-            },
-            pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-            },
-            navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-            },
-            autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-            },
-            breakpoints: {
-            0: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-            },
-        });
+            // Inicializa Swiper con efecto tipo Skiper
+            const swiper = new Swiper(".mySwiper", {
+                effect: "coverflow",
+                // quitamos grabCursor por claridad ahora que no se puede arrastrar
+                grabCursor: false,
+                centeredSlides: true,
+                slidesPerView: "auto",
+                loop: true,
+                coverflowEffect: {
+                    rotate: 35,
+                    stretch: 0,
+                    depth: 120,
+                    modifier: 1.2,
+                    slideShadows: false,
+                },
+                pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                },
+                navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+                },
+                autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+                },
+                breakpoints: {
+                0: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+                },
+
+                // Desactivar arrastre manual
+                simulateTouch: false,
+                allowTouchMove: false,
+
+                // IMPORTANTE: permitir clics dentro de los slides
+                preventClicks: false,
+                preventClicksPropagation: false,
+
+                // eliminar noSwiping (si lo quieres luego, añade la clase manualmente a los slides específicos)
+                noSwiping: false,
+            });
         </script>
 
     </body>

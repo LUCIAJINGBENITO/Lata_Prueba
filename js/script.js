@@ -216,6 +216,38 @@ $(document).ready(function(){
   
       $("#customText").val("");
     });
-  
+
+    // =====================================
+    // 6️⃣ Fallback seguro clicks add-to-cart
+    // =====================================
+
+    function addToCartFromButton(el){
+      const btn = el.closest('.add-to-cart');
+      if(!btn) return;
+
+      const id = btn.dataset.id;
+      const title = btn.dataset.title;
+      const price = parseFloat(btn.dataset.price);
+      const img = btn.dataset.img;
+
+      if(!id || !title || isNaN(price)) return;
+
+      const item = { id, title, price, img };
+      cart.push(item);
+      saveCart();
+      updateBadge();
+      renderCart();
+      renderCheckout();
+    }
+
+    document.addEventListener('click', function(e){
+        const target = e.target;
+        if(target.closest && target.closest('.add-to-cart')){
+            e.stopPropagation();   // evita que Swiper bloquee
+            addToCartFromButton(target);
+            e.preventDefault();    // opcional
+        }
+    }, true);
+
 });
   
