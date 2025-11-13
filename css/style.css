@@ -1,4 +1,5 @@
 /* style.css — Pop-art palette + texture details */
+@import url('https://fonts.googleapis.com/css2?family=Kufam:wght@400;700&display=swap');
 
 :root{
     --blue: #1E6DF2;
@@ -11,7 +12,6 @@
 
 *{box-sizing:border-box}
 body{
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
     background: var(--bg);
     color: #111;
     -webkit-font-smoothing:antialiased;
@@ -276,35 +276,103 @@ section.py-5,
 
 
 /* ---------------------------
-   Forzar clickabilidad dentro de slides
-   --------------------------- */
-   .swiper, .swiper-wrapper, .swiper-slide {
+Forzar clickabilidad dentro de slides
+--------------------------- */
+.swiper, .swiper-wrapper, .swiper-slide {
     overflow: visible !important;
     -webkit-overflow-scrolling: touch;
-  }
+}
   
-  /* Asegura que ningún pseudo-elemento o sombra capture el pointer */
-  .swiper .swiper-slide-shadow-left,
-  .swiper .swiper-slide-shadow-right,
-  .swiper .swiper-slide::before,
-  .swiper .swiper-slide::after {
+/* Asegura que ningún pseudo-elemento o sombra capture el pointer */
+.swiper .swiper-slide-shadow-left,
+.swiper .swiper-slide-shadow-right,
+.swiper .swiper-slide::before,
+.swiper .swiper-slide::after {
     pointer-events: none !important;
-  }
+}
   
-  /* Hijos de slide reciben los eventos */
-  .swiper-slide, .swiper-slide * {
+/* Hijos de slide reciben los eventos */
+.swiper-slide, .swiper-slide * {
     pointer-events: auto !important;
-  }
+}
   
-  /* Slide activo por delante (evita que slides traseros tapen botones) */
-  .swiper-slide { z-index: 0 !important; backface-visibility: hidden; transform-style: preserve-3d; }
-  .swiper-slide-active { z-index: 20 !important; }
+/* Slide activo por delante (evita que slides traseros tapen botones) */
+.swiper-slide { z-index: 0 !important; backface-visibility: hidden; transform-style: preserve-3d; }
+.swiper-slide-active { z-index: 20 !important; }
   
-  /* Botón claramente por encima */
-  .carousel-card .add-to-cart {
+/* Botón claramente por encima */
+.carousel-card .add-to-cart {
     position: relative;
     z-index: 50 !important;
     pointer-events: auto !important;
     cursor: pointer;
-  }
+}
+
+/* ============== SOBRE AURA ============== */
+.about-section {
+    background: linear-gradient(135deg, #fcf4ff 0%, #e8e6fe 100%);
+    color: #2b2b2b;
+    font-family: 'Kufam', sans-serif;
+    overflow: hidden;
+}
   
+.about-text h2 {
+    font-weight: 700;
+    font-size: 2.3rem;
+    color: #f68853;
+}
+  
+.about-text .highlight {
+    color: #b9cde4;
+}
+  
+.about-text p {
+    text-align: left;
+    line-height: 1.7;
+    color: #333;
+}
+  
+.btn-aura {
+    background-color: #eece7b;
+    color: #2b2b2b;
+    font-weight: 600;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.6rem 1.5rem;
+    transition: all 0.3s ease;
+}
+  
+.btn-aura:hover {
+    background-color: #f68853;
+    color: white;
+    transform: scale(1.05);
+}
+  
+.about-img img {
+    max-width: 90%;
+    transition: transform 0.8s ease;
+}
+  
+.about-img img:hover {
+    transform: scale(1.03);
+}
+
+/* Línea de tiempo */
+.timeline-section {
+    background: linear-gradient(135deg, #fcf4ff 0%, #e8e6fe 100%);
+    font-family: 'Kufam', sans-serif;
+}
+
+.timeline-wrapper {
+    gap: 2rem;
+}
+
+.timeline-card {
+    flex: 1 1 0;
+}
+
+.timeline-card .card {
+    border-radius: 12px;
+    background: #fff;
+    color: #2b2b2b;
+}
