@@ -146,6 +146,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Inicializa el rotaterator en el contenedor con id "rotate"
     const rotateContainer = document.querySelector("#girando");
     if (rotateContainer) {
-        rotaterator(rotateContainer, { fadeSpeed: 500, pauseSpeed: 600 });
+        rotaterator(rotateContainer, { fadeSpeed: 700, pauseSpeed: 600 });
     }
+});
+
+$(document).ready(function () {
+  AOS.init({
+    duration: 100,
+  });
 });
