@@ -383,6 +383,263 @@ Forzar clickabilidad dentro de slides
     color: #2b2b2b;
 }
 
+/* ============== NUEVA COLECCIÓN ============== */
+.new-collection .collection-title {
+    font-family: 'Kufam', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.new-collection .collection-desc {
+    font-family: 'Kufam', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+/* Grid de tarjetas */
+.collection-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* Tarjeta */
+.product-card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    transition: transform .25s ease, box-shadow .25s ease;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+}
+
+/* Imagen con botones */
+.product-img-wrapper {
+    position: relative;
+}
+
+.product-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.btn-fav, .btn-cart {
+    position: absolute;
+    top: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-fav { right: 50px; }
+.btn-cart { right: 10px; }
+
+.btn-fav:hover, .btn-cart:hover { background: rgba(255,255,255,1); }
+
+/* Info del producto */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.product-name {
+    font-family: 'Kufam', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.product-desc {
+    font-family: 'Kufam', sans-serif;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Botón añadir */
+.btn-add {
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+}
+
+.btn-add:hover {
+    background-color: #b9cde4;
+    color: black;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .col-md-3 {
+        flex: 0 0 45%;
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 576px) {
+    .col-md-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* ============== NUEVA COLECCIÓN ============== */
+/* Grid de 4 tarjetas alineadas */
+.collection-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/* Tarjeta completa */
+.product-card {
+    flex: 0 0 calc(25% - 0.75rem);
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+}
+
+/* Contenido de la tarjeta: separar visual y texto */
+.product-visual {
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0; /* que la imagen no se reduzca */
+}
+
+.product-visual img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-visual:hover img {
+    transform: scale(1.05);
+}
+
+/* Botones flotantes */
+.product-buttons {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    gap: 5px;
+}
+
+.product-buttons button {
+    background: rgba(0,0,0,0.6);
+    border: none;
+    color: #fff;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    padding: 0;
+}
+
+.product-buttons button i {
+    margin: 0;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-buttons button:hover {
+    background: rgba(182, 205, 228, 0.9);
+    color: #000;
+}
+
+/* Zona de info que ocupa todo el espacio restante */
+.product-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1; /* Ocupa todo el espacio sobrante */
+    justify-content: space-between; /* Empuja el botón al final */
+}
+
+.product-info h5 {
+    margin: 0;
+    font-weight: 700;
+}
+
+.product-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+    flex-grow: 1; /* Hace que el párrafo ocupe espacio flexible */
+}
+
+/* Botón ancho */
+.btn-view-product {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    width: 100%;          /* ocupa todo el ancho de la tarjeta */
+    margin-top: 10px;     /* separa del texto de descripción */
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-view-product:hover {
+    background-color: #b9cde4;
+    color: black;
+    transform: scale(1.03);  /* ligero efecto al pasar el cursor */
+}
+
+/* Hover en tarjeta */
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .product-card {
+        flex: 0 0 calc(50% - 0.5rem);
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-card {
+        flex: 0 0 100%;
+    }
+}
+
 
 /* ============== Reviews Section ============== */
 
