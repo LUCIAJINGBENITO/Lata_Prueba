@@ -160,7 +160,7 @@
             
                     <!-- Imagen -->
                     <div class="col-md-6 text-center about-img">
-                        <img src="img/about-aura.jpg" alt="AURA brand" class="img-fluid rounded-4 shadow-lg">
+                        <img src="https://picsum.photos/500/500?random=94" alt="AURA brand" class="img-fluid rounded-4 shadow-lg">
                     </div>
             
                 </div>
@@ -202,6 +202,104 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: REVIEWS Y COMENTARIOS -->
+        <section class="reviews-section container-fluid py-5">
+            <div class="container">
+                <h3 class="reviews-title mb-4">Opiniones y comentarios</h3>
+
+                <!-- Review 1 -->
+                <div class="review-item mb-4">
+                    <div class="review-header d-flex align-items-center justify-content-between">
+                        <h5 class="review-author">Marina López</h5>
+                        <div class="review-stars">
+                            ★★★★☆
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Me encanta la estética y la calidad de los productos. Se nota el cuidado detrás de cada pieza.
+                    </p>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-item mb-4">
+                    <div class="review-header d-flex align-items-center justify-content-between">
+                        <h5 class="review-author">Carlos Ruiz</h5>
+                        <div class="review-stars">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        La mejor experiencia de compra que he tenido últimamente. El diseño es impecable.
+                    </p>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-item mb-4">
+                    <div class="review-header d-flex align-items-center justify-content-between">
+                        <h5 class="review-author">Lucía Fernández</h5>
+                        <div class="review-stars">
+                            ★★★★☆
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        Entrega rápida y presentación espectacular. Sin duda volveré a comprar.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMULARIO PARA ENVIAR UNA REVIEW -->
+        <section class="reviews-section">
+            <div class="container">
+                <div class="leave-review mt-5">
+                    <h4 class="leave-review-title mb-3">Deja tu opinión</h4>
+
+                    <form id="reviewForm" novalidate>
+                        <!-- Nombre -->
+                        <div class="mb-3">
+                            <label class="form-label">Tu nombre</label>
+                            <div class="input-icon">
+                                <i class="bi bi-person"></i>
+                                <input type="text" class="form-control review-input" id="reviewName" required>
+                            </div>
+                            <div class="invalid-feedback">Introduce tu nombre.</div>
+                        </div>
+
+                        <!-- Estrellas -->
+                        <div class="mb-3">
+                            <label class="form-label">Valoración</label>
+                            <div class="stars-select">
+                                <i class="bi bi-star" data-value="1"></i>
+                                <i class="bi bi-star" data-value="2"></i>
+                                <i class="bi bi-star" data-value="3"></i>
+                                <i class="bi bi-star" data-value="4"></i>
+                                <i class="bi bi-star" data-value="5"></i>
+                            </div>
+                            <input type="hidden" id="reviewStars" required>
+                            <div class="invalid-feedback">Selecciona una puntuación.</div>
+                        </div>
+
+                        <!-- Comentario -->
+                        <div class="mb-3">
+                            <label class="form-label">Comentario</label>
+                            <textarea class="form-control review-input" id="reviewText" rows="3" required></textarea>
+                            <div class="invalid-feedback">Escribe un comentario.</div>
+                        </div>
+
+                        <!-- Botón -->
+                        <button type="submit" class="btn submit-review-btn">
+                            <i class="bi bi-send"></i> Enviar
+                        </button>
+
+                        <!-- Mensaje de éxito -->
+                        <div class="review-success mt-3" style="display:none;">
+                            <i class="bi bi-check-circle-fill"></i> ¡Gracias por tu review!
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
