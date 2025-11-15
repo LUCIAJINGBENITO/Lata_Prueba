@@ -249,5 +249,25 @@ $(document).ready(function(){
         }
     }, true);
 
+    // =====================================
+    // 7️⃣ Cerrar menú en móvil al abrir carrito
+    // =====================================
+
+    $('#cartBtn').click(function(e) {
+      e.preventDefault();
+      var $navCollapse = $('#navMain');
+      if ($(window).width() < 992) {
+          if ($navCollapse.hasClass('show')) {
+              $navCollapse.collapse('hide');
+              $navCollapse.one('hidden.bs.collapse', function() {
+                  $('#cartModal').modal('show');
+              });
+          } else {
+              $('#cartModal').modal('show');
+          }
+      } else {
+          $('#cartModal').modal('show');
+      }
+    });
 });
   

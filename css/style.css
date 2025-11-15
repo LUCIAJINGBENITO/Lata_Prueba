@@ -89,6 +89,47 @@ body{
     display: inline-block;
 }
 
+/* BOTÓN HAMBURGUESA MINIMALISTA */
+.custom-toggler {
+    border: none;
+    background: none;
+    padding: 0;
+    width: 28px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.custom-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.custom-toggler .line {
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    display: block;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+/* --- ANIMACIÓN A X --- */
+.custom-toggler.active .line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.custom-toggler.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.custom-toggler.active .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
 /* Logo */
 .brand-logo{
     width: 40px;
@@ -101,7 +142,42 @@ body{
     color: #000 !important;
     transition: color 0.3s ease;
 }
-  
+
+@media (min-width: 992px) {
+    .cart-wrapper {
+        margin-left: 1.5rem; /* espacio a la derecha de los links */
+    }
+}
+
+@media (max-width: 991px) {
+    #cartBtn {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+    .navbar-collapse {
+        padding-top: 1rem;
+        padding-bottom: 1.5rem;
+        background: var(--purple);
+        border-radius: 0 0 14px 14px;
+    }
+    .navbar-collapse .nav-link {
+        color: #fff;
+        padding: 0.8rem 1rem;
+    }
+    .cart-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 1rem;
+    }
+    .navbar-nav .nav-item {
+        margin-bottom: 0.5rem; /* antes podía ser más grande */
+    }
+    .navbar-nav .nav-link::after {
+        bottom: 1px; /* antes era 0, ahora un poquito más cerca */
+    }
+}
 
 /* HERO */
 .hero-pop{

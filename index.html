@@ -23,8 +23,11 @@
                     <span>ArtCans</span>
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-                    <span class="navbar-toggler-icon"></span>
+                <!-- BOTÓN HAMBURGUESA MINIMALISTA -->
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navMain">
@@ -32,13 +35,13 @@
                         <li class="nav-item"><a class="nav-link hover-line" href="index.html">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link hover-line" href="products.html">Latas</a></li>
                         <li class="nav-item"><a class="nav-link hover-line" href="products.html#customize">Diseña la tuya</a></li>
-                        <li class="nav-item ms-3">
-                            <button class="btn btn-outline-light position-relative" id="cartBtn" data-bs-toggle="modal" data-bs-target="#cartModal">
-                                <i class="bi bi-cart3"></i>
-                                <span id="cartCountBadge" class="badge bg-danger rounded-pill position-absolute top-0 start-100 translate-middle">0</span>
-                            </button>
-                        </li>
                     </ul>
+                    <div class="cart-wrapper ms-lg-3 mt-3 mt-lg-0">
+                        <button class="btn btn-outline-light position-relative" id="cartBtn" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="bi bi-cart3"></i>
+                            <span id="cartCountBadge" class="badge bg-danger rounded-pill position-absolute top-0 start-100 translate-middle">0</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -331,19 +334,19 @@
         </section>
         
         <div class="artistas">
-                <h1> No te pierdas a
-                    <div id="girando">
-                        <div>Karol G</div>
-                        <div>Rauw Alejandro</div>
-                        <div>Bad Bunny</div>
-                        <div>Natti Natasha</div>
-                        <div>Farruko</div>
-                        <div>Zion & Lennox</div>
-                        <div>Myke Towers</div>
-                        <div>Daddy Yankee</div>
-                    </div>
-                </h1>
-            </div>
+            <h1> No te pierdas a
+                <div id="girando">
+                    <div>Karol G</div>
+                    <div>Rauw Alejandro</div>
+                    <div>Bad Bunny</div>
+                    <div>Natti Natasha</div>
+                    <div>Farruko</div>
+                    <div>Zion & Lennox</div>
+                    <div>Myke Towers</div>
+                    <div>Daddy Yankee</div>
+                </div>
+            </h1>
+        </div>
         
         <div class="marquee">
             <div class="track">
@@ -353,7 +356,7 @@
                 Santander - Mallorca - Gran Canaria - Madrid - Benidorm - Málaga - Santander - Mallorca - Gran Canaria
                 </div>
             </div>
-         </div>
+        </div>
 
         <!-- SECCIÓN: REVIEWS Y COMENTARIOS -->
         <section class="reviews-section py-5">
@@ -664,5 +667,20 @@
             });
         </script>
 
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const toggler = document.querySelector(".custom-toggler");
+                const nav = document.getElementById("navMain");
+            
+                nav.addEventListener("shown.bs.collapse", () => {
+                    toggler.classList.add("active");
+                });
+            
+                nav.addEventListener("hidden.bs.collapse", () => {
+                    toggler.classList.remove("active");
+                });
+            });
+        </script>
+    
     </body>
 </html>
