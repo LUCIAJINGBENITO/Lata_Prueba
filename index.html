@@ -585,15 +585,16 @@
 
 
         <script>
+            // Inicializa Swiper con efecto tipo Skiper
             const swiper = new Swiper(".mySwiper", {
                 effect: "coverflow",
-            
+                // quitamos grabCursor por claridad ahora que no se puede arrastrar
+                grabCursor: false,
                 centeredSlides: true,
                 slidesPerView: "auto",
                 loop: true,
                 loopAdditionalSlides: 10, // 🔥 CLAVE para que no haya salto
-                speed: 1400,              // 🔥 transición suave (evita el flash)
-                
+                speed: 1400,
                 coverflowEffect: {
                     rotate: 35,
                     stretch: 0,
@@ -601,43 +602,40 @@
                     modifier: 1.2,
                     slideShadows: false,
                 },
-            
-                autoplay: {
-                    delay: 0,               // 🔥 movimiento continuo
-                    disableOnInteraction: false,
-                },
-            
                 freeMode: {
-                    enabled: true,          // 🔥 movimiento fluido
+                    enabled: true,
                     momentum: false,
                 },
-            
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-            
                 pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
+                el: ".swiper-pagination",
+                clickable: true,
                 },
-            
+                navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+                },
+                autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+                },
                 breakpoints: {
-                    0: { slidesPerView: 1 },
-                    768: { slidesPerView: 2 },
-                    1024: { slidesPerView: 3 },
+                0: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
                 },
-            
-                // No arrastrar manualmente
+
+                // Desactivar arrastre manual
                 simulateTouch: false,
                 allowTouchMove: false,
-            
-                // Permitir clics dentro de slide
+
+                // IMPORTANTE: permitir clics dentro de los slides
                 preventClicks: false,
                 preventClicksPropagation: false,
+
+                // eliminar noSwiping (si lo quieres luego, añade la clase manualmente a los slides específicos)
+                noSwiping: false,
             });
         </script>
-            
 
         <script>
             gsap.registerPlugin(ScrollTrigger);
