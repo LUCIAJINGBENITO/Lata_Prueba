@@ -118,3 +118,34 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const rotaterator = (container, { fadeSpeed = 500, pauseSpeed = 100, child = null } = {}) => {
+        const items = Array.from(container.children);
+        items.forEach(item => item.style.display = "none");
+
+        let next = child || items[0];
+        const fadeInOut = () => {
+            next.style.display = "block";
+            next.style.opacity = "1";
+            setTimeout(() => {
+                next.style.transition = `opacity ${fadeSpeed}ms`;
+                next.style.opacity = "0";
+                setTimeout(() => {
+                    next.style.display = "none";
+                    const nextIndex = (items.indexOf(next) + 1) % items.length;
+                    next = items[nextIndex];
+                    fadeInOut();
+                }, fadeSpeed);
+            }, pauseSpeed);
+        };
+
+        fadeInOut();
+    };
+
+    // Inicializa el rotaterator en el contenedor con id "rotate"
+    const rotateContainer = document.querySelector("#girando");
+    if (rotateContainer) {
+        rotaterator(rotateContainer, { fadeSpeed: 500, pauseSpeed: 600 });
+    }
+});
