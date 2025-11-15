@@ -19,7 +19,7 @@
         <nav class="navbar navbar-expand-lg fixed-top navbar-light">
             <div class="container">
                 <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
-                    <span class="brand-bubble">AC</span>
+                    <img src="tu-logo.png" alt="ArtCans Logo" class="brand-logo">
                     <span>ArtCans</span>
                 </a>
 
@@ -29,9 +29,9 @@
 
                 <div class="collapse navbar-collapse" id="navMain">
                     <ul class="navbar-nav ms-auto align-items-lg-center">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="products.html">Latas</a></li>
-                        <li class="nav-item"><a class="nav-link" href="products.html#customize">Diseña la tuya</a></li>
+                        <li class="nav-item"><a class="nav-link hover-line" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link hover-line" href="products.html">Latas</a></li>
+                        <li class="nav-item"><a class="nav-link hover-line" href="products.html#customize">Diseña la tuya</a></li>
                         <li class="nav-item ms-3">
                             <button class="btn btn-outline-light position-relative" id="cartBtn" data-bs-toggle="modal" data-bs-target="#cartModal">
                                 <i class="bi bi-cart3"></i>
@@ -329,7 +329,7 @@
                 </div>
             </div>
         </section>
-
+        
         <div class="artistas">
                 <h1> No te pierdas a
                     <div id="girando">
@@ -585,14 +585,15 @@
 
 
         <script>
-            // Inicializa Swiper con efecto tipo Skiper
             const swiper = new Swiper(".mySwiper", {
                 effect: "coverflow",
-                // quitamos grabCursor por claridad ahora que no se puede arrastrar
-                grabCursor: false,
+            
                 centeredSlides: true,
                 slidesPerView: "auto",
                 loop: true,
+                loopAdditionalSlides: 10, // 🔥 CLAVE para que no haya salto
+                speed: 1400,              // 🔥 transición suave (evita el flash)
+                
                 coverflowEffect: {
                     rotate: 35,
                     stretch: 0,
@@ -600,36 +601,43 @@
                     modifier: 1.2,
                     slideShadows: false,
                 },
-                pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-                },
-                navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-                },
+            
                 autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
+                    delay: 0,               // 🔥 movimiento continuo
+                    disableOnInteraction: false,
                 },
+            
+                freeMode: {
+                    enabled: true,          // 🔥 movimiento fluido
+                    momentum: false,
+                },
+            
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+            
                 breakpoints: {
-                0: { slidesPerView: 1 },
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
+                    0: { slidesPerView: 1 },
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 },
                 },
-
-                // Desactivar arrastre manual
+            
+                // No arrastrar manualmente
                 simulateTouch: false,
                 allowTouchMove: false,
-
-                // IMPORTANTE: permitir clics dentro de los slides
+            
+                // Permitir clics dentro de slide
                 preventClicks: false,
                 preventClicksPropagation: false,
-
-                // eliminar noSwiping (si lo quieres luego, añade la clase manualmente a los slides específicos)
-                noSwiping: false,
             });
         </script>
+            
 
         <script>
             gsap.registerPlugin(ScrollTrigger);

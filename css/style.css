@@ -2,8 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Kufam:wght@400;700&display=swap');
 
 :root{
-    --blue: #1E6DF2;
-    --red:  #F24150;
+    --purple: #6C1F41;
+    --orange: #F68853;
+    --yellow: #EECE7B;
+    --green: #D9E4A0;
+    --blue: #B9CDE4;
+    --light_blue: #E8E6FE;
+    --lavender:  #FCF4FF;
     --accent: #FFA13D;
     --bg: #fffdfa;
     --muted: #6b6b6b;
@@ -22,24 +27,79 @@ body{
 
 /* NAV */
 .navbar{
-    background: linear-gradient(90deg, rgba(30,109,242,0.95), rgba(242,65,80,0.95));
+    background: var(--purple);
     color: white;
     padding: .6rem 1rem;
     box-shadow: 0 10px 30px rgba(0,0,0,.08);
     position: fixed;
     z-index: 1100;
+    transition: background .3s ease;
 }
-.navbar .navbar-brand{ color: #fff; }
-.brand-bubble{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:40px;height:40px;
-    background: var(--accent);
-    color:#fff;
-    border-radius:8px;
-    font-weight:700;
-    box-shadow: 0 8px 18px rgba(255,161,61,.18);
+
+.navbar-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar-nav .nav-item {
+    display: block;
+}
+
+.navbar .navbar-brand,
+.navbar .navbar-brand span,
+.navbar .nav-link,
+.navbar .btn-outline-light {
+    color: #fff !important;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+    margin-left: 2rem;
+    padding: 0 0 2px 0;
+    display: inline-block;
+}
+
+.navbar-nav .nav-link:first-child {
+    margin-left: 0;
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--blue);
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--blue);
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link span {
+    display: inline-block;
+}
+
+/* Logo */
+.brand-logo{
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+#cartBtn:hover i.bi-cart3 {
+    color: #000 !important;
+    transition: color 0.3s ease;
 }
   
 
@@ -50,21 +110,8 @@ body{
     color: white;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(45deg, #ff5f6d, #ffc371, #47c6ff);
-    /*background-size: 600% 600%;*/
-    animation: gradientBG 20s ease infinite;
+    background: var(--blue);
     z-index: 0;
-}
-@keyframes gradientPOP {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-.hero-deco{
-    position:absolute; right:-120px; bottom:-80px;
-    width:420px; height:420px; border-radius:50%;
-    background: linear-gradient(45deg, rgba(255,255,255,.06), rgba(0,0,0,.03));
-    transform: rotate(25deg);
 }
 
 /* Texto encima del fondo */
@@ -72,38 +119,6 @@ body{
     position: relative;
     z-index: 2;
 }
-
-/* Stickers */
-.sticker {
-    position: absolute;
-    padding: 5px 10px;
-    background: #efefc5;
-    color: #333;
-    font-weight: bold;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    text-align: center;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-}
-.sticker-1 { top: 5%; left: 5%; }
-.sticker-2 { bottom: 5%; right: 5%; }
-  
-/* Product card */
-.product-card{ border-radius: var(--card-radius); overflow:hidden; }
-.product-visual{ position:relative; overflow:hidden; }
-.product-visual img{ width:100%; display:block; transition: transform .45s ease; }
-.product-visual:hover img{ transform: scale(1.07) rotate(-1deg); }
-.art-overlay{
-    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-    background: linear-gradient(0deg, rgba(0,0,0,.0), rgba(0,0,0,.0));
-    opacity:0; transition: opacity .3s;
-}
-.product-visual:hover .art-overlay{ opacity:1; background: linear-gradient(0deg, rgba(0,0,0,.18), rgba(0,0,0,.06)); }
-.overlay-img{ width:70%; filter: drop-shadow(0 6px 12px rgba(0,0,0,.2)); transform: rotate(-3deg); }
-  
-
-/* CTA accent section */
-.bg-accent{ background: linear-gradient(90deg, var(--blue), var(--red)); }
   
 
 /* Buttons */
@@ -302,12 +317,24 @@ Forzar clickabilidad dentro de slides
 .swiper-slide { z-index: 0 !important; backface-visibility: hidden; transform-style: preserve-3d; }
 .swiper-slide-active { z-index: 20 !important; }
   
-/* Botón claramente por encima */
+/* Botón */
 .carousel-card .add-to-cart {
     position: relative;
     z-index: 50 !important;
     pointer-events: auto !important;
     cursor: pointer;
+}
+
+.collection-carousel .carousel-card .add-to-cart {
+    background-color: #6C1F41;
+    color: #fff;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.collection-carousel .carousel-card .add-to-cart:hover {
+    background-color: #b9cde4;
+    color: #000;
 }
 
 /* ============== SOBRE AURA ============== */
@@ -641,67 +668,6 @@ Forzar clickabilidad dentro de slides
 }
 
 
-
-
-/* COMIENZA TEXTO CAMBIA  */
-
-.artistas {
-    text-align: center;
-}
-
-.artistas h1 {
-    color: #f296bc;
-}
-
-#girando {
-    color: #ffcc55;
-}
-
-.text-info div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-/* TERMINA TEXTO CAMBIA  */
-
-
-
-/* COMIENZA TEXTO CIUDADES BUCLE  */
-
-.marquee {
-    position: relative;
-    width: 100%;
-    height: 4rem;
-    overflow-x: hidden;
-    background-color: #f296bc;
-    color: #fff1e7;
-    display: flex;
-    align-items: center;
-}
-
-.track {
-    font-size: 1.5rem;
-    position: absolute;
-    white-space: nowrap;
-    will-change: transform;
-    animation: marquee 90s linear infinite;
-}
-
-@keyframes marquee {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-/* TEMINA TEXTO CIUDADES BUCLE  */
-
-
 /* ============== Reviews Section ============== */
 
 /* Contenedor de cada review */
@@ -874,6 +840,22 @@ Forzar clickabilidad dentro de slides
 }
 .review-success i {
     font-size: 1.3rem;
+}
+
+
+/* CTA*/
+.bg-accent{ background: var(--purple); }
+
+section.bg-accent .btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+section.bg-accent .btn:hover {
+    background-color: #000;
+    color: #fff;
 }
 
 
