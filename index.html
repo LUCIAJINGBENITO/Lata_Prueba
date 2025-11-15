@@ -19,26 +19,29 @@
         <nav class="navbar navbar-expand-lg fixed-top navbar-light">
             <div class="container">
                 <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
-                    <span class="brand-bubble">AC</span>
+                    <img src="tu-logo.png" alt="ArtCans Logo" class="brand-logo">
                     <span>ArtCans</span>
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-                    <span class="navbar-toggler-icon"></span>
+                <!-- BOTÓN HAMBURGUESA MINIMALISTA -->
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navMain">
                     <ul class="navbar-nav ms-auto align-items-lg-center">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="products.html">Latas</a></li>
-                        <li class="nav-item"><a class="nav-link" href="products.html#customize">Diseña la tuya</a></li>
-                        <li class="nav-item ms-3">
-                            <button class="btn btn-outline-light position-relative" id="cartBtn" data-bs-toggle="modal" data-bs-target="#cartModal">
-                                <i class="bi bi-cart3"></i>
-                                <span id="cartCountBadge" class="badge bg-danger rounded-pill position-absolute top-0 start-100 translate-middle">0</span>
-                            </button>
-                        </li>
+                        <li class="nav-item"><a class="nav-link hover-line" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link hover-line" href="products.html">Latas</a></li>
+                        <li class="nav-item"><a class="nav-link hover-line" href="products.html#customize">Diseña la tuya</a></li>
                     </ul>
+                    <div class="cart-wrapper ms-lg-3 mt-3 mt-lg-0">
+                        <button class="btn btn-outline-light position-relative" id="cartBtn" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="bi bi-cart3"></i>
+                            <span id="cartCountBadge" class="badge bg-danger rounded-pill position-absolute top-0 start-100 translate-middle">0</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -689,12 +692,18 @@
                 centeredSlides: true,
                 slidesPerView: "auto",
                 loop: true,
+                loopAdditionalSlides: 10, // 🔥 CLAVE para que no haya salto
+                speed: 1400,
                 coverflowEffect: {
                     rotate: 35,
                     stretch: 0,
                     depth: 120,
                     modifier: 1.2,
                     slideShadows: false,
+                },
+                freeMode: {
+                    enabled: true,
+                    momentum: false,
                 },
                 pagination: {
                 el: ".swiper-pagination",
