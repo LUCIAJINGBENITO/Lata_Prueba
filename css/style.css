@@ -11,10 +11,12 @@
 } 
 
 *{box-sizing:border-box}
+
 body{
     background: var(--bg);
     color: #111;
     -webkit-font-smoothing:antialiased;
+    font-family: 'Kufam', sans-serif;
 }
 
 
@@ -384,55 +386,103 @@ Forzar clickabilidad dentro de slides
 
 /* ============== Reviews Section ============== */
 
-.reviews-section {
-    padding: 80px 0;
-    background-color: #f8f8f8; /* Ajustable si usas otro fondo */
-    border-radius: 18px;
-}
-
-.reviews-title {
-    font-family: 'Kufam', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 600;
-    text-align: left;
-    margin-bottom: 40px;
-    color: #f68853;
-    text-align: center;
-}
-
+/* Contenedor de cada review */
 .review-item {
-    padding: 20px;
     background: white;
     border-radius: 14px;
-    border: 1px solid #e3e3e3;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    padding: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .review-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.1);
 }
 
-.review-author {
-    margin: 0;
+/* Imagen */
+.review-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Contenido */
+.review-content h5 {
+    margin: 0 0 4px 0;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.review-content .review-stars {
     font-size: 1.1rem;
-    font-weight: 600;
+    color: #D4A373;
+    margin-bottom: 6px;
 }
 
-.review-stars {
-    font-size: 1.2rem;
-    color: #D4A373; /* Ajusta al color de acento de tu marca */
-    letter-spacing: 1px;
-}
-
-.review-text {
-    margin-top: 10px;
-    line-height: 1.6;
-    color: #444;
+.review-content .review-text {
+    margin: 0;
     font-size: 0.95rem;
+    color: #444;
+    line-height: 1.5;
 }
+
+/* Contenedor de columnas de reviews */
+.reviews-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Cada columna de reviews (2 reviews por columna) */
+.review-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Hacer que las reviews dentro de cada columna tengan la misma altura */
+.review-column .review-item {
+    flex: 1;
+}
+
+/* RESPONSIVE: MÓVIL TODO APILADO Y MISMO TAMAÑO */
+@media (max-width: 768px) {
+    .reviews-section .row {
+        flex-direction: column;
+    }
+
+    .review-column {
+        flex-direction: column;
+    }
+
+    .review-column .review-item {
+        flex: unset; /* Para que cada review tenga altura según su contenido */
+    }
+
+    .review-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .review-content h5 {
+        font-size: 0.95rem;
+    }
+
+    .review-content .review-text {
+        font-size: 0.9rem;
+    }
+}
+
 
 /* ============== Formulario Reviews Section ============== */
+.leave-review {
+    margin-bottom: 60px; /* <-- Separación general */
+}
+
 .leave-review-title {
     font-size: 1.4rem;
     font-weight: 600;
