@@ -89,6 +89,7 @@ body{
     display: inline-block;
 }
 
+
 /* BOTÓN HAMBURGUESA MINIMALISTA */
 .custom-toggler {
     border: none;
@@ -402,43 +403,39 @@ Forzar clickabilidad dentro de slides
 }
 
 .collection-carousel .carousel-card .add-to-cart {
-    background-color: #6C1F41;
+    background-color: var(--purple);
     color: #fff;
     border: none;
     transition: all 0.3s ease;
 }
 
 .collection-carousel .carousel-card .add-to-cart:hover {
-    background-color: #b9cde4;
+    background-color: var(--lavender);
     color: #000;
 }
 
 /* ============== SOBRE AURA ============== */
 .about-section {
-    background: linear-gradient(135deg, #fcf4ff 0%, #e8e6fe 100%);
-    color: #2b2b2b;
+    background: linear-gradient(180deg, #fffdfa 0%, #6C1F41 100%);
     font-family: 'Kufam', sans-serif;
     overflow: hidden;
 }
   
-.about-text h2 {
+.about-text h1 {
     font-weight: 700;
     font-size: 2.3rem;
-    color: #f68853;
+    color: var(--purple);
 }
-  
-.about-text .highlight {
-    color: #b9cde4;
-}
+
   
 .about-text p {
     text-align: left;
     line-height: 1.7;
-    color: #333;
+    color: var(--bg);
 }
   
 .btn-aura {
-    background-color: #eece7b;
+    background-color: var(--bg);
     color: #2b2b2b;
     font-weight: 600;
     border: none;
@@ -448,8 +445,8 @@ Forzar clickabilidad dentro de slides
 }
   
 .btn-aura:hover {
-    background-color: #f68853;
-    color: white;
+    background-color: var(--yellow);
+    color: var(--bg);
     transform: scale(1.05);
 }
   
@@ -465,8 +462,9 @@ Forzar clickabilidad dentro de slides
 
 /* Línea de tiempo */
 .timeline-section {
-    background: linear-gradient(135deg, #fcf4ff 0%, #e8e6fe 100%);
+    background: var(--purple);
     font-family: 'Kufam', sans-serif;
+    color: var(--bg);
 }
 
 .timeline-wrapper {
@@ -489,12 +487,12 @@ Forzar clickabilidad dentro de slides
     font-weight: 700;
     font-size: 2rem;
     margin-bottom: 0.5rem;
+    color: var(--purple);
 }
 
 .new-collection .collection-desc {
     font-family: 'Kufam', sans-serif;
     font-size: 1rem;
-    color: #555;
     margin-bottom: 2rem;
 }
 
@@ -654,7 +652,7 @@ Forzar clickabilidad dentro de slides
 .product-buttons button {
     background: rgba(0,0,0,0.6);
     border: none;
-    color: #fff;
+    color: var(--bg);
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -675,8 +673,8 @@ Forzar clickabilidad dentro de slides
 }
 
 .product-buttons button:hover {
-    background: rgba(182, 205, 228, 0.9);
-    color: #000;
+    background: #6c1f40b4;
+    color: var(--bg);
 }
 
 /* Zona de info que ocupa todo el espacio restante */
@@ -703,8 +701,8 @@ Forzar clickabilidad dentro de slides
 
 /* Botón ancho */
 .btn-view-product {
-    background-color: black;
-    color: white;
+    background-color: var(--purple);
+    color: var(--bg);
     border: none;
     border-radius: 8px;
     padding: 0.6rem 1.2rem;
@@ -715,7 +713,7 @@ Forzar clickabilidad dentro de slides
 }
 
 .btn-view-product:hover {
-    background-color: #b9cde4;
+    background-color: var(--yellow);
     color: black;
     transform: scale(1.03);  /* ligero efecto al pasar el cursor */
 }
@@ -756,6 +754,11 @@ Forzar clickabilidad dentro de slides
     gap: 10px;
 }
 
+/* Hay que hacerlo responsive  */
+#girando {
+    font-size: 3rem;
+}
+
 /* TERMINA TEXTO CAMBIA  */
 
 /* Imágenes como en About */
@@ -765,11 +768,21 @@ Forzar clickabilidad dentro de slides
 
 
 /* Colores distintos para que no se vea un bloque */
-.bg-aura-1 { background-color: #f296bc; }
-.bg-aura-2 {
-    background-color: #ee8cae;
+.text-track {
+    color: var(--bg);
 }
-.bg-aura-3 { background-color: #f7a6c9; }
+
+.bg-aura-1 {
+    background-color: var(--yellow);
+}
+
+.bg-aura-2 {
+    background-color: var(--green);
+}
+
+.bg-aura-3 {
+    background-color: var(--blue);
+}
 
 .marquee {
   overflow: hidden;
@@ -780,6 +793,7 @@ Forzar clickabilidad dentro de slides
   white-space: nowrap;
   display: inline-block;
   animation: marquee 20s linear infinite;
+  font-size: 1.5rem;
 }
 
 /* Dirección contraria */
@@ -803,6 +817,10 @@ Forzar clickabilidad dentro de slides
 
 
 /* ============== Reviews Section ============== */
+
+.reviews-title {
+    color: var(--purple);
+}
 
 /* Contenedor de cada review */
 .review-item {
@@ -838,7 +856,7 @@ Forzar clickabilidad dentro de slides
 
 .review-content .review-stars {
     font-size: 1.1rem;
-    color: #D4A373;
+    color: var(--yellow);
     margin-bottom: 6px;
 }
 
@@ -904,6 +922,7 @@ Forzar clickabilidad dentro de slides
 .leave-review-title {
     font-size: 1.4rem;
     font-weight: 600;
+    color: var(--purple);
 }
 
 .review-input {
@@ -914,7 +933,7 @@ Forzar clickabilidad dentro de slides
 
 .review-input:focus {
     box-shadow: 0 0 0 3px rgba(200, 170, 255, 0.25);
-    border-color: #C7A8FF; /* Ajusta al color aura */
+    border-color: var(--purple);
 }
 
 .reviews-list {
@@ -944,22 +963,22 @@ Forzar clickabilidad dentro de slides
 
 .stars-select i:hover,
 .stars-select i.active {
-    color: #D4A373; /* tu color de acento */
+    color: var(--yellow); /* tu color de acento */
     transform: scale(1.12);
 }
 
 /* Botón enviar */
 .submit-review-btn {
-    background-color: black;
-    color: rgb(255, 255, 255);
+    background-color: var(--purple);
+    color: var(--bg);
     border-radius: 14px;
     padding: 10px 20px;
     transition: opacity .25s ease, transform .2s ease;
 }
 
 .submit-review-btn:hover {
-    background-color: #b9cde4;
-    color: #000;
+    background-color: var(--yellow);
+    color: black;
     opacity: .85;
     transform: translateY(-2px);
 }
@@ -967,7 +986,7 @@ Forzar clickabilidad dentro de slides
 /* Mensaje éxito */
 .review-success {
     font-size: 1rem;
-    color: #48b368;
+    color: var(--green);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -981,24 +1000,23 @@ Forzar clickabilidad dentro de slides
 .bg-accent{ background: var(--purple); }
 
 section.bg-accent .btn {
-    background-color: #fff;
-    color: #000;
+    background-color: var(--bg);
+    color: black;
     border: none;
     transition: all 0.3s ease;
 }
 
 section.bg-accent .btn:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--yellow);
+    color: var(--bg);
 }
 
 
 /* FOOTER */
 .aura-footer {
-    background: #fcf4ff;
+    background: var(--bg);
     padding: 70px 0 40px;
     font-family: 'Kufam', sans-serif;
-    color: #333;
 }
 
 /* Centrado real de columnas */
@@ -1017,22 +1035,16 @@ section.bg-accent .btn:hover {
 
 /* Marca */
 .footer-brand {
-    font-size: 34px;
     font-weight: 700;
-    color: #f68853;
+    color: var(--purple);
     margin-bottom: 10px;
-}
-
-.footer-desc {
-    color: #444;
-    font-size: 14px;
 }
 
 /* Títulos */
 .footer-title {
     font-size: 20px;
     font-weight: 600;
-    color: #b9cde4;
+    color: var(--yellow);
     margin-bottom: 15px;
 }
 
@@ -1051,7 +1063,7 @@ section.bg-accent .btn:hover {
     position: relative;
     display: inline-block;
     font-size: 15px;
-    color: #444;
+    color: black;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -1064,12 +1076,12 @@ section.bg-accent .btn:hover {
     bottom: -2px;
     width: 0;
     height: 2px;
-    background-color: #f68853;
+    background-color: var(--yellow);
     transition: width 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: #f68853;
+    color: var(--yellow);
 }
 
 .footer-links a:hover::after {
@@ -1081,24 +1093,24 @@ section.bg-accent .btn:hover {
     display: inline-block;
     margin: 0 7px;
     font-size: 20px;
-    color: #b9cde4;
+    color: black;
     transition: 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #f68853;
+    color: var(--yellow);
 }
 
 /* Línea inferior */
 .footer-bottom {
     margin-top: 40px;
-    border-top: 1px solid #e8e6fe;
+    border-top: 1px solid var(--purple);
     padding-top: 15px;
 }
 
 .footer-bottom p {
     font-size: 14px;
-    color: #777;
+    color: var(--muted);
 }
 
 
