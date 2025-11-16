@@ -434,20 +434,26 @@ Forzar clickabilidad dentro de slides
     color: var(--bg);
 }
   
-.btn-aura {
-    background-color: var(--bg);
-    color: #2b2b2b;
-    font-weight: 600;
-    border: none;
-    border-radius: 2rem;
-    padding: 0.6rem 1.5rem;
-    transition: all 0.3s ease;
+.btn-round {
+  border-radius: 50rem;
+  border: 2px solid var(--bg);
+  color: var(--bg);
+  background-color: transparent;
+  font-weight: 600;
+  height: 3rem;
+  padding: 0 1.5rem;
+  width: 100%;
+  max-width: 60%;
+  transition: all 0.25s ease;
 }
-  
-.btn-aura:hover {
-    background-color: var(--yellow);
-    color: var(--bg);
-    transform: scale(1.05);
+
+.btn-round:hover {
+  background-color: var(--bg);
+  color: var(--purple);
+}
+
+.btn-round .arrow {
+  font-size: 1.2rem;
 }
   
 .about-img img {
@@ -683,8 +689,8 @@ Forzar clickabilidad dentro de slides
     display: flex;
     flex-direction: column;
     gap: 8px;
-    flex: 1; /* Ocupa todo el espacio sobrante */
-    justify-content: space-between; /* Empuja el botón al final */
+    flex: 1;
+    justify-content: space-between;
 }
 
 .product-info h5 {
@@ -696,26 +702,34 @@ Forzar clickabilidad dentro de slides
     margin: 0;
     font-size: 0.9rem;
     color: #555;
-    flex-grow: 1; /* Hace que el párrafo ocupe espacio flexible */
+    flex-grow: 1;
 }
 
 /* Botón ancho */
 .btn-view-product {
-    background-color: var(--purple);
-    color: var(--bg);
-    border: none;
-    border-radius: 8px;
-    padding: 0.6rem 1.2rem;
-    width: 100%;          /* ocupa todo el ancho de la tarjeta */
-    margin-top: 10px;     /* separa del texto de descripción */
+    border: 2px solid var(--purple);
+    color: var(--purple);
+    background-color: transparent;
+    border-radius: 50rem;
+    width: 100%;  
+    max-width: 80%;        
+    margin-top: 10px;    
     cursor: pointer;
-    transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    transition: all 0.25s ease;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
 }
 
 .btn-view-product:hover {
-    background-color: var(--yellow);
-    color: black;
-    transform: scale(1.03);  /* ligero efecto al pasar el cursor */
+    background-color: var(--purple);
+    color: var(--bg);
+}
+
+.btn-view-product .arrow {
+  font-size: 1.2rem;
 }
 
 /* Hover en tarjeta */
@@ -969,18 +983,18 @@ Forzar clickabilidad dentro de slides
 
 /* Botón enviar */
 .submit-review-btn {
-    background-color: var(--purple);
-    color: var(--bg);
-    border-radius: 14px;
-    padding: 10px 20px;
-    transition: opacity .25s ease, transform .2s ease;
+    background-color: transparent;
+    color: var(--purple);
+    border-radius: 50rem;
+    height: 3rem;
+    border: 2px solid var(--purple);
+    font-weight: 600;
+    transition: all 0.25s ease;
 }
 
 .submit-review-btn:hover {
-    background-color: var(--yellow);
-    color: black;
-    opacity: .85;
-    transform: translateY(-2px);
+    background-color: var(--purple);
+    color: var(--bg);
 }
 
 /* Mensaje éxito */
@@ -997,20 +1011,26 @@ Forzar clickabilidad dentro de slides
 
 
 /* CTA*/
-.bg-accent{ background: var(--purple); }
+.bg-accent{
+    background: var(--purple);
+}
 
 section.bg-accent .btn {
-    background-color: var(--bg);
-    color: black;
-    border: none;
-    transition: all 0.3s ease;
+    background-color: transparent;
+    color: var(--bg);
+    border-radius: 50rem;
+    height: 3rem;
+    border: 2px solid var(--bg);
+    font-weight: 600;
+    transition: all 0.25s ease;
 }
+
+
 
 section.bg-accent .btn:hover {
-    background-color: var(--yellow);
-    color: var(--bg);
+    background-color: var(--bg);
+    color: var(--purple);
 }
-
 
 /* FOOTER */
 .aura-footer {
