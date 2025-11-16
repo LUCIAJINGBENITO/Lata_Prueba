@@ -445,9 +445,8 @@
                     </div>
                 </div>
         
-                </div>
-        
-        
+            </div>
+            
         </section>
         
         <!-- texto corrido termina  -->
@@ -758,6 +757,21 @@
               duration: 1.2,
               ease: "power3.out",
               delay: 0.2
+            });
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const toggler = document.querySelector(".custom-toggler");
+                const nav = document.getElementById("navMain");
+            
+                nav.addEventListener("shown.bs.collapse", () => {
+                    toggler.classList.add("active");
+                });
+            
+                nav.addEventListener("hidden.bs.collapse", () => {
+                    toggler.classList.remove("active");
+                });
             });
         </script>
 

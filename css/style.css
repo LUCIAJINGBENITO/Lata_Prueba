@@ -1163,6 +1163,7 @@ section.bg-accent .btn:hover {
 @media (min-width: 425px) and (max-width: 767px) {
     .about-section .row {
         display: block; /* apilar columnas */
+        text-align: center;
     }
     .about-text,
     .about-img {
