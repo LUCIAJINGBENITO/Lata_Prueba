@@ -274,6 +274,20 @@ $(document).ready(function(){
     // 8️⃣ Añadir a favoritos
     // ==========================
 
+    function markFavorites() {
+      const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+    
+      $(".fav-btn").each(function() {
+        const btn = $(this);
+        const id = btn.data("id");
+        if (favoritos.some(item => item.id === id)) {
+          btn.find("i").removeClass("bi-heart").addClass("bi-heart-fill text-danger");
+        } else {
+          btn.find("i").removeClass("bi-heart-fill text-danger").addClass("bi-heart");
+        }
+      });
+    }
+    
     function toggleFavorite(product) {
       let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
       const index = favoritos.findIndex(item => item.id === product.id);
@@ -287,7 +301,9 @@ $(document).ready(function(){
           localStorage.setItem("favoritos", JSON.stringify(favoritos));
           alert(`${product.title} eliminado de favoritos 🖤`);
       }
-      renderFavorites();
+    
+      markFavorites();     // actualiza corazones en index
+      renderFavorites();   // refresca lista de favoritos en favoritos.html
     }
     
     $(document).on("click", ".fav-btn", function(){
@@ -304,6 +320,7 @@ $(document).ready(function(){
     // ==========================
     // 9️⃣ Renderizar favoritos
     // ==========================
+    
     function renderFavorites() {
       const container = $("#favoritesGrid");
       if (!container.length) return;
@@ -339,13 +356,20 @@ $(document).ready(function(){
       });
     }
     
-    // Quitar favoritos directamente desde favoritos.html
+    // Quitar favoritos desde favoritos.html
     $(document).on("click", ".btn-remove-fav", function(){
       const productId = $(this).data("id");
       let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
       favoritos = favoritos.filter(item => item.id !== productId);
       localStorage.setItem("favoritos", JSON.stringify(favoritos));
-      renderFavorites();
+      markFavorites();   // refresca corazones en index
+      renderFavorites(); // refresca lista de favoritos
+    });
+    
+    // Marcar favoritos al cargar la página (index.html)
+    $(document).ready(function(){
+      markFavorites();
+      renderFavorites(); // para favoritos.html
     });
 
 });
