@@ -34,6 +34,7 @@
                     <ul class="navbar-nav ms-auto align-items-lg-center">
                         <li class="nav-item"><a class="nav-link hover-line" href="index.html">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link hover-line" href="products.html">Latas</a></li>
+                        <li class="nav-item"><a class="nav-link hover-line" href="favoritos.html">Favoritos</a></li>
                         <li class="nav-item"><a class="nav-link hover-line" href="products.html#customize">Diseña la tuya</a></li>
                     </ul>
                     <div class="cart-wrapper ms-lg-3 mt-3 mt-lg-0">
@@ -220,7 +221,9 @@
                         <div class="product-visual">
                             <img src="https://picsum.photos/300/200?1" alt="Producto 1">
                             <div class="product-buttons">
-                                <button class="fav-btn"><i class="bi bi-heart"></i></button>
+                                <button class="fav-btn" data-id="p1" data-title="Producto 1" data-price="10.5" data-img="https://picsum.photos/300/200?1">
+                                    <i class="bi bi-heart"></i>
+                                </button>
                                 <button class="cart-btn add-to-cart" data-id="p1" data-title="Producto 1" data-price="10.5"
                                     data-img="https://picsum.photos/300/200?1">
                                     <i class="bi bi-cart"></i>
@@ -244,7 +247,9 @@
                         <div class="product-visual">
                             <img src="https://picsum.photos/300/200?1" alt="Producto 2">
                             <div class="product-buttons">
-                                <button class="fav-btn"><i class="bi bi-heart"></i></button>
+                                <button class="fav-btn" data-id="p2" data-title="Producto 2" data-price="10.5" data-img="https://picsum.photos/300/200?1">
+                                    <i class="bi bi-heart"></i>
+                                </button>
                                 <button class="cart-btn add-to-cart" data-id="p2" data-title="Producto 2" data-price="10.5"
                                     data-img="https://picsum.photos/300/200?1">
                                     <i class="bi bi-cart"></i>
@@ -267,7 +272,9 @@
                         <div class="product-visual">
                             <img src="https://picsum.photos/300/200?1" alt="Producto 3">
                             <div class="product-buttons">
-                                <button class="fav-btn"><i class="bi bi-heart"></i></button>
+                                <button class="fav-btn" data-id="p3" data-title="Producto 3" data-price="10.5" data-img="https://picsum.photos/300/200?1">
+                                    <i class="bi bi-heart"></i>
+                                </button>
                                 <button class="cart-btn add-to-cart" data-id="p3" data-title="Producto 3" data-price="10.5"
                                     data-img="https://picsum.photos/300/200?1">
                                     <i class="bi bi-cart"></i>
@@ -290,7 +297,9 @@
                         <div class="product-visual">
                             <img src="https://picsum.photos/300/200?1" alt="Producto 4">
                             <div class="product-buttons">
-                                <button class="fav-btn"><i class="bi bi-heart"></i></button>
+                                <button class="fav-btn" data-id="p4" data-title="Producto 4" data-price="10.5" data-img="https://picsum.photos/300/200?1">
+                                    <i class="bi bi-heart"></i>
+                                </button>
                                 <button class="cart-btn add-to-cart" data-id="p4" data-title="Producto 4" data-price="10.5"
                                     data-img="https://picsum.photos/300/200?1">
                                     <i class="bi bi-cart"></i>
@@ -664,12 +673,12 @@
             // Inicializa Swiper con efecto tipo Skiper
             const swiper = new Swiper(".mySwiper", {
                 effect: "coverflow",
-                // quitamos grabCursor por claridad ahora que no se puede arrastrar
+
                 grabCursor: false,
                 centeredSlides: true,
                 slidesPerView: "auto",
                 loop: true,
-                loopAdditionalSlides: 10, // 🔥 CLAVE para que no haya salto
+                loopAdditionalSlides: 10,
                 speed: 1400,
                 coverflowEffect: {
                     rotate: 35,
@@ -700,15 +709,12 @@
                 1024: { slidesPerView: 3 },
                 },
 
-                // Desactivar arrastre manual
                 simulateTouch: false,
                 allowTouchMove: false,
 
-                // IMPORTANTE: permitir clics dentro de los slides
                 preventClicks: false,
                 preventClicksPropagation: false,
 
-                // eliminar noSwiping (si lo quieres luego, añade la clase manualmente a los slides específicos)
                 noSwiping: false,
             });
         </script>

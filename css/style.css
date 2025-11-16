@@ -200,10 +200,17 @@ body{
 
 /* Buttons */
 .btn-primary{
-    background: linear-gradient(90deg, var(--blue), var(--red));
-    border: 0;
-    box-shadow: 0 10px 30px rgba(30,109,242,.12);
+    border: 2px solid var(--purple);
+    color: var(--purple);
+    background-color: white;
 }
+
+.btn-primary:hover {
+    border: 2px solid var(--purple);
+    background-color: var(--purple);
+    color: var(--bg);
+}
+
 .btn-outline-light{
     border-color: rgba(255,255,255,.35);
     color: #fff;

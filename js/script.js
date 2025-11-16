@@ -269,5 +269,84 @@ $(document).ready(function(){
           $('#cartModal').modal('show');
       }
     });
+
+    // ==========================
+    // 8️⃣ Añadir a favoritos
+    // ==========================
+
+    function toggleFavorite(product) {
+      let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+      const index = favoritos.findIndex(item => item.id === product.id);
+    
+      if(index === -1){
+          favoritos.push(product);
+          localStorage.setItem("favoritos", JSON.stringify(favoritos));
+          alert(`${product.title} añadido a favoritos ❤️`);
+      } else {
+          favoritos.splice(index, 1);
+          localStorage.setItem("favoritos", JSON.stringify(favoritos));
+          alert(`${product.title} eliminado de favoritos 🖤`);
+      }
+      renderFavorites();
+    }
+    
+    $(document).on("click", ".fav-btn", function(){
+      const btn = $(this);
+      const product = {
+          id: btn.data("id"),
+          title: btn.data("title"),
+          price: parseFloat(btn.data("price")),
+          img: btn.data("img")
+      };
+      toggleFavorite(product);
+    });
+
+    // ==========================
+    // 9️⃣ Renderizar favoritos
+    // ==========================
+    function renderFavorites() {
+      const container = $("#favoritesGrid");
+      if (!container.length) return;
+    
+      const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+      container.empty();
+    
+      if(favoritos.length === 0){
+        container.html('<p class="text-center text-muted">No tienes favoritos aún.</p>');
+        return;
+      }
+    
+      favoritos.forEach(product => {
+        container.append(`
+          <div class="product-card" data-id="${product.id}">
+            <div class="product-visual">
+              <img src="${product.img}" alt="${product.title}">
+              <div class="product-buttons">
+                <button class="btn-remove-fav" data-id="${product.id}">
+                  <i class="bi bi-x-circle text-danger"></i>
+                </button>
+                <button class="cart-btn add-to-cart" data-id="${product.id}" data-title="${product.title}" data-price="${product.price}" data-img="${product.img}">
+                  <i class="bi bi-cart"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h5>${product.title}</h5>
+              <p>Descripción breve del producto.</p>
+            </div>
+          </div>
+        `);
+      });
+    }
+    
+    // Quitar favoritos directamente desde favoritos.html
+    $(document).on("click", ".btn-remove-fav", function(){
+      const productId = $(this).data("id");
+      let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+      favoritos = favoritos.filter(item => item.id !== productId);
+      localStorage.setItem("favoritos", JSON.stringify(favoritos));
+      renderFavorites();
+    });
+
 });
   
