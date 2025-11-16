@@ -416,47 +416,53 @@ Forzar clickabilidad dentro de slides
 
 
 /* ============== SOBRE AURA ============== */
-.about-section {
-    font-family: 'Kufam', sans-serif;
-    background-color: #6C1F41;
-    overflow-x: hidden;
+#sobre-aura {
+    padding: 60px 15px;
+    background-color: var(--purple);
 }
 
-.about-text h1 {
+#sobre-aura h2 {
     font-weight: 700;
-    font-size: 2.3rem;
+    margin-bottom: 20px;
     color: white;
 }
 
-.about-text p {
-    line-height: 1.7;
-    color: var(--bg);
+#sobre-aura p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: white;
 }
 
-.about-img img {
+#sobre-aura img {
     width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 14px;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-.btn-round {
-    border-radius: 50rem;
+.btn-aura {
     border: 2px solid var(--bg);
     color: var(--bg);
-    background-color: transparent;
-    font-weight: 600;
-    height: 3rem;
-    padding: 0 1.5rem;
-    max-width: 100%;
-    box-sizing: border-box;
+    background-color: var(--purple);
+    border-radius: 50rem;
+    width: 100%;  
+    max-width: 80%;        
+    margin-top: 10px;    
+    cursor: pointer;
     transition: all 0.25s ease;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
 }
 
-.btn-round:hover {
+.btn-aura:hover {
+    border: 2px solid var(--bg);
     background-color: var(--bg);
     color: var(--purple);
+    transform: translateY(-2px);
 }
 
 /* Línea de tiempo */
@@ -1132,22 +1138,33 @@ section.bg-accent .btn:hover {
 
 
 @media (max-width: 768px) {
-    .about-text {
-        text-align: left;
-        padding-left: 15px;  /* respeta contenedor */
-        padding-right: 15px; /* respeta contenedor */
+    #sobre-aura {
+      padding: 40px 15px;
     }
 
-    .about-img {
-        text-align: left;
-        padding-left: 15px;
-        padding-right: 15px;
-        margin-top: 1rem;
+    #sobre-aura h2 {
+      font-size: 1.8rem;
+      text-align: left;
     }
 
-    .btn-round {
-        justify-content: flex-start;
-        width: auto; /* que respete padding interno del contenedor */
+    #sobre-aura p {
+      text-align: left;
+    }
+
+    #sobre-aura .btn-aura {
+        display: block;
+        width: 100%;       /* ancho completo */
+        max-width: none;   /* opcional, quita cualquier límite */
+        margin: 10px 0;
+    }
+
+    #sobre-aura .row {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    #sobre-aura img {
+      margin-bottom: 20px;
     }
 }
 
