@@ -503,14 +503,6 @@ Forzar clickabilidad dentro de slides
     margin-bottom: 2rem;
 }
 
-/* Grid de tarjetas */
-.collection-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-}
-
 /* Tarjeta */
 .product-card {
     background: #fff;
@@ -613,7 +605,7 @@ Forzar clickabilidad dentro de slides
 .collection-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 1rem;
 }
 
