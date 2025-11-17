@@ -3,7 +3,7 @@ $(document).ready(function(){
     AOS.init(); // Animaciones scroll
   
     // ==========================
-    // 1️⃣ Gestión del carrito
+    // 1️ Gestión del carrito
     // ==========================
   
     // Reinicia carrito si venimos de index.html refrescando
@@ -83,7 +83,7 @@ $(document).ready(function(){
     }
   
     // ==========================
-    // 2️⃣ Añadir y eliminar items
+    // 2️ Añadir y eliminar items
     // ==========================
   
     $(document).on("click",".add-to-cart", function(){
@@ -118,16 +118,17 @@ $(document).ready(function(){
     renderCheckout();
   
     // ==========================
-    // 3️⃣ Productos dinámicos
+    // 3️ Productos dinámicos
     // ==========================
   
     // Array de productos (puedes añadir artista, estilo, etc.)
     const products = [
-      {id:"p1", title:"La Noche Estrellada — Pop", price:9.5, img:"https://picsum.photos/600/600?random=41", artist:"van", style:"pop"},
-      {id:"p2", title:"Composición — Neón", price:11, img:"https://picsum.photos/600/600?random=42", artist:"mondrian", style:"geometrico"},
-      {id:"p3", title:"Retrato Pop — Viva", price:10, img:"https://picsum.photos/600/600?random=43", artist:"frida", style:"retrato"},
-      {id:"p4", title:"Sueño Daliniano", price:12, img:"https://picsum.photos/600/600?random=44", artist:"dali", style:"surreal"},
-      {id:"p5", title:"El Beso — Pop Edition", price:9.8, img:"https://picsum.photos/600/600?random=45", artist:"klimt", style:"pop"}
+      {id:"p1", title:"Impresión, sol naciente", price:9.5, img:"https://picsum.photos/600/600?random=41", artist:"Claude Monet", style:"impresionismo"},
+      {id:"p2", title:"Baile en el Moulin Rouge", price:11, img:"https://picsum.photos/600/600?random=42", artist:"Toulouse-Lautrec", style:"impresionismo"},
+      {id:"p3", title:"Los girasoles", price:10, img:"https://picsum.photos/600/600?random=43", artist:"Vincent Van Gogh", style:"impresionismo"},
+      {id:"p4", title:"Nenúfares", price:12, img:"https://picsum.photos/600/600?random=44", artist:"Claude Monet", style:"impresionismo"},
+      {id:"p5", title:"La noche estrellada", price:9.8, img:"https://picsum.photos/600/600?random=45", artist:"Vincent Van Gogh", style:"impresionismo"},
+      {id:"p6", title:"El almendro en flor", price:12, img:"https://picsum.photos/600/600?random=45", artist:"Vincent Van Gogh", style:"impresionismo"}
       // Añadir más según necesites
     ];
   
@@ -138,7 +139,7 @@ $(document).ready(function(){
       container.empty();
   
       if(productsArray.length === 0){
-        container.html('<p class="text-center text-muted">No hay productos.</p>');
+        container.html('<p class="text-center text-muted">Todavía no hay productos</p>');
         return;
       }
   
@@ -161,7 +162,7 @@ $(document).ready(function(){
                           data-id="${product.id}" 
                           data-title="${product.title}" 
                           data-price="${product.price}" 
-                          data-img="${product.img}">Añadir</button>
+                          data-img="${product.img}">Detalles del producto ></button>
                 </div>
               </div>
             </div>
@@ -175,7 +176,7 @@ $(document).ready(function(){
     renderProducts(products);
   
     // ==========================
-    // 4️⃣ Filtros
+    // 4️ Filtros
     // ==========================
   
     $("#filterArtist, #artistFilter").on("change", function(){
@@ -191,7 +192,7 @@ $(document).ready(function(){
     });
   
     // ==========================
-    // 5️⃣ Personalización (demo)
+    // 5️ Personalización (demo)
     // ==========================
   
     $("#addCustomBtn").on("click", function(){
@@ -218,7 +219,7 @@ $(document).ready(function(){
     });
 
     // =====================================
-    // 6️⃣ Fallback seguro clicks add-to-cart
+    // 6️ Fallback seguro clicks add-to-cart
     // =====================================
 
     function addToCartFromButton(el){
@@ -250,7 +251,7 @@ $(document).ready(function(){
     }, true);
 
     // =====================================
-    // 7️⃣ Cerrar menú en móvil al abrir carrito
+    // 7️ Cerrar menú en móvil al abrir carrito
     // =====================================
 
     $('#cartBtn').click(function(e) {
@@ -271,7 +272,7 @@ $(document).ready(function(){
     });
 
     // ==========================
-    // 8️⃣ Añadir a favoritos
+    // 8️ Añadir a favoritos
     // ==========================
 
     function markFavorites() {
@@ -318,7 +319,7 @@ $(document).ready(function(){
     });
 
     // ==========================
-    // 9️⃣ Renderizar favoritos
+    // 9️ Renderizar favoritos
     // ==========================
 
     function renderFavorites() {
