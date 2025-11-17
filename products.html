@@ -54,56 +54,56 @@
 
         <!-- CARRUSEL -->
         <main class="pt-5 mt-4">
-          <div class="container py-5">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-              <div>
-                <h2 data-aos="fade-up">Colección completa</h2>
-                <p class="text-muted" data-aos="fade-up" data-aos-delay="40">Filtra por artista o estilo (demo visual).</p>
-              </div>
-              <div>
-                <select id="filterArtist" class="form-select form-select-sm">
-                  <option value="all">Todos los estilos</option>
-                  <option value="van">Van Gogh</option>
-                  <option value="mondrian">Mondrian</option>
-                  <option value="frida">Retratos pop</option>
-                </select>
-              </div>
-            </div>
-      
-            <div class="row g-4" id="productsGrid">
-              <!-- Los productos se inyectan desde js/script.js -->
-            </div>
-      
-            <!-- Personaliza tu lata (ancla) -->
-            <section id="customize" class="mt-5" data-aos="fade-up">
-              <div class="p-4 rounded bg-light border">
-                <h4>Diseña la tuya</h4>
-                <p class="small text-muted">Selecciona obra, fondo y texto. (Demo visual: envía a carrito)</p>
-                <div class="row g-3 align-items-end">
-                  <div class="col-md-4">
-                    <label class="form-label">Obra base</label>
-                    <select id="customArtwork" class="form-select">
-                      <option value="p1">La Noche Estrellada — Pop</option>
-                      <option value="p2">Composición — Neón</option>
-                      <option value="p3">Retrato Pop — Viva</option>
-                    </select>
-                  </div>
-                  <div class="col-md-3">
-                    <label class="form-label">Color fondo</label>
-                    <input type="color" id="customColor" class="form-control form-control-color" value="#1E6DF2">
-                  </div>
-                  <div class="col-md-3">
-                    <label class="form-label">Texto (opcional)</label>
-                    <input id="customText" class="form-control" placeholder="Tu frase / nombre">
-                  </div>
-                  <div class="col-12 col-md-2">
-                    <button class="btn btn-primary w-100" id="addCustomBtn">Añadir al carrito</button>
-                  </div>
+            <div class="container py-5">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h2 data-aos="fade-up">Colección completa</h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="40">Filtra por artista o estilo (demo visual).</p>
+                    </div>
+                    <div>
+                        <select id="filterArtist" class="form-select form-select-sm">
+                            <option value="all">Todos los estilos</option>
+                            <option value="van">Van Gogh</option>
+                            <option value="mondrian">Mondrian</option>
+                            <option value="frida">Retratos pop</option>
+                        </select>
+                    </div>
                 </div>
-              </div>
-            </section>
-      
-          </div>
+        
+                <div class="row g-4" id="productsGrid">
+                <!-- Los productos se inyectan desde js/script.js -->
+                </div>
+        
+                <!-- Personaliza tu lata (ancla) -->
+                <section id="customize" class="mt-5" data-aos="fade-up">
+                    <div class="p-4 rounded bg-light border">
+                        <h4>Diseña la tuya</h4>
+                        <p class="small text-muted">Selecciona obra, fondo y texto. (Demo visual: envía a carrito)</p>
+                        <div class="row g-3 align-items-end">
+                            <div class="col-md-4">
+                                <label class="form-label">Obra base</label>
+                                <select id="customArtwork" class="form-select">
+                                    <option value="p1">La Noche Estrellada — Pop</option>
+                                    <option value="p2">Composición — Neón</option>
+                                    <option value="p3">Retrato Pop — Viva</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Color fondo</label>
+                                <input type="color" id="customColor" class="form-control form-control-color" value="#1E6DF2">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Texto (opcional)</label>
+                                <input id="customText" class="form-control" placeholder="Tu frase / nombre">
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <button class="btn btn-primary w-100" id="addCustomBtn">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        
+            </div>
         </main>
 
         <!-- FOOTER -->
