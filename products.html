@@ -1,117 +1,205 @@
-<!doctype html>
-<html lang="es">
-  <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width,initial-scale=1" />
-      <title>ArtCans — Latas</title>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Productos</title>
 
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-      <link href="css/style.css" rel="stylesheet">
-  </head>
-<body>
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg fixed-top navbar-light">
-    <div class="container">
-      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
-        <span class="brand-bubble">AC</span><span>ArtCans</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain2">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navMain2">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link active" href="products.html">Latas</a></li>
-          <li class="nav-item"><a class="nav-link" href="products.html#customize">Diseña la tuya</a></li>
-          <li class="nav-item ms-3">
-            <button class="btn btn-outline-light position-relative" id="cartBtn2" data-bs-toggle="modal" data-bs-target="#cartModal">
-              <i class="bi bi-cart3"></i>
-              <span id="cartCountBadge2" class="badge bg-danger rounded-pill position-absolute top-0 start-100 translate-middle">0</span>
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- AOS -->
+        <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+        <!-- Bootstrap Icons -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light">
+            <div class="container">
+                <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+                    <img src="img/logo blanco.png" alt="ArtCans Logo" class="brand-logo">
+                    <span class="d-flex align-items-center">AURA</span>
+                </a>
 
-  <main class="pt-5 mt-4">
-    <div class="container py-5">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <div>
-          <h2 data-aos="fade-up">Colección completa</h2>
-          <p class="text-muted" data-aos="fade-up" data-aos-delay="40">Filtra por artista o estilo (demo visual).</p>
-        </div>
-        <div>
-          <select id="filterArtist" class="form-select form-select-sm">
-            <option value="all">Todos los estilos</option>
-            <option value="van">Van Gogh</option>
-            <option value="mondrian">Mondrian</option>
-            <option value="frida">Retratos pop</option>
-          </select>
-        </div>
-      </div>
+                <!-- BOTÓN HAMBURGUESA MINIMALISTA -->
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
 
-      <div class="row g-4" id="productsGrid">
-        <!-- Los productos se inyectan desde js/script.js -->
-      </div>
+                <div class="collapse navbar-collapse" id="navMain">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link hover-line" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link hover-line" href="products.html">Latas</a></li>
+                        <li class="nav-item"><a class="nav-link hover-line" href="favoritos.html">Favoritos</a></li>
+                        <li class="nav-item"><a class="nav-link hover-line" href="products.html#customize">Diseña la tuya</a></li>
+                    </ul>
+                    <div class="cart-wrapper ms-lg-3 mt-3 mt-lg-0">
+                        <button class="btn btn-outline-light position-relative" id="cartBtn" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="bi bi-cart3"></i>
+                            <span id="cartCountBadge" class="badge bg-danger rounded-pill position-absolute top-0 start-100 translate-middle">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
 
-      <!-- Personaliza tu lata (ancla) -->
-      <section id="customize" class="mt-5" data-aos="fade-up">
-        <div class="p-4 rounded bg-light border">
-          <h4>Diseña la tuya</h4>
-          <p class="small text-muted">Selecciona obra, fondo y texto. (Demo visual: envía a carrito)</p>
-          <div class="row g-3 align-items-end">
-            <div class="col-md-4">
-              <label class="form-label">Obra base</label>
-              <select id="customArtwork" class="form-select">
-                <option value="p1">La Noche Estrellada — Pop</option>
-                <option value="p2">Composición — Neón</option>
-                <option value="p3">Retrato Pop — Viva</option>
-              </select>
+        <!-- HERO -->
+        <header class="hero-pop d-flex align-items-center">
+            <div class="hero-deco"></div>
+        </header>
+
+        <!-- CARRUSEL -->
+        <main class="pt-5 mt-4">
+          <div class="container py-5">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div>
+                <h2 data-aos="fade-up">Colección completa</h2>
+                <p class="text-muted" data-aos="fade-up" data-aos-delay="40">Filtra por artista o estilo (demo visual).</p>
+              </div>
+              <div>
+                <select id="filterArtist" class="form-select form-select-sm">
+                  <option value="all">Todos los estilos</option>
+                  <option value="van">Van Gogh</option>
+                  <option value="mondrian">Mondrian</option>
+                  <option value="frida">Retratos pop</option>
+                </select>
+              </div>
             </div>
-            <div class="col-md-3">
-              <label class="form-label">Color fondo</label>
-              <input type="color" id="customColor" class="form-control form-control-color" value="#1E6DF2">
+      
+            <div class="row g-4" id="productsGrid">
+              <!-- Los productos se inyectan desde js/script.js -->
             </div>
-            <div class="col-md-3">
-              <label class="form-label">Texto (opcional)</label>
-              <input id="customText" class="form-control" placeholder="Tu frase / nombre">
-            </div>
-            <div class="col-md-2 text-end">
-              <button class="btn btn-primary w-100" id="addCustomBtn">Añadir al carrito</button>
-            </div>
+      
+            <!-- Personaliza tu lata (ancla) -->
+            <section id="customize" class="mt-5" data-aos="fade-up">
+              <div class="p-4 rounded bg-light border">
+                <h4>Diseña la tuya</h4>
+                <p class="small text-muted">Selecciona obra, fondo y texto. (Demo visual: envía a carrito)</p>
+                <div class="row g-3 align-items-end">
+                  <div class="col-md-4">
+                    <label class="form-label">Obra base</label>
+                    <select id="customArtwork" class="form-select">
+                      <option value="p1">La Noche Estrellada — Pop</option>
+                      <option value="p2">Composición — Neón</option>
+                      <option value="p3">Retrato Pop — Viva</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3">
+                    <label class="form-label">Color fondo</label>
+                    <input type="color" id="customColor" class="form-control form-control-color" value="#1E6DF2">
+                  </div>
+                  <div class="col-md-3">
+                    <label class="form-label">Texto (opcional)</label>
+                    <input id="customText" class="form-control" placeholder="Tu frase / nombre">
+                  </div>
+                  <div class="col-12 col-md-2">
+                    <button class="btn btn-primary w-100" id="addCustomBtn">Añadir al carrito</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+      
           </div>
-        </div>
-      </section>
+        </main>
 
-    </div>
-  </main>
+        <!-- FOOTER -->
 
-  <!-- CART MODAL -->
-  <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Tu carrito</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body" id="cartModalBody">
-          <!-- inyectado por JS -->
-        </div>
-        <div class="modal-footer">
-          <a href="checkout.html" class="btn btn-primary">Ir a pagar</a>
-          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Seguir comprando</button>
-        </div>
-      </div>
-    </div>
-  </div>
+        <footer class="aura-footer">
+            <div class="container">
+                <div class="row aura-footer-row text-center">
 
-  <!-- SCRIPTS -->
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script src="js/script.js"></script>
-</body>
+                    <!-- Col 1: Marca -->
+                    <div class="col-sm-3 footer-col">
+                        <h1 class="footer-brand">AURA</h1>
+                        <p class="footer-desc">
+                            Arte embotellado en experiencias sensoriales.
+                        </p>
+                    </div>
+
+                    <!-- Col 2: Enlaces -->
+                    <div class="col-sm-3 footer-col">
+                        <h4 class="footer-title">Explorar</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Colecciones</a></li>
+                            <li><a href="#">Ediciones limitadas</a></li>
+                            <li><a href="#">Artistas</a></li>
+                            <li><a href="#">Sostenibilidad</a></li>
+                            <li><a href="#">Tienda</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 3: Contacto -->
+                    <div class="col-sm-3 footer-col">
+                        <h4 class="footer-title">Contacto</h4>
+                        <p class="footer-contact">info@auradrinks.com</p>
+                        <p class="footer-contact">+34 600 000 000</p>
+                    </div>
+
+                    <!-- Col 4: Social (ahora a la derecha de Contacto) -->
+                    <div class="col-sm-3 footer-col">
+                        <h4 class="footer-title">Social</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="bi bi-instagram"></i></a>
+                            <a href="#"><i class="bi bi-tiktok"></i></a>
+                            <a href="#"><i class="bi bi-youtube"></i></a>
+                            <a href="#"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="footer-bottom text-center">
+                    <p>© 2025 AURA — Art & Flavors</p>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- CART MODAL (reutilizable en todas las páginas) -->
+        <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Tu carrito</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body" id="cartModalBody">
+                    <!-- contenido inyectado por JS -->
+                    </div>
+                    <div class="modal-footer">
+                        <a href="checkout.html" class="btn btn-primary">Ir a pagar</a>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Seguir comprando</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCRIPTS PRINCIPALES -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+        <!-- SCRIPTS LOCALES -->
+        <script src="js/script.js"></script>
+        <script src="js/animations.js"></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const toggler = document.querySelector(".custom-toggler");
+                const nav = document.getElementById("navMain");
+    
+                nav.addEventListener("shown.bs.collapse", () => {
+                    toggler.classList.add("active");
+                });
+                nav.addEventListener("hidden.bs.collapse", () => {
+                    toggler.classList.remove("active");
+                });
+            });
+        </script>
+    </body>
 </html>

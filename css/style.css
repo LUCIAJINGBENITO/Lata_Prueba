@@ -1,7 +1,7 @@
 /* style.css — Pop-art palette + texture details */
 @import url('https://fonts.googleapis.com/css2?family=Kufam:wght@400;700&display=swap');
 
-:root{
+:root {
     --purple: #6C1F41;
     --orange: #F68853;
     --yellow: #EECE7B;
@@ -17,7 +17,7 @@
 
 *{box-sizing:border-box}
 
-body{
+body {
     background: var(--bg);
     color: #111;
     -webkit-font-smoothing:antialiased;
@@ -26,7 +26,7 @@ body{
 
 
 /* NAV */
-.navbar{
+.navbar {
     background: var(--purple);
     color: white;
     padding: .6rem 1rem;
@@ -38,7 +38,7 @@ body{
 
 .navbar-nav {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .navbar-nav .nav-item {
@@ -52,36 +52,28 @@ body{
     color: #fff !important;
 }
 
-.navbar-nav .nav-link {
+.navbar-nav .nav-link.hover-line {
     position: relative;
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.3s ease;
-    margin-left: 2rem;
-    padding: 0 0 2px 0;
     display: inline-block;
+    padding-bottom: 2px;
+    margin-left: 0 !important;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.navbar-nav .nav-link:first-child {
-    margin-left: 0;
-}
-
-.navbar-nav .nav-link::after {
+.navbar-nav .nav-link.hover-line::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 0;
+    width: 0;                 
     height: 2px;
     background-color: var(--blue);
     transition: width 0.3s ease;
 }
 
-.navbar-nav .nav-link:hover {
-    color: var(--blue);
-}
-
-.navbar-nav .nav-link:hover::after {
+.navbar-nav .nav-link.hover-line:hover::after {
     width: 100%;
 }
 
@@ -211,10 +203,13 @@ body{
     color: var(--bg);
 }
 
+
+
 .btn-outline-light{
     border-color: rgba(255,255,255,.35);
     color: #fff;
 }
+
 .product-card .product-visual {
     position: relative;
     overflow: hidden;
@@ -738,6 +733,14 @@ Forzar clickabilidad dentro de slides
   font-size: 1.2rem;
 }
 
+/* Hacer que el botón de "Añadir al carrito" sea responsive */
+#addCustomBtn {
+    min-width: 100%; /* fuerza que ocupe todo el ancho del contenedor */
+    padding: 0.3rem 1rem;
+    font-size: 1rem;
+}
+
+
 /* Hover en tarjeta */
 .product-card:hover {
     transform: translateY(-6px);
@@ -916,7 +919,7 @@ Forzar clickabilidad dentro de slides
     }
 
     .review-column .review-item {
-        flex: unset; /* Para que cada review tenga altura según su contenido */
+        flex: unset;
     }
 
     .review-img {
@@ -936,7 +939,7 @@ Forzar clickabilidad dentro de slides
 
 /* ============== Formulario Reviews Section ============== */
 .leave-review {
-    margin-bottom: 60px; /* <-- Separación general */
+    margin-bottom: 60px;
 }
 
 .leave-review-title {
@@ -983,7 +986,7 @@ Forzar clickabilidad dentro de slides
 
 .stars-select i:hover,
 .stars-select i.active {
-    color: var(--yellow); /* tu color de acento */
+    color: var(--yellow);
     transform: scale(1.12);
 }
 
@@ -1136,6 +1139,7 @@ section.bg-accent .btn:hover {
 
 .footer-bottom p {
     font-size: 14px;
+    padding-top: 20px;
     color: var(--muted);
 }
 
@@ -1143,6 +1147,29 @@ section.bg-accent .btn:hover {
 /* RESPONSIVE */
 /* ---------------- MEDIA QUERIES ---------------- */
 
+
+
+/* Desktop: ≥992px */
+@media (min-width: 992px) {
+    #customize .col-md-4 { flex: 0 0 40%; max-width: 40%; }
+    #customize .col-md-3 { flex: 0 0 20%; max-width: 20%; }
+    #customize .col-md-2 { flex: 0 0 20%; max-width: 20%; }
+
+    #addCustomBtn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    #customize .col-md-2 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    #addCustomBtn {
+        width: 100%;
+    }
+}
 
 @media (max-width: 768px) {
     #sobre-aura {
@@ -1160,8 +1187,8 @@ section.bg-accent .btn:hover {
 
     #sobre-aura .btn-aura {
         display: block;
-        width: 100%;       /* ancho completo */
-        max-width: none;   /* opcional, quita cualquier límite */
+        width: 100%;
+        max-width: none;
         margin: 10px 0;
     }
 
@@ -1175,3 +1202,89 @@ section.bg-accent .btn:hover {
     }
 }
 
+/* ===== FIX MOBILE ALIGNMENT (texto, botones, imágenes) ===== */
+@media (max-width: 576px) {
+
+    .container,
+    .container-fluid,
+    section,
+    .row,
+    [class*="col-"] {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        overflow: visible !important;
+    }
+
+    body, html {
+        overflow-x: hidden !important;
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    p,
+    button,
+    .btn,
+    .product-info,
+    .hero-pop,
+    .hero-pop .container {
+        text-align: left !important;
+    }
+
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: cover;
+    }
+
+    .btn,
+    button {
+        width: auto;
+        max-width: 100%;
+        display: inline-block;
+    }
+
+    /* Botón de "Añadir al carrito" responsive (diseña la tuya) */
+
+    #addCustomBtn {
+        width: 100%;
+        font-size: 0.95rem;
+    }
+
+    /* FOOTER */
+    .footer-brand {
+        text-align: center !important;
+        width: 100%;
+        display: block;
+    }
+
+    .aura-footer,
+    .aura-footer .footer-col,
+    .aura-footer .footer-title,
+    .aura-footer .footer-desc,
+    .aura-footer .footer-contact,
+    .aura-footer .footer-links,
+    .aura-footer .footer-links li a,
+    .aura-footer .social-icons {
+        text-align: center !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .aura-footer .footer-col {
+        margin-bottom: 25px;
+    }
+
+    .aura-footer .footer-links {
+        padding-left: 0 !important;
+    }
+
+    .aura-footer .social-icons a {
+        margin: 0 8px;
+    }
+
+    .footer-bottom,
+    .footer-bottom p {
+        text-align: center !important;
+        justify-content: center !important;
+        width: 100%;
+    }
+}

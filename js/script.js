@@ -295,15 +295,15 @@ $(document).ready(function(){
       if(index === -1){
           favoritos.push(product);
           localStorage.setItem("favoritos", JSON.stringify(favoritos));
-          alert(`${product.title} añadido a favoritos ❤️`);
+          
       } else {
           favoritos.splice(index, 1);
           localStorage.setItem("favoritos", JSON.stringify(favoritos));
-          alert(`${product.title} eliminado de favoritos 🖤`);
+          
       }
     
-      markFavorites();     // actualiza corazones en index
-      renderFavorites();   // refresca lista de favoritos en favoritos.html
+      markFavorites();
+      renderFavorites();
     }
     
     $(document).on("click", ".fav-btn", function(){
@@ -320,7 +320,7 @@ $(document).ready(function(){
     // ==========================
     // 9️⃣ Renderizar favoritos
     // ==========================
-    
+
     function renderFavorites() {
       const container = $("#favoritesGrid");
       if (!container.length) return;
