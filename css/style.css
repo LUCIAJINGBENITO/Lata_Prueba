@@ -537,7 +537,7 @@ Forzar clickabilidad dentro de slides
     background-color: var(--purple);
     border-radius: 50rem;
     width: 100%;  
-    max-width: 80%;        
+    max-width: 40%;        
     margin-top: 10px;    
     cursor: pointer;
     transition: all 0.25s ease;
@@ -844,11 +844,16 @@ Forzar clickabilidad dentro de slides
 
 
 /* INSPIRADOS POR...  */
+
+#inspirados{
+    padding: 60px 15px;
+}
 /* COMIENZA TEXTO CAMBIA  */
 
 .artistas {
     text-align: center;
     color: #6C1F41;
+    margin-top: 3rem;
 }
 
 .text-info div {
@@ -864,9 +869,6 @@ Forzar clickabilidad dentro de slides
 }
 
 /* TERMINA TEXTO CAMBIA  */
-
-/* Imágenes como en About */
-
 
 /* INSPIRADOS POR... TERMINA  */
 
@@ -1447,6 +1449,20 @@ select option:checked {
     }
 }
 
+@media (min-width: 769px) {
+
+        #inspirados .row {
+        flex-direction: column;  
+
+    }
+
+    
+    #inspirados .col-md-6 {
+        width: 100%;     
+    }
+
+}
+
 @media (max-width: 768px) {
     #sobre-aura {
       padding: 40px 15px;
@@ -1459,13 +1475,6 @@ select option:checked {
 
     #sobre-aura p {
       text-align: left;
-    }
-
-    #sobre-aura .btn-aura {
-        display: block;
-        width: 100%;
-        max-width: none;
-        margin: 10px 0;
     }
 
     #sobre-aura .row {
@@ -1500,6 +1509,14 @@ select option:checked {
         max-width: 300px;
         justify-content: center;
     }
+
+    
+
+
+    #inspirados {
+      padding: 40px 15px;
+    }
+
 }
 
 /* ===== FIX MOBILE ALIGNMENT (texto, botones, imágenes) ===== */
