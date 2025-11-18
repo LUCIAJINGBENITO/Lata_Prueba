@@ -24,8 +24,8 @@ body {
     font-family: 'Kufam', sans-serif;
 }
 
+/* -------------------------------- NAV -------------------------------- */
 
-/* NAV */
 .navbar {
     background: var(--purple);
     color: white;
@@ -81,8 +81,8 @@ body {
     display: inline-block;
 }
 
+/* -------------------------------- BOTÓN HAMBURGUESA -------------------------------- */
 
-/* BOTÓN HAMBURGUESA MINIMALISTA */
 .custom-toggler {
     border: none;
     background: none;
@@ -172,7 +172,8 @@ body {
     }
 }
 
-/* HERO */
+/* -------------------------------- HERO -------------------------------- */
+
 .hero-pop{
     min-height: 30vh;
     padding-top: 5.5rem;
@@ -192,7 +193,7 @@ body {
 
 /* Buttons */
 .btn-primary{
-  border: 2px solid var(--purple);
+    border: 2px solid var(--purple);
     color: var(--purple);
     background-color: transparent;
     border-radius: 50rem;
@@ -241,6 +242,7 @@ body {
     filter: saturate(120%) contrast(110%);
 }
   
+/* -------------------------------- CART -------------------------------- */
 
 /* Cart badge adjustments */
 #cartCountBadge, #cartCountBadge2{
@@ -272,8 +274,49 @@ section.py-5,
 .collection-carousel {
   overflow: visible !important;
 }
-  
-/* === CARRUSEL POP-ART === */
+
+#cartModal .modal-footer .btn {
+    width: 180px;
+    height: 48px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+/* Botón "Ir a pagar" en el modal del carrito */
+#cartModal .btn-primary {
+    background: var(--purple);
+    color: white;
+    border: 2px solid var(--purple);
+    border-radius: 50rem;
+    transition: all 0.25s ease;
+}
+
+#cartModal .btn-primary:hover {
+    background: white;
+    color: var(--purple);
+    border: 2px solid var(--purple);
+}
+
+/* Botón "Seguir comprando" en el modal del carrito */
+#cartModal .btn-outline-secondary {
+    background: white;
+    border: 2px solid var(--purple);
+    color: var(--purple);
+    border-radius: 50rem;
+    transition: all 0.25s ease;
+}
+
+#cartModal .btn-outline-secondary:hover {
+    background: var(--purple);
+    color: white;
+    border: 2px solid var(--purple);
+}
+
+/* -------------------------------- CARRUSEL -------------------------------- */
+
 .collection-carousel {
     position: relative;
     z-index: 1040;
@@ -426,8 +469,8 @@ Forzar clickabilidad dentro de slides
     color: #000;
 }
 
+/* -------------------------------- SOBRE AURA -------------------------------- */
 
-/* ============== SOBRE AURA ============== */
 #sobre-aura {
     padding: 60px 15px;
     background-color: var(--purple);
@@ -498,7 +541,8 @@ Forzar clickabilidad dentro de slides
     color: #2b2b2b;
 }
 
-/* ============== NUEVA COLECCIÓN ============== */
+/* -------------------------------- NUEVA COLECCIÓN -------------------------------- */
+
 .new-collection .collection-title {
     font-family: 'Kufam', sans-serif;
     font-weight: 700;
@@ -610,8 +654,8 @@ Forzar clickabilidad dentro de slides
     }
 }
 
-/* ============== NUEVA COLECCIÓN ============== */
-/* Grid de 4 tarjetas alineadas */
+/* -------------------------------- NUEVA COLECCIÓN -------------------------------- */
+
 .collection-grid {
     display: flex;
     flex-wrap: wrap;
@@ -737,7 +781,7 @@ Forzar clickabilidad dentro de slides
 
 /* Hacer que el botón de "Añadir al carrito" sea responsive */
 #addCustomBtn {
-    min-width: 100%; /* fuerza que ocupe todo el ancho del contenedor */
+    min-width: 100%;
     padding: 0.3rem 1rem;
     font-size: 1rem;
 }
@@ -840,8 +884,7 @@ Forzar clickabilidad dentro de slides
 
 /* TEMINA TEXTO CIUDADES BUCLE  */
 
-
-/* ============== Reviews Section ============== */
+/* -------------------------------- Reviews Section -------------------------------- */
 
 .reviews-title {
     color: var(--purple);
@@ -892,20 +935,17 @@ Forzar clickabilidad dentro de slides
     line-height: 1.5;
 }
 
-/* Contenedor de columnas de reviews */
 .reviews-row {
     display: flex;
     justify-content: space-between;
 }
 
-/* Cada columna de reviews (2 reviews por columna) */
 .review-column {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* Hacer que las reviews dentro de cada columna tengan la misma altura */
 .review-column .review-item {
     flex: 1;
 }
@@ -938,8 +978,8 @@ Forzar clickabilidad dentro de slides
     }
 }
 
+/* -------------------------------- Formulario Reviews Section -------------------------------- */
 
-/* ============== Formulario Reviews Section ============== */
 .leave-review {
     margin-bottom: 60px;
 }
@@ -1020,8 +1060,8 @@ Forzar clickabilidad dentro de slides
     font-size: 1.3rem;
 }
 
+/* -------------------------------- CTA -------------------------------- */
 
-/* CTA*/
 .bg-accent{
     background: var(--purple);
 }
@@ -1036,14 +1076,183 @@ section.bg-accent .btn {
     transition: all 0.25s ease;
 }
 
-
-
 section.bg-accent .btn:hover {
     background-color: var(--bg);
     color: var(--purple);
 }
 
-/* FOOTER */
+/* -------------------------------- PAGO -------------------------------- */
+
+.checkout-wrapper {
+    margin-top: -100px;
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;      
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+.form-card {
+    background: var(--lavender);
+    border-radius: var(--card-radius);
+    border-color: var(--lavender);
+    padding: 2rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Títulos dentro de la card */
+.checkout-page .section-title {
+    font-family: 'Kufam', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--purple);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.checkout-page.checkout-top {
+    padding-top: 0.1rem !important;
+}
+
+.form-card h5 {
+    font-weight: 700;
+    color: black;
+    margin-bottom: 1rem;
+}
+
+/* Inputs */
+.form-card .form-control,
+.form-card .form-select {
+    border-radius: var(--card-radius);
+    border: 2px solid var(--purple);
+    background: white;
+    transition: 0.25s ease;
+}
+
+.form-card .form-control:focus,
+.form-card .form-select:focus {
+    border-color: var(--blue);
+    box-shadow: 4px 4px 0 var(--blue);
+    outline: none;
+}
+
+.form-card .text-end {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* Botón principal */
+.form-card .btn-primary {
+    background: var(--purple);
+    border: 2px solid var(--purple);
+    color: white;
+    padding: 0.9rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.form-card .btn-primary:hover {
+    background: white;
+    border: 2px solid var(--purple);
+    color: var(--purple);
+    transform: translate(-2px, -2px);
+}
+
+/* Botón Seguir comprando */
+.form-card .btn-outline-secondary {
+    background: white;
+    border: 2px solid var(--purple);
+    border-radius: 50rem;
+    color: var(--purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    transition: 0.25s ease;
+}
+
+.form-card .btn-outline-secondary:hover {
+    background: var(--purple);
+    border: 2px solid var(--purple);
+    color: white;
+}
+
+/* Botón success del resumen */
+.form-card .btn-success {
+    background: var(--green);
+    border: 2px solid var(--green);
+    border-radius: 50rem;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    transition: 0.25s ease;
+}
+
+.form-card .btn-success:hover {
+    background: rgb(168, 212, 168);
+    border: 2px solid rgb(168, 212, 168);
+    color: black;
+}
+
+/* Contenedor de cada producto */
+.checkout-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.25rem 0;
+}
+
+/* Contenedor de imagen + info */
+.checkout-item > div {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+  
+/* Imagen miniatura */
+.checkout-thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-radius: 0.5rem;
+}
+  
+/* Info del producto */
+.checkout-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+  
+/* Nombre y precio */
+.checkout-name {
+    font-weight: 600;
+    color: var(--purple);
+}
+  
+.checkout-price {
+    font-size: 0.875rem;
+    color: #555;
+}
+
+/* -------------------------------- FOOTER -------------------------------- */
+
 .aura-footer {
     background: var(--bg);
     padding: 70px 0 40px;
@@ -1147,7 +1356,7 @@ section.bg-accent .btn:hover {
 
 
 /* RESPONSIVE */
-/* ---------------- MEDIA QUERIES ---------------- */
+/* -------------------------------- MEDIA QUERIES -------------------------------- */
 
 
 
@@ -1201,6 +1410,30 @@ section.bg-accent .btn:hover {
 
     #sobre-aura img {
       margin-bottom: 20px;
+    }
+
+    .form-card .btn-primary {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .form-card .btn-outline-secondary,
+    .form-card .btn-success {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+
+    #cartModal .modal-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    #cartModal .modal-footer .btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
     }
 }
 
@@ -1288,5 +1521,32 @@ section.bg-accent .btn:hover {
         text-align: center !important;
         justify-content: center !important;
         width: 100%;
+    }
+
+    .checkout-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .checkout-item > div {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .checkout-thumb {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 0.5rem;
+    }
+    
+    .checkout-info {
+        gap: 0.15rem;
+    }
+    
+    .checkout-line.text-end {
+        text-align: center !important;
     }
 }
