@@ -202,118 +202,61 @@
             </div>
         </section>
 
-        <!-- NUEVA COLECCIÓN -->
-        <section class="new-collection py-5">
-            <div class="container">
-                <h2 class="collection-title text-center mb-3">Nueva Colección</h2>
-                <p class="collection-desc text-center mb-5">
-                    Descubre los nuevos productos de AURA, combinando diseño y arte en cada detalle.
-                </p>
-        
-                <div class="collection-grid">
-                    <!-- TARJETA 1 -->
-                    <div class="product-card">
-                        <div class="product-visual">
-                            <img src="https://picsum.photos/300/200?1" alt="Producto 1">
-                            <div class="product-buttons">
-                                <button class="fav-btn" data-id="p1" data-title="Producto 1" data-price="10.5" data-img="https://picsum.photos/300/200?1">
-                                    <i class="bi bi-heart"></i>
-                                </button>
-                                <button class="cart-btn add-to-cart" data-id="p1" data-title="Producto 1" data-price="10.5"
-                                    data-img="https://picsum.photos/300/200?1">
-                                    <i class="bi bi-cart"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h5>Producto 1</h5>
-                            <p>Descripción breve del producto.</p>
-                            <button class="btn-view-product add-to-cart " data-id="p1" data-title="Producto 1" data-price="10.5"
-                                data-img="https://picsum.photos/300/200?1">
-                                <span>Ver Producto</span>
-                                <span class="arrow">&gt;</span>
-                            </button>
-                
-                        </div>
-                    </div>
-                
-                    <!-- TARJETA 2 -->
-                    <div class="product-card">
-                        <div class="product-visual">
-                            <img src="https://picsum.photos/300/200?1" alt="Producto 2">
-                            <div class="product-buttons">
-                                <button class="fav-btn" data-id="p2" data-title="Producto 2" data-price="10.5" data-img="https://picsum.photos/300/200?1">
-                                    <i class="bi bi-heart"></i>
-                                </button>
-                                <button class="cart-btn add-to-cart" data-id="p2" data-title="Producto 2" data-price="10.5"
-                                    data-img="https://picsum.photos/300/200?1">
-                                    <i class="bi bi-cart"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h5>Producto 2</h5>
-                            <p>Descripción breve del producto.</p>
-                            <button class="btn-view-product add-to-cart" data-id="p2" data-title="Producto 2" data-price="10.5"
-                                data-img="https://picsum.photos/300/200?1">
-                                <span>Ver Producto</span>
-                                <span class="arrow">&gt;</span>
-                            </button>
-                        </div>
-                    </div>
-                
-                    <!-- TARJETA 3 -->
-                    <div class="product-card">
-                        <div class="product-visual">
-                            <img src="https://picsum.photos/300/200?1" alt="Producto 3">
-                            <div class="product-buttons">
-                                <button class="fav-btn" data-id="p3" data-title="Producto 3" data-price="10.5" data-img="https://picsum.photos/300/200?1">
-                                    <i class="bi bi-heart"></i>
-                                </button>
-                                <button class="cart-btn add-to-cart" data-id="p3" data-title="Producto 3" data-price="10.5"
-                                    data-img="https://picsum.photos/300/200?1">
-                                    <i class="bi bi-cart"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h5>Producto 1</h5>
-                            <p>Descripción breve del producto.</p>
-                            <button class="btn-view-product add-to-cart" data-id="p3" data-title="Producto 3" data-price="10.5"
-                                data-img="https://picsum.photos/300/200?1">
-                                <span>Ver Producto</span>
-                                <span class="arrow">&gt;</span>
-                            </button>
-                        </div>
-                    </div>
-                
-                    <!-- TARJETA 4 -->
-                    <div class="product-card">
-                        <div class="product-visual">
-                            <img src="https://picsum.photos/300/200?1" alt="Producto 4">
-                            <div class="product-buttons">
-                                <button class="fav-btn" data-id="p4" data-title="Producto 4" data-price="10.5" data-img="https://picsum.photos/300/200?1">
-                                    <i class="bi bi-heart"></i>
-                                </button>
-                                <button class="cart-btn add-to-cart" data-id="p4" data-title="Producto 4" data-price="10.5"
-                                    data-img="https://picsum.photos/300/200?1">
-                                    <i class="bi bi-cart"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h5>Producto 1</h5>
-                            <p>Descripción breve del producto.</p>
-                            <button class="btn-view-product add-to-cart" data-id="p4" data-title="Producto 4" data-price="10.5"
-                                data-img="https://picsum.photos/300/200?1">
-                                <span>Ver Producto</span>
-                                <span class="arrow">&gt;</span>
-                            </button>
-                        </div>
-                    </div>
+        <main class="pt-5 mt-4"></main>
+            <div class="container py-5">
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                  <h2 data-aos="fade-up">Colección completa</h2>
+                  <p class="text-muted" data-aos="fade-up" data-aos-delay="40">Filtra por artista o estilo (demo visual).</p>
                 </div>
+                <div>
+                  <select id="filterArtist" class="form-select form-select-sm custom-select-product">
+                    <option value="all">Todas las colecciones</option>
+                    <option value="Vincent Van Gogh">Vincent Van Gogh</option>
+                    <option value="Claude Monet">Claude Monet</option>
+                    <option value="Toulouse-Lautrec">Toulouse-Lautrec</option>
+                  </select>
+                </div>
+              </div>
+            
+              <div class="row g-4" id="productsGrid">
+                <!-- Los productos se inyectan desde js/script.js -->
+              </div>
+            
+              <!-- Personaliza tu lata (ancla) -->
+              <section id="customize" class="mt-5" data-aos="fade-up">
+                <div class="p-4 rounded bg-light border">
+                  <h4>Diseña la tuya</h4>
+                  <p class="small text-muted">Selecciona obra, fondo y texto. (Demo visual: envía a carrito)</p>
+                  <div class="row g-3 align-items-end">
+                    <div class="col-md-4">
+                      <label class="form-label">Obra base</label>
+                      <select id="customArtwork" class="form-select">
+                        <option value="p1">Claude Monet</option>
+                        <option value="p2">Toulouse-Lautrec</option>
+                        <option value="p3"> Vincent van Gogh</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3">
+                      <label class="form-label">Color fondo</label>
+                      <input type="color" id="customColor" class="form-control form-control-color" value="#1E6DF2">
+                    </div>
+                    <div class="col-md-3">
+                      <label class="form-label">Texto (opcional)</label>
+                      <input id="customText" class="form-control" placeholder="Tu frase / nombre">
+                    </div>
+                    <div class="col-12 col-md-2">
+                      <button class="btn btn-primary w-100" id="addCustomBtn">
+                        <span>Añadir al Carrito</span>
+                        <span class="arrow">&gt;</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                </section>
+        
             </div>
-        </section>
+        </main>
 
         <!-- FOOTER -->
 
