@@ -173,22 +173,54 @@ body {
 }
 
 /* -------------------------------- HERO -------------------------------- */
-
-.hero-pop{
-    min-height: 30vh;
-    padding-top: 5.5rem;
-    color: white;
+/* Header principal */
+.hero-pop-header {
     position: relative;
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
     overflow: hidden;
-    background: var(--blue);
+    padding-top: var(--navbar-height, 5rem); /* espacio superior para navbar */
+}
+
+/* Texto de fondo grande */
+.hero-pop-text {
+    font-size: 12vw;  
+    font-weight: 900;
+    color: var(--purple);
+    white-space: nowrap;
+    text-align: center;
     z-index: 0;
 }
 
-/* Texto encima del fondo */
-.hero-pop .container {
-    position: relative;
-    z-index: 2;
+/* Solo "DESCUBRE" en móviles */
+@media (max-width: 768px) {
+    .hero-pop-text::after {
+        content: "DESCUBRE";
+    }
+    .hero-pop-text {
+        font-size: 18vw;
+        width: 100%;
+    }
+
+    /* mirar que es lo que hay debajopara ajustar el margin  */
 }
+
+/* Asegura que los ancestros no recorten el slider */
+header.hero-pop,
+section.py-5,
+.container,
+.collection-carousel {
+  overflow: visible !important;
+}
+
+/* responsive tweaks */
+@media (max-width: 767px){
+    .sticker{ display:none; }
+}
+  
+
   
 
 /* Buttons */
@@ -281,22 +313,9 @@ body {
 /* Checkout summary */
 .checkout-line{ display:flex; justify-content:space-between; align-items:center; padding:.4rem 0; }
   
-/* responsive tweaks */
-@media (max-width: 767px){
-    .sticker{ display:none; }
-    .hero-pop{ padding-top:6.5rem; text-align:center; }
-}
-  
 
 /* ---------- Debug / Fix: swiper no debe recortarse ---------- */
 
-/* Asegura que los ancestros no recorten el slider */
-header.hero-pop,
-section.py-5,
-.container,
-.collection-carousel {
-  overflow: visible !important;
-}
 
 #cartModal .modal-footer .btn {
     width: 180px;
@@ -343,7 +362,8 @@ section.py-5,
 .collection-carousel {
     position: relative;
     z-index: 1040;
-    margin-top: -15rem;
+    margin-top: -20rem; 
+    /* hay que cambiar el margin con los media pero no me deja ns pq  */
     width: 100vw;
     left: 50%;
     right: 50%;
@@ -351,8 +371,9 @@ section.py-5,
     margin-right: -50vw;
     background: transparent !important;
     overflow: visible;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: var(--hero-pop-header-height, 15rem);
+    /* o cambiar esto  */
+    padding-bottom: 3rem;
 }
   
 .carousel-card {
@@ -1451,6 +1472,7 @@ select option:checked {
 
 
 @media (max-width: 768px) {
+
     #sobre-aura {
       padding: 40px 15px;
     }
