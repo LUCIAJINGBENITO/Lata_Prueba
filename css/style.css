@@ -192,7 +192,7 @@ body {
 
 /* Buttons */
 .btn-primary{
-  border: 2px solid var(--purple);
+    border: 2px solid var(--purple);
     color: var(--purple);
     background-color: transparent;
     border-radius: 50rem;
@@ -211,6 +211,29 @@ body {
 .btn-primary:hover {
     background-color: var(--purple);
     color: var(--bg);
+    border-color: var(--purple);
+}
+
+.btn-secondary{
+    border: 2px solid var(--bg);
+    color: var(--bg);
+    background-color: var(--purple);
+    border-radius: 50rem;
+    width: 100%;  
+    max-width: 50%;        
+    margin-top: 10px;    
+    cursor: pointer;
+    transition: all 0.25s ease;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg);
+    color: var(--purple);
     border-color: var(--purple);
 }
 
@@ -292,7 +315,7 @@ section.py-5,
 .carousel-card {
     border-radius: var(--card-radius);
     overflow: hidden;
-    background: #fff;
+    background: var(--bg);
     padding: 1rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     transform-origin: center bottom;
@@ -320,6 +343,7 @@ section.py-5,
 
 /* Swiper settings */
 .swiper {
+    color: var(--purple);
     padding-top: 2rem;
     padding-bottom: 4rem;
     width: 90%;
@@ -338,14 +362,21 @@ section.py-5,
 .swiper-slide-active {
     z-index: 10 !important;
 }
+
 .swiper-button-next,
 .swiper-button-prev {
-    color: var(--accent);
+    width: 4rem !important;
+    height: 4rem !important;
+    border-radius: 50% !important;
+    color: var(--purple) !important;
     transition: color .3s ease;
-}
+    background-color: var(--bg);
+    
+}   
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-    color: var(--red);
+    color: var(--bg) !important;
+    background-color: var(--purple);
 }
 
 .swiper,
@@ -412,18 +443,6 @@ Forzar clickabilidad dentro de slides
     z-index: 50 !important;
     pointer-events: auto !important;
     cursor: pointer;
-}
-
-.collection-carousel .carousel-card .add-to-cart {
-    background-color: var(--purple);
-    color: #fff;
-    border: none;
-    transition: all 0.3s ease;
-}
-
-.collection-carousel .carousel-card .add-to-cart:hover {
-    background-color: var(--lavender);
-    color: #000;
 }
 
 
@@ -1143,6 +1162,36 @@ section.bg-accent .btn:hover {
     font-size: 14px;
     padding-top: 20px;
     color: var(--muted);
+}
+
+
+/* Pag Products  */
+
+.custom-select-product {
+  border: 2px solid var(--purple);
+    color: var(--purple);
+    background-color: transparent;
+    border-radius: 50rem;
+    width: 100%;         
+    margin-top: 10px;    
+    cursor: pointer;
+    transition: all 0.25s ease;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 2.5rem;
+    padding-left: 1rem;
+}
+
+.custom-select-product:focus {
+  border-color: var(--purple-dark);
+  box-shadow: 0 0 0 .2rem #6c1f4081;
+}
+
+select option:checked {
+  background-color: var(--purple) !important;
+  color: white !important;
 }
 
 
