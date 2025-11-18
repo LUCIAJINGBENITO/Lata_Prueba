@@ -1433,19 +1433,6 @@ select option:checked {
     }
 }
 
-@media (min-width: 769px) {
-
-        #inspirados .row {
-        flex-direction: column;  
-
-    }
-
-    
-    #inspirados .col-md-6 {
-        width: 100%;     
-    }
-
-}
 
 @media (max-width: 768px) {
     #sobre-aura {
@@ -1494,11 +1481,18 @@ select option:checked {
         justify-content: center;
     }
 
-    
 
 
     #inspirados {
       padding: 40px 15px;
+    }
+    
+    #inspirados .row {
+        flex-direction: column;
+    }
+
+    #inspirados .col-md-6 {
+        width: 100%;
     }
 
 }
