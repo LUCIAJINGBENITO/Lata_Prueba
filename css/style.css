@@ -1166,6 +1166,8 @@ section.bg-accent .btn:hover {
     flex: 0 0 27%;
     z-index: 2;
     position: relative;
+    text-align: left;
+    margin-top: 0;
 }
 
 /* Carrusel a la derecha */
@@ -1173,6 +1175,7 @@ section.bg-accent .btn:hover {
     flex: 1 1 72%;
     max-width: unset;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     overflow: hidden;
     position: relative;
@@ -1188,9 +1191,12 @@ section.bg-accent .btn:hover {
 .swiper-buttons-bajo {
     display: flex;
     gap: 10px;
-    margin-top: 2rem;
-    justify-content: flex-start; /* alineado al inicio del carrusel */
-    padding-left: 33rem; /* mismo padding que tu texto/carrusel para alinear */
+    justify-content: flex-start;
+    position: absolute;
+    bottom: -50px; /* ajusta la distancia deseada */
+    left: 0;        /* inicio del carrusel */
+    z-index: 10;
+    width: max-content;
 }
 
 .swiper-btn-prev,
@@ -1517,8 +1523,6 @@ select option:checked {
 /* RESPONSIVE */
 /* -------------------------------- MEDIA QUERIES -------------------------------- */
 
-
-
 /* Desktop: ≥992px */
 @media (min-width: 992px) {
     #customize .col-md-4 { flex: 0 0 40%; max-width: 40%; }
@@ -1527,6 +1531,12 @@ select option:checked {
 
     #addCustomBtn {
         width: 100%;
+    }
+
+    .swiper-buttons-bajo {
+        padding-left: 33rem;
+        bottom: -50px;
+        gap: 10px;
     }
 }
 
@@ -1538,6 +1548,25 @@ select option:checked {
 
     #addCustomBtn {
         width: 100%;
+    }
+
+    .swiper-buttons-bajo {
+        padding-left: 2rem;
+        bottom: -40px;
+        gap: 8px;
+    }
+
+    .swiper-btn-prev,
+    .swiper-btn-next {
+        padding: 0.45rem 0.9rem;
+    }
+
+    .texto-izquierda {
+        flex: 1 1 100%; /* ocupa todo el ancho */
+        padding: 1.5rem; /* menos padding para que no ocupe tanto */
+        text-align: center;
+        margin-top: 2rem; /* centrado horizontal */
+        margin-bottom: 1rem; /* separación del carrusel */
     }
 }
 
@@ -1590,8 +1619,6 @@ select option:checked {
         justify-content: center;
     }
 
-
-
     #inspirados {
       padding: 40px 15px;
     }
@@ -1604,6 +1631,28 @@ select option:checked {
         width: 100%;
     }
 
+    .texto-izquierda {
+        flex: 1 1 100%;
+        padding: 1rem; /* un poco menos de padding en móvil */
+        text-align: center;
+        margin-top: 1.5rem; 
+        margin-bottom: 1rem; 
+    }
+
+}
+
+/* Tablet pequeña y móvil 576px–767px */
+@media (max-width: 767px) and (min-width: 576px) {
+    .swiper-buttons-bajo {
+        padding-left: 1.5rem;
+        bottom: -35px;
+        gap: 6px;
+    }
+
+    .swiper-btn-prev,
+    .swiper-btn-next {
+        padding: 0.4rem 0.8rem;
+    }
 }
 
 /* ===== FIX MOBILE ALIGNMENT (texto, botones, imágenes) ===== */
@@ -1718,4 +1767,25 @@ select option:checked {
     .checkout-line.text-end {
         text-align: center !important;
     }
+
+    .swiper-buttons-bajo {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        margin-top: 1rem;
+        justify-content: flex-start;
+    }
+
+    .swiper-btn-prev,
+    .swiper-btn-next {
+        padding: 0.35rem 0.7rem;
+    }
+
+    .texto-izquierda {
+        flex: 1 1 100%;
+        padding: 1rem; /* un poco menos de padding en móvil */
+        text-align: center; 
+        margin-bottom: 1rem; 
+    }
+
 }
