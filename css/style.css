@@ -197,14 +197,25 @@ body {
 /* Solo "DESCUBRE" en móviles */
 @media (max-width: 768px) {
     .hero-pop-text::after {
-        content: "DESCUBRE";
+        content: attr(data-mobile-text);
+        visibility: visible;
+        position: absolute;
+        inset: 0;
+        text-align: center;
+        padding-top: var(--navbar-height, 5rem);
     }
+
     .hero-pop-text {
         font-size: 18vw;
         width: 100%;
+        visibility: hidden;
     }
 
-    /* mirar que es lo que hay debajopara ajustar el margin  */
+.collection-carousel {
+    margin-top: -19rem !important; 
+}    
+
+    /* mirar que es lo que hay debajo para ajustar el margin  */
 }
 
 /* Asegura que los ancestros no recorten el slider */
@@ -868,6 +879,18 @@ Forzar clickabilidad dentro de slides
 
 #inspirados{
     padding: 60px 15px;
+}
+
+.carousel-item img {
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+.carousel-item.active img {
+    opacity: 1;
+}
+
+.carousel-item img {
+    opacity: .5;
 }
 /* COMIENZA TEXTO CAMBIA  */
 

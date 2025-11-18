@@ -355,7 +355,7 @@ $(document).ready(function(){
             </div>
             <div class="product-info">
               <h5>${product.title}</h5>
-              <p>Descripción breve del producto.</p>
+              <p>Sabor AURA, diseñada para coleccionarse. Llévala a tu cesta y completa tu serie.</p>
             </div>
           </div>
         `);
