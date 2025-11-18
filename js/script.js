@@ -72,9 +72,14 @@ $(document).ready(function(){
       cart.forEach(item => {
         total += item.price;
         container.append(`
-          <div class="checkout-line">
-            <span>${item.title}</span>
-            <span>€${item.price.toFixed(2)}</span>
+          <div class="checkout-item">
+            <div>
+              <img src="${item.img}" alt="${item.title}" class="checkout-thumb">
+              <div class="checkout-info">
+                <span class="checkout-name">${item.title}</span>
+                <span class="checkout-price">€${item.price.toFixed(2)}</span>
+              </div>
+            </div>
           </div>
         `);
       });
