@@ -191,7 +191,7 @@ body {
     color: var(--purple);
     white-space: nowrap;
     text-align: center;
-    z-index: 0;
+    z-index: 10;
 }
 
 /* Solo "DESCUBRE" en móviles */
@@ -1137,6 +1137,77 @@ section.bg-accent .btn {
 section.bg-accent .btn:hover {
     background-color: var(--bg);
     color: var(--purple);
+}
+
+/* -------------------------------- COLECCIONES -------------------------------- */
+
+.home-carousel .container {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+}
+
+.home-carousel {
+    position: relative;
+    z-index: 1;
+    margin-top: -100px;
+}
+
+.carousel-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* Texto a la izquierda */
+.texto-izquierda {
+    padding: 2rem 4rem;
+    flex: 0 0 27%;
+    z-index: 2;
+    position: relative;
+}
+
+/* Carrusel a la derecha */
+.carrusel-derecha {
+    flex: 1 1 72%;
+    max-width: unset;
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+/* Escala el carrusel directamente con max-width */
+.carrusel-derecha .swiper {
+    width: 100%;
+}
+
+/* Botones navegación */
+.swiper-buttons-bajo {
+    display: flex;
+    gap: 10px;
+    margin-top: 2rem;
+    justify-content: flex-start; /* alineado al inicio del carrusel */
+    padding-left: 33rem; /* mismo padding que tu texto/carrusel para alinear */
+}
+
+.swiper-btn-prev,
+.swiper-btn-next {
+    border: 2px solid var(--purple);
+    background: var(--bg);
+    color: var(--purple);
+    border-radius: 50rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.swiper-btn-prev:hover,
+.swiper-btn-next:hover {
+    background: var(--purple);
+    color: var(--bg);
 }
 
 /* -------------------------------- PAGO -------------------------------- */
