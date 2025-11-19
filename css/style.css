@@ -374,7 +374,6 @@ section.py-5,
     position: relative;
     z-index: 1040;
     margin-top: -20rem; 
-    /* hay que cambiar el margin con los media pero no me deja ns pq  */
     width: 100vw;
     left: 50%;
     right: 50%;
@@ -383,7 +382,6 @@ section.py-5,
     background: transparent !important;
     overflow: visible;
     padding-top: var(--hero-pop-header-height, 15rem);
-    /* o cambiar esto  */
     padding-bottom: 3rem;
 }
   
@@ -427,6 +425,7 @@ section.py-5,
 .swiper-slide {
     display: flex;
     justify-content: center;
+    align-items: stretch;
     overflow: visible;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -578,6 +577,11 @@ Forzar clickabilidad dentro de slides
     align-items: center;
     justify-content: space-between;
     padding: 0 1.5rem;
+    text-decoration: none !important;
+}
+
+.btn-aura span {
+    text-decoration: none !important;
 }
 
 .btn-aura:hover {
@@ -746,7 +750,7 @@ Forzar clickabilidad dentro de slides
 .product-visual {
     position: relative;
     overflow: hidden;
-    flex-shrink: 0; /* que la imagen no se reduzca */
+    flex-shrink: 0;
 }
 
 .product-visual img {
@@ -835,6 +839,7 @@ Forzar clickabilidad dentro de slides
     align-items: center;
     justify-content: space-between;
     padding: 0 1.5rem;
+    text-decoration: none;
 }
 
 .btn-view-product:hover {
@@ -858,6 +863,12 @@ Forzar clickabilidad dentro de slides
 .product-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.btn-view-product:hover,
+.btn-view-product:focus,
+.btn-view-product:visited {
+    text-decoration: none !important;
 }
 
 /* RESPONSIVE */
@@ -1216,8 +1227,8 @@ section.bg-accent .btn:hover {
     gap: 10px;
     justify-content: flex-start;
     position: absolute;
-    bottom: -50px; /* ajusta la distancia deseada */
-    left: 0;        /* inicio del carrusel */
+    bottom: -50px;
+    left: 0;
     z-index: 10;
     width: max-content;
 }
@@ -1241,9 +1252,28 @@ section.bg-accent .btn:hover {
 
 /* Estilos base para los botones del carrusel */
 .carousel-card .d-flex.gap-2 .btn {
-    font-size: 0.9rem; /* tamaño de texto base */
-    padding: 0.4rem 0.7rem; /* relleno base */
+    font-size: 0.9rem;
+    padding: 0.4rem 0.7rem;
     transition: all 0.3s ease;
+}
+
+/* Botones de carrito inyectados por JS */
+#productsGrid .add-to-cart {
+    font-size: 0.80rem;
+    padding: 0.4rem 0.8rem;
+    width: 100%;
+    min-width: 190px;
+    transition: all 0.25s ease;
+}
+
+/* Texto dentro del botón */
+#productsGrid .add-to-cart span {
+    display: inline-block;
+}
+
+/* Flecha dentro del botón */
+#productsGrid .add-to-cart .arrow {
+    margin-left: 5px;
 }
 
 /* -------------------------------- PAGO -------------------------------- */
@@ -1658,11 +1688,46 @@ select option:checked {
     }
 
     .texto-izquierda {
-        flex: 1 1 100%; /* ocupa todo el ancho */
-        padding: 1.5rem; /* menos padding para que no ocupe tanto */
+        flex: 1 1 100%;
+        padding: 1.5rem;
         text-align: center;
-        margin-top: 2rem; /* centrado horizontal */
-        margin-bottom: 1rem; /* separación del carrusel */
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .reviews-row {
+        flex-wrap: wrap;
+    }
+
+    .review-column {
+        flex: 0 0 48%;
+        max-width: 48%;
+        margin-bottom: 20px;
+    }
+
+
+    #productsGrid .add-to-cart {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 8px;
+        padding: 0.6rem;
+        font-size: 0.7rem;
+        min-width: 100px;
+    }
+
+    /* Gap entre el texto y la flecha */
+    #productsGrid .add-to-cart span.arrow {
+        margin-left: 10px;
+    }
+
+    /* Asegura que el contenedor del precio y botón esté en columna */
+    #productsGrid .card-body {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
     }
 }
 
@@ -1729,12 +1794,52 @@ select option:checked {
 
     .texto-izquierda {
         flex: 1 1 100%;
-        padding: 1rem; /* un poco menos de padding en móvil */
+        padding: 1rem;
         text-align: center;
         margin-top: 1.5rem; 
         margin-bottom: 1rem; 
     }
     
+    .reviews-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .review-column {
+        flex: 0 0 100%;
+        max-width: 100%;
+        gap: 15px;
+    }
+
+    .review-column .review-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .review-img {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 10px;
+    }
+
+    .review-content {
+        width: 100%;
+    }
+
+    .review-content .review-stars {
+        justify-content: center;
+        display: flex;
+    }
+
+    .review-content h5 {
+        font-size: 0.95rem;
+        margin-bottom: 4px;
+    }
+
+    .review-content .review-text {
+        font-size: 0.9rem;
+    }
 
 }
 
@@ -1879,21 +1984,41 @@ select option:checked {
 
     .texto-izquierda {
         flex: 1 1 100%;
-        padding: 1rem; /* un poco menos de padding en móvil */
+        padding: 1rem;
         text-align: center; 
         margin-bottom: 1rem; 
     }
 
     .carousel-card .d-flex.gap-2 {
-        flex-direction: column; /* apila botones */
-        gap: 0.4rem; /* separación vertical más pequeña */
-        align-items: stretch; /* botones ocupan todo el ancho de la tarjeta */
+        flex-direction: column;
+        gap: 0.4rem;
+        align-items: stretch;
     }
 
     .carousel-card .d-flex.gap-2 .btn {
-        width: 100%; /* ancho completo */
+        width: 100%;
         font-size: 0.75rem;
         padding: 1rem;
     }
 
+    .btn-aura {
+        width: 100%;
+        max-width: 220px;
+        padding: 0.7rem 1.4rem;
+        gap: 3rem;
+        font-size: 0.9rem;
+        justify-content: center;
+    }
+
+    .btn-aura .arrow {
+        font-size: 0.9rem;
+    }
+
+    #productsGrid .add-to-cart {
+        font-size: 0.80rem;
+        padding: 0.4rem;
+        width: 100%;
+        min-width: 190px;
+        transition: all 0.25s ease;
+    }
 }
