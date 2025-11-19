@@ -750,7 +750,7 @@ Forzar clickabilidad dentro de slides
 .product-visual {
     position: relative;
     overflow: hidden;
-    flex-shrink: 0; /* que la imagen no se reduzca */
+    flex-shrink: 0;
 }
 
 .product-visual img {
@@ -1227,8 +1227,8 @@ section.bg-accent .btn:hover {
     gap: 10px;
     justify-content: flex-start;
     position: absolute;
-    bottom: -50px; /* ajusta la distancia deseada */
-    left: 0;        /* inicio del carrusel */
+    bottom: -50px;
+    left: 0;
     z-index: 10;
     width: max-content;
 }
@@ -1252,9 +1252,28 @@ section.bg-accent .btn:hover {
 
 /* Estilos base para los botones del carrusel */
 .carousel-card .d-flex.gap-2 .btn {
-    font-size: 0.9rem; /* tamaño de texto base */
-    padding: 0.4rem 0.7rem; /* relleno base */
+    font-size: 0.9rem;
+    padding: 0.4rem 0.7rem;
     transition: all 0.3s ease;
+}
+
+/* Botones de carrito inyectados por JS */
+#productsGrid .add-to-cart {
+    font-size: 0.80rem;
+    padding: 0.4rem 0.8rem;
+    width: 100%;
+    min-width: 190px;
+    transition: all 0.25s ease;
+}
+
+/* Texto dentro del botón */
+#productsGrid .add-to-cart span {
+    display: inline-block;
+}
+
+/* Flecha dentro del botón */
+#productsGrid .add-to-cart .arrow {
+    margin-left: 5px;
 }
 
 /* -------------------------------- PAGO -------------------------------- */
@@ -1603,11 +1622,11 @@ select option:checked {
     }
 
     .texto-izquierda {
-        flex: 1 1 100%; /* ocupa todo el ancho */
-        padding: 1.5rem; /* menos padding para que no ocupe tanto */
+        flex: 1 1 100%;
+        padding: 1.5rem;
         text-align: center;
-        margin-top: 2rem; /* centrado horizontal */
-        margin-bottom: 1rem; /* separación del carrusel */
+        margin-top: 2rem;
+        margin-bottom: 1rem;
     }
 
     .reviews-row {
@@ -1615,9 +1634,34 @@ select option:checked {
     }
 
     .review-column {
-        flex: 0 0 48%;  /* dos columnas con un pequeño gap */
+        flex: 0 0 48%;
         max-width: 48%;
         margin-bottom: 20px;
+    }
+
+
+    #productsGrid .add-to-cart {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 8px;
+        padding: 0.6rem;
+        font-size: 0.7rem;
+        min-width: 100px;
+    }
+
+    /* Gap entre el texto y la flecha */
+    #productsGrid .add-to-cart span.arrow {
+        margin-left: 10px;
+    }
+
+    /* Asegura que el contenedor del precio y botón esté en columna */
+    #productsGrid .card-body {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
     }
 }
 
@@ -1684,7 +1728,7 @@ select option:checked {
 
     .texto-izquierda {
         flex: 1 1 100%;
-        padding: 1rem; /* un poco menos de padding en móvil */
+        padding: 1rem;
         text-align: center;
         margin-top: 1.5rem; 
         margin-bottom: 1rem; 
@@ -1730,6 +1774,7 @@ select option:checked {
     .review-content .review-text {
         font-size: 0.9rem;
     }
+
 }
 
 /* Tablet pequeña y móvil 576px–767px */
@@ -1874,26 +1919,26 @@ select option:checked {
 
     .texto-izquierda {
         flex: 1 1 100%;
-        padding: 1rem; /* un poco menos de padding en móvil */
+        padding: 1rem;
         text-align: center; 
         margin-bottom: 1rem; 
     }
 
     .carousel-card .d-flex.gap-2 {
-        flex-direction: column; /* apila botones */
-        gap: 0.4rem; /* separación vertical más pequeña */
-        align-items: stretch; /* botones ocupan todo el ancho de la tarjeta */
+        flex-direction: column;
+        gap: 0.4rem;
+        align-items: stretch;
     }
 
     .carousel-card .d-flex.gap-2 .btn {
-        width: 100%; /* ancho completo */
+        width: 100%;
         font-size: 0.75rem;
         padding: 1rem;
     }
 
     .btn-aura {
-        width: 100%;        /* ocupa todo el ancho del contenedor */
-        max-width: 220px;   /* evita que se haga exagerado */
+        width: 100%;
+        max-width: 220px;
         padding: 0.7rem 1.4rem;
         gap: 3rem;
         font-size: 0.9rem;
@@ -1904,4 +1949,11 @@ select option:checked {
         font-size: 0.9rem;
     }
 
+    #productsGrid .add-to-cart {
+        font-size: 0.80rem;
+        padding: 0.4rem;
+        width: 100%;
+        min-width: 190px;
+        transition: all 0.25s ease;
+    }
 }
