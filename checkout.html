@@ -33,19 +33,25 @@
                 <div class="collapse navbar-collapse" id="navMain">
                     <ul class="navbar-nav ms-auto align-items-lg-center">
                         <li class="nav-item"><a class="nav-link hover-line" href="index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link hover-line" href="products.html">Latas</a></li>
-                        <li class="nav-item"><a class="nav-link hover-line" href="favoritos.html">Favoritos</a></li>
+                        <li class="nav-item"><a class="nav-link hover-line" href="sobrenosotros.html">Sobre Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link hover-line" href="favoritos.html">Tus Favoritos</a></li>
                         <li class="nav-item"><a class="nav-link hover-line" href="colecciones.html">Colecciones</a></li>
                         <li class="nav-item"><a class="nav-link hover-line" href="products.html#customize">Diseña la tuya</a></li>
                     </ul>
-                    
+                    <div class="cart-wrapper ms-lg-3 mt-3 mt-lg-0">
+                        <button class="btn btn-outline-light position-relative" id="cartBtn" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="bi bi-cart3"></i>
+                            <span id="cartCountBadge" class="badge bg-danger rounded-pill position-absolute top-0 start-100 translate-middle">0</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </nav>
 
         <!-- HERO -->
-        <header class="hero-pop d-flex align-items-center">
-            <div class="hero-deco"></div>
+        <header class="hero-pop-header d-flex align-items-center justify-content-center">
+            <!-- Texto de fondo -->
+            <h1 class="hero-pop-text" data-mobile-text="CONFIRMA">HAZ TU AURA</h1>
         </header>
 
         <!-- PAGO -->
