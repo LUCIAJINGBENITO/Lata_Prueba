@@ -374,7 +374,6 @@ section.py-5,
     position: relative;
     z-index: 1040;
     margin-top: -20rem; 
-    /* hay que cambiar el margin con los media pero no me deja ns pq  */
     width: 100vw;
     left: 50%;
     right: 50%;
@@ -383,7 +382,6 @@ section.py-5,
     background: transparent !important;
     overflow: visible;
     padding-top: var(--hero-pop-header-height, 15rem);
-    /* o cambiar esto  */
     padding-bottom: 3rem;
 }
   
@@ -427,6 +425,7 @@ section.py-5,
 .swiper-slide {
     display: flex;
     justify-content: center;
+    align-items: stretch;
     overflow: visible;
     padding-top: 1rem;
     padding-bottom: 1rem;
