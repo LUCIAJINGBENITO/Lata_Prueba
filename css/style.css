@@ -1549,6 +1549,72 @@ select option:checked {
   color: white !important;
 }
 
+/* SOBRE NOSOTROS EMPIEZA  */
+
+.logo-section {
+    padding: 15px;
+}
+
+.logo-text-wrap {
+    margin: 0 auto;
+    text-align: justify;
+    position: relative;
+    color: var(--purple);
+    top: -3vh;
+}
+
+/* Círculo flotante */
+.circle-us {
+    float: left;
+    shape-outside: circle();
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background: var(--bg);
+    margin: -4rem 6rem 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Logo dentro del círculo */
+.logo-over-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+/* Texto que rodea el círculo */
+
+
+.short-text {
+    display: none;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .logo-text-wrap {
+        top: -1vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-text-wrap {
+        top: 1vh;
+    }
+
+        .full-text {
+        display: none;
+    }
+    .short-text {
+        display: block;
+    }
+
+}
+
+/* SOBRE NOSOTROS TERMINA  */
 
 /* RESPONSIVE */
 /* -------------------------------- MEDIA QUERIES -------------------------------- */
@@ -1692,7 +1758,6 @@ select option:checked {
     .container,
     .container-fluid,
     section,
-    .row,
     [class*="col-"] {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
