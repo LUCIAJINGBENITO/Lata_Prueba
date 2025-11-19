@@ -128,14 +128,14 @@ $(document).ready(function(){
   
     // Array de productos (puedes añadir artista, estilo, etc.)
     const products = [
-      {id:"p1", title:"Impresión, sol naciente", price:9.5, img:"../img/LATA_NARANJA.jpg", artist:"Claude Monet", style:"impresionismo"},
-      {id:"p2", title:"Baile en el Moulin Rouge", price:11, img:"../img/LATA_ROSA.jpg", artist:"Toulouse-Lautrec", style:"impresionismo"},
-      {id:"p3", title:"Los girasoles", price:10, img:"../img/LATA_AMARILLA.jpg", artist:"Vincent Van Gogh", style:"impresionismo"},
-      {id:"p4", title:"Nenúfares", price:12, img:"../img/LATA_MORADA.jpg", artist:"Claude Monet", style:"impresionismo"},
-      {id:"p5", title:"La noche estrellada", price:9.8, img:"../img/LATA_AZUL.jpg", artist:"Vincent Van Gogh", style:"impresionismo"},
-      {id:"p6", title:"El almendro en flor", price:12, img:"../img/LATA_VERDE.jpg", artist:"Vincent Van Gogh", style:"impresionismo"}
-      // Añadir más según necesites
+      {id:"p1", title:"Impresión, sol naciente", price:9.5, img:"img/LATA_NARANJA.jpg", artist:"Claude Monet", style:"impresionismo"},
+      {id:"p2", title:"Baile en el Moulin Rouge", price:11, img:"img/LATA_ROSA.jpg", artist:"Toulouse-Lautrec", style:"impresionismo"},
+      {id:"p3", title:"Los girasoles", price:10, img:"img/LATA_AMARILLA.jpg", artist:"Vincent Van Gogh", style:"impresionismo"},
+      {id:"p4", title:"Nenúfares", price:12, img:"img/LATA_MORADA.jpg", artist:"Claude Monet", style:"impresionismo"},
+      {id:"p5", title:"La noche estrellada", price:9.8, img:"img/LATA_AZUL.jpg", artist:"Vincent Van Gogh", style:"impresionismo"},
+      {id:"p6", title:"El almendro en flor", price:12, img:"img/LATA_VERDE.jpg", artist:"Vincent Van Gogh", style:"impresionismo"}
     ];
+    
   
     function renderProducts(productsArray){
       const container = $("#productsGrid, #productsContainer");

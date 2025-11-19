@@ -577,6 +577,11 @@ Forzar clickabilidad dentro de slides
     align-items: center;
     justify-content: space-between;
     padding: 0 1.5rem;
+    text-decoration: none !important;
+}
+
+.btn-aura span {
+    text-decoration: none !important;
 }
 
 .btn-aura:hover {
@@ -834,6 +839,7 @@ Forzar clickabilidad dentro de slides
     align-items: center;
     justify-content: space-between;
     padding: 0 1.5rem;
+    text-decoration: none;
 }
 
 .btn-view-product:hover {
@@ -857,6 +863,12 @@ Forzar clickabilidad dentro de slides
 .product-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.btn-view-product:hover,
+.btn-view-product:focus,
+.btn-view-product:visited {
+    text-decoration: none !important;
 }
 
 /* RESPONSIVE */
@@ -1597,6 +1609,16 @@ select option:checked {
         margin-top: 2rem; /* centrado horizontal */
         margin-bottom: 1rem; /* separación del carrusel */
     }
+
+    .reviews-row {
+        flex-wrap: wrap;
+    }
+
+    .review-column {
+        flex: 0 0 48%;  /* dos columnas con un pequeño gap */
+        max-width: 48%;
+        margin-bottom: 20px;
+    }
 }
 
 
@@ -1668,7 +1690,46 @@ select option:checked {
         margin-bottom: 1rem; 
     }
     
+    .reviews-row {
+        flex-direction: column;
+        gap: 20px;
+    }
 
+    .review-column {
+        flex: 0 0 100%;
+        max-width: 100%;
+        gap: 15px;
+    }
+
+    .review-column .review-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .review-img {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 10px;
+    }
+
+    .review-content {
+        width: 100%;
+    }
+
+    .review-content .review-stars {
+        justify-content: center;
+        display: flex;
+    }
+
+    .review-content h5 {
+        font-size: 0.95rem;
+        margin-bottom: 4px;
+    }
+
+    .review-content .review-text {
+        font-size: 0.9rem;
+    }
 }
 
 /* Tablet pequeña y móvil 576px–767px */
@@ -1828,6 +1889,19 @@ select option:checked {
         width: 100%; /* ancho completo */
         font-size: 0.75rem;
         padding: 1rem;
+    }
+
+    .btn-aura {
+        width: 100%;        /* ocupa todo el ancho del contenedor */
+        max-width: 220px;   /* evita que se haga exagerado */
+        padding: 0.7rem 1.4rem;
+        gap: 3rem;
+        font-size: 0.9rem;
+        justify-content: center;
+    }
+
+    .btn-aura .arrow {
+        font-size: 0.9rem;
     }
 
 }
