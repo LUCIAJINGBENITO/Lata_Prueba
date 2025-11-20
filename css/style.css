@@ -918,7 +918,6 @@ Forzar clickabilidad dentro de slides
     gap: 10px;
 }
 
-/* Hay que hacerlo responsive  */
 #girando {
     font-size: 3rem;
 }
@@ -945,6 +944,11 @@ Forzar clickabilidad dentro de slides
     background-color: var(--blue);
 }
 
+.bg-aura-4 {
+    background-color: var(--purple);
+}
+
+
 .marquee {
   overflow: hidden;
   position: relative;
@@ -956,6 +960,14 @@ Forzar clickabilidad dentro de slides
   animation: marquee 20s linear infinite;
   font-size: 1.5rem;
 }
+
+.track-2 {
+  white-space: nowrap;
+  display: inline-block;
+  animation: marquee 40s linear infinite;
+  font-size: 1.5rem;
+}
+
 
 /* Dirección contraria */
 .marquee-reverse .track {
@@ -1589,7 +1601,6 @@ select option:checked {
     margin: 0 auto;
     text-align: justify;
     position: relative;
-    color: var(--purple);
     top: -3vh;
 }
 
@@ -1619,6 +1630,19 @@ select option:checked {
 
 /* Texto que rodea el círculo */
 
+/*  Datos curiosos */
+
+#facts{
+    padding: 0px 15px;
+}
+
+.carousel-can-img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* DATOS CURIOSOS TERMINA  */
 
 .short-text {
     display: none;
@@ -1791,6 +1815,18 @@ select option:checked {
     #inspirados .col-md-6 {
         width: 100%;
     }
+    
+    #facts {
+      padding: 40px 15px;
+    }
+    
+    #facts .row {
+        flex-direction: column;
+    }
+
+    #facts .col-md-6 {
+        width: 100%;
+    }
 
     .texto-izquierda {
         flex: 1 1 100%;
@@ -1839,6 +1875,12 @@ select option:checked {
 
     .review-content .review-text {
         font-size: 0.9rem;
+    }
+
+    .carousel-can-img {
+        max-width: 70%;
+        margin: 0 auto;
+        display: block;
     }
 
 }
@@ -2020,5 +2062,11 @@ select option:checked {
         width: 100%;
         min-width: 190px;
         transition: all 0.25s ease;
+    }
+
+    .carousel-can-img {
+        max-width: 60% !important;
+        margin: 0 auto;
+        display: block;
     }
 }
