@@ -1360,9 +1360,6 @@ section.bg-accent .btn:hover {
     padding: 1rem 1.5rem;
 }
 
-
-
-
 /* -------------------------------- PAGO -------------------------------- */
 
 .checkout-wrapper {
@@ -2128,7 +2125,7 @@ select option:checked {
     #productsGrid .add-to-cart {
         font-size: 0.80rem;
         padding: 0.4rem;
-        width: 100%;
+        width: 10%;
         min-width: 190px;
         transition: all 0.25s ease;
     }
