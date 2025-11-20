@@ -75,20 +75,23 @@
 
                 <!-- INFORMACIÓN -->
                 <div class="col-lg-6 px-5 mt-5">
-
+                
                     <!-- BOTONES -->
                     <div class="d-flex gap-3 justify-content-end mb-4">
-
                         <!-- Cantidad -->
-                        <div class="quantity-selector d-flex align-items-center">
-                            <button class="qty-btn">-</button>
-                            <span id="qty-value">0</span>
-                            <button class="qty-btn cart-btn add-to-cart" data-id="p3" data-title="Los girasoles" data-price="10"
-                                    data-img="../img/LATA_AMARILLA.jpg">+</button>
-                        </div>
+                        <div class="quantity-selector" data-id="p3">
+                            <button class="qty-btn" data-id="p3">-</button>
+                            
+                            <span class="qty-value" data-id="p3" data-title="Los girasoles" data-price="10"
+                                data-img="img/LATA_AMARILLA.jpg">0</span>
 
+                            <button class="qty-btn add-to-cart" data-id="p3" data-title="Los girasoles" data-price="10"
+                                data-img="img/LATA_AMARILLA.jpg">+</button>
+                        </div>
+                
                         <!-- Fav -->
-                        <button class="bnt-det fav-btn d-flex justify-content-center align-items-center" data-id="p3" data-title="Los girasoles" data-price="10" data-img="../img/LATA_AMARILLA.jpg">
+                        <button class="bnt-det fav-btn d-flex justify-content-center align-items-center" data-id="p3"
+                            data-title="Los girasoles" data-price="10" data-img="../img/LATA_AMARILLA.jpg">
                             <i class="bi bi-heart"></i>
                         </button>
                     </div>
