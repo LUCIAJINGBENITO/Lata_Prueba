@@ -53,10 +53,96 @@
             <h1 class="hero-pop-text" data-mobile-text="DETALLES">TU AURA HOY</h1>
         </header>
 
+        <!-- DETALLES -->
 
-
-
-
+        <section class="product-detail py-4">
+            <div class="container">
+        
+                <div class="row g-4 align-items-start">
+        
+                    <!-- IMAGEN -->
+                    <div class="col-12 col-lg-6">
+                        <img src="img/LATA_AMARILLA.jpg" alt="Los girasoles" class="img-fluid rounded-4 w-100">
+                    </div>
+        
+                    <!-- INFORMACIÓN -->
+                    <div class="col-12 col-lg-6">
+        
+                        <!-- TÍTULO + ESTRELLAS -->
+                        <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+                            <h2 class="mb-0">Los girasoles</h2>
+                            <div class="rating-stars fs-4 text-warning">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                            </div>
+                        </div>
+        
+                        <!-- BOTONES -->
+                        <div class="d-flex gap-3 justify-content-end mb-4">
+        
+                            <!-- Cantidad -->
+                            <div class="quantity-selector d-flex align-items-center">
+                                <button class="qty-btn" id="qty-minus">-</button>
+                                <span id="qty-value">1</span>
+                                <button class="qty-btn" id="qty-plus">+</button>
+                            </div>
+        
+                            <!-- Fav -->
+                            <button class="fav-btn d-flex justify-content-center align-items-center">
+                                <i class="bi bi-heart"></i>
+                            </button>
+        
+                            <!-- Carrito -->
+                            <button class="cart-btn d-flex justify-content-center align-items-center">
+                                <i class="bi bi-cart"></i>
+                            </button>
+        
+                        </div>
+        
+                        <!-- DESCRIPCION -->
+                        <p class="lead">
+                            La esencia del sol capturada en una lata. Un sabor cálido y vibrante inspirado en la obra de Van Gogh.
+                        </p>
+        
+                        <!-- PRECIO + STOCK -->
+                        <div class="mb-4">
+                            <span class="price h2 d-block">10€</span>
+                            <span class="text-muted">Disponibles: 24 unidades</span>
+                        </div>
+        
+                        <!-- BADGES -->
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge bg-light text-dark">Los girasoles</span>
+                            <span class="badge bg-light text-dark">Sabor limón</span>
+                            <span class="badge bg-light text-dark">Edición limitada</span>
+                            <span class="badge bg-light text-dark">4.0 ★</span>
+                        </div>
+        
+                        <!-- ACORDEÓN HORIZONTAL -->
+                        <div class="accordion-h">
+        
+                            <div class="d-flex gap-2 flex-wrap">
+                                <div class="tab" data-tab="1">Ingredientes</div>
+                                <div class="tab" data-tab="2">Proceso</div>
+                                <div class="tab" data-tab="3">Artista</div>
+                                <div class="tab" data-tab="4">Curiosidades</div>
+                            </div>
+        
+                            <div class="tab-content mt-3" id="tab-1">Contenido de Ingredientes...</div>
+                            <div class="tab-content mt-3" id="tab-2">Contenido de Proceso...</div>
+                            <div class="tab-content mt-3" id="tab-3">Contenido sobre el Artista...</div>
+                            <div class="tab-content mt-3" id="tab-4">Curiosidades del producto...</div>
+        
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <!-- FOOTER -->
 
         <footer class="aura-footer">
@@ -151,5 +237,44 @@
                 });
             });
         </script>
+
+        <!-- SCRIPTS DETALLES -->
+
+        <script>
+            /* SELECTOR CANTIDAD */
+            let qty = 1;
+            const qtyValue = document.getElementById("qty-value");
+            
+            document.getElementById("qty-minus").onclick = () => {
+                if (qty > 1) qty--;
+                qtyValue.textContent = qty;
+            };
+            document.getElementById("qty-plus").onclick = () => {
+                qty++;
+                qtyValue.textContent = qty;
+            };
+            
+            /* ACORDEÓN HORIZONTAL */
+            const tabs = document.querySelectorAll(".tab");
+            const contents = document.querySelectorAll(".tab-content");
+            
+            tabs.forEach(tab => {
+                tab.addEventListener("click", () => {
+                    tabs.forEach(t => t.classList.remove("active"));
+                    tab.classList.add("active");
+            
+                    const id = tab.getAttribute("data-tab");
+            
+                    contents.forEach(c => c.style.display = "none");
+                    document.getElementById(`tab-${id}`).style.display = "block";
+                });
+            });
+            
+            /* Activar primera pestaña por defecto */
+            tabs[0].classList.add("active");
+            contents[0].style.display = "block";
+        </script>
+            
+    
     </body>
 </html>

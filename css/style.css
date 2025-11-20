@@ -1276,6 +1276,77 @@ section.bg-accent .btn:hover {
     margin-left: 5px;
 }
 
+/* -------------------------------- DETALLES -------------------------------- */
+
+/* SELECTOR CANTIDAD */
+.quantity-selector {
+    border: 2px solid #ddd;
+    border-radius: 0.6rem;
+    overflow: hidden;
+    height: 42px;
+}
+
+.qty-btn {
+    background: #f2f2f2;
+    border: none;
+    width: 40px;
+    height: 100%;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#qty-value {
+    padding: 0 1rem;
+    min-width: 30px;
+    text-align: center;
+}
+
+/* BOTONES FAV Y CARRITO */
+.fav-btn, .cart-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    border: none;
+    background: var(--blue, #eaeaea);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* ACORDEÓN HORIZONTAL PERSONALIZADO */
+.tab {
+    padding: 0.6rem 1rem;
+    background: #eee;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background .3s ease;
+    user-select: none;
+}
+
+.tab:hover {
+    background: #ddd;
+}
+
+.tab.active {
+    background: var(--purple, #6C1F41);
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    padding: 1rem;
+    background: #fafafa;
+    border-radius: 8px;
+}
+
+/* RESPONSIVE: fallback vertical */
+@media (max-width: 768px) {
+    .tab {
+        flex: 1 1 100%;
+    }
+}
+
+
+
 /* -------------------------------- PAGO -------------------------------- */
 
 .checkout-wrapper {
