@@ -1,4 +1,4 @@
-/* style.css — Pop-art palette + texture details */
+/* style.css details */
 @import url('https://fonts.googleapis.com/css2?family=Kufam:wght@400;700&display=swap');
 
 :root {
@@ -138,7 +138,7 @@ body {
 
 @media (min-width: 992px) {
     .cart-wrapper {
-        margin-left: 1.5rem; /* espacio a la derecha de los links */
+        margin-left: 1.5rem;
     }
 }
 
@@ -148,27 +148,32 @@ body {
         width: 100%;
         text-align: left;
     }
+
     .navbar-collapse {
         padding-top: 1rem;
         padding-bottom: 1.5rem;
         background: var(--purple);
         border-radius: 0 0 14px 14px;
     }
+
     .navbar-collapse .nav-link {
         color: #fff;
         padding: 0.8rem 1rem;
     }
+
     .cart-wrapper {
         width: 100%;
         display: flex;
         justify-content: flex-start;
         margin-top: 1rem;
     }
+
     .navbar-nav .nav-item {
-        margin-bottom: 0.5rem; /* antes podía ser más grande */
+        margin-bottom: 0.5rem;
     }
+
     .navbar-nav .nav-link::after {
-        bottom: 1px; /* antes era 0, ahora un poquito más cerca */
+        bottom: 1px;
     }
 }
 
@@ -181,7 +186,7 @@ body {
     justify-content: center;
     align-items: center; 
     overflow: hidden;
-    padding-top: var(--navbar-height, 5rem); /* espacio superior para navbar */
+    padding-top: var(--navbar-height, 5rem);
 }
 
 /* Texto de fondo grande */
@@ -210,15 +215,12 @@ body {
         width: 100%;
         visibility: hidden;
     }
-
-.collection-carousel {
-    margin-top: -19rem !important; 
-}    
-
-    /* mirar que es lo que hay debajo para ajustar el margin  */
+    
+    .collection-carousel {
+        margin-top: -19rem !important; 
+    }    
 }
 
-/* Asegura que los ancestros no recorten el slider */
 header.hero-pop,
 section.py-5,
 .container,
@@ -230,9 +232,6 @@ section.py-5,
 @media (max-width: 767px){
     .sticker{ display:none; }
 }
-  
-
-  
 
 /* Buttons */
 .btn-primary{
@@ -281,7 +280,6 @@ section.py-5,
     border-color: var(--purple);
 }
 
-
 .btn-outline-light{
     border-color: rgba(255,255,255,.35);
     color: var(--bg);
@@ -315,7 +313,6 @@ section.py-5,
     font-size:.7rem;
     transform: translate(30%, -40%);
 }
-  
 
 /* Modal cart styling */
 .cart-item{ border-bottom:1px dashed rgba(0,0,0,.06); padding: 12px 0; }
@@ -323,10 +320,6 @@ section.py-5,
   
 /* Checkout summary */
 .checkout-line{ display:flex; justify-content:space-between; align-items:center; padding:.4rem 0; }
-  
-
-/* ---------- Debug / Fix: swiper no debe recortarse ---------- */
-
 
 #cartModal .modal-footer .btn {
     width: 180px;
@@ -412,7 +405,6 @@ section.py-5,
     transform: translateY(-8px);
     box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
-  
 
 /* Swiper settings */
 .swiper {
@@ -422,6 +414,7 @@ section.py-5,
     width: 90%;
     box-sizing: border-box;
 } 
+
 .swiper-slide {
     display: flex;
     justify-content: center;
@@ -433,6 +426,7 @@ section.py-5,
     backface-visibility: hidden;
     z-index: 0 !important;
 } 
+
 .swiper-slide-active {
     z-index: 10 !important;
 }
@@ -475,6 +469,7 @@ section.py-5,
   overflow: visible !important;
   -webkit-overflow-scrolling: touch;
 }
+
 .swiper-slide * {
     pointer-events: auto !important;
 }
@@ -489,41 +484,40 @@ section.py-5,
 .swiper-slide.swiper-no-swiping {
     pointer-events: auto !important;
 }
+
 .carousel-card .add-to-cart {
     position: relative;
     z-index: 50 !important;
     pointer-events: auto !important;
     cursor: pointer;
 }
+
 .swiper .swiper-slide-shadow-left,
 .swiper .swiper-slide-shadow-right {
   pointer-events: none;
-  opacity: 0; /* opcional: oculta sombras que tapen */
+  opacity: 0;
 }
-
 
 /* ---------------------------
 Forzar clickabilidad dentro de slides
 --------------------------- */
+
 .swiper, .swiper-wrapper, .swiper-slide {
     overflow: visible !important;
     -webkit-overflow-scrolling: touch;
 }
-  
-/* Asegura que ningún pseudo-elemento o sombra capture el pointer */
+
 .swiper .swiper-slide-shadow-left,
 .swiper .swiper-slide-shadow-right,
 .swiper .swiper-slide::before,
 .swiper .swiper-slide::after {
     pointer-events: none !important;
 }
-  
-/* Hijos de slide reciben los eventos */
+
 .swiper-slide, .swiper-slide * {
     pointer-events: auto !important;
 }
-  
-/* Slide activo por delante (evita que slides traseros tapen botones) */
+
 .swiper-slide { z-index: 0 !important; backface-visibility: hidden; transform-style: preserve-3d; }
 .swiper-slide-active { z-index: 20 !important; }
   
@@ -851,13 +845,11 @@ Forzar clickabilidad dentro de slides
   font-size: 1.2rem;
 }
 
-/* Hacer que el botón de "Añadir al carrito" sea responsive */
 #addCustomBtn {
     min-width: 100%;
     padding: 0.3rem 1rem;
     font-size: 1rem;
 }
-
 
 /* Hover en tarjeta */
 .product-card:hover {
@@ -885,7 +877,6 @@ Forzar clickabilidad dentro de slides
     }
 }
 
-
 /* INSPIRADOS POR...  */
 
 #inspirados{
@@ -903,6 +894,7 @@ Forzar clickabilidad dentro de slides
 .carousel-item img {
     opacity: .5;
 }
+
 /* COMIENZA TEXTO CAMBIA  */
 
 .artistas {
@@ -926,7 +918,6 @@ Forzar clickabilidad dentro de slides
 
 /* INSPIRADOS POR... TERMINA  */
 
-
 /* Colores distintos para que no se vea un bloque */
 .text-track {
     color: var(--bg);
@@ -948,7 +939,6 @@ Forzar clickabilidad dentro de slides
     background-color: var(--purple);
 }
 
-
 .marquee {
   overflow: hidden;
   position: relative;
@@ -968,7 +958,6 @@ Forzar clickabilidad dentro de slides
   font-size: 1.5rem;
 }
 
-
 /* Dirección contraria */
 .marquee-reverse .track {
   animation: marquee-reverse 20s linear infinite;
@@ -984,7 +973,6 @@ Forzar clickabilidad dentro de slides
   from { transform: translateX(-50%); }
   to   { transform: translateX(0); }
 }
-
 
 /* TEMINA TEXTO CIUDADES BUCLE  */
 
@@ -1113,6 +1101,7 @@ Forzar clickabilidad dentro de slides
 .input-icon {
     position: relative;
 }
+
 .input-icon i {
     position: absolute;
     top: 50%;
@@ -1160,6 +1149,7 @@ Forzar clickabilidad dentro de slides
     align-items: center;
     gap: 8px;
 }
+
 .review-success i {
     font-size: 1.3rem;
 }
@@ -1228,7 +1218,6 @@ section.bg-accent .btn:hover {
     z-index: 1;
 }
 
-/* Escala el carrusel directamente con max-width */
 .carrusel-derecha .swiper {
     width: 100%;
 }
@@ -1652,9 +1641,7 @@ section.bg-accent .btn:hover {
     color: var(--muted);
 }
 
-
 /* Pag Products  */
-
 .custom-select-product {
   border: 2px solid var(--purple);
     color: var(--purple);
@@ -1731,7 +1718,6 @@ select option:checked {
     max-width: 100%;
     height: auto;
 }
-
 
 /* DATOS CURIOSOS TERMINA  */
 
@@ -1820,7 +1806,6 @@ select option:checked {
         margin-bottom: 20px;
     }
 
-
     #productsGrid .add-to-cart {
         display: flex;
         flex-direction: row;
@@ -1838,7 +1823,6 @@ select option:checked {
         margin-left: 10px;
     }
 
-    /* Asegura que el contenedor del precio y botón esté en columna */
     #productsGrid .card-body {
         display: flex;
         flex-direction: column;

@@ -3,7 +3,7 @@ $(document).ready(function(){
     AOS.init(); // Animaciones scroll
   
     // ==========================
-    // 1️ Gestión del carrito
+    // Gestión del carrito
     // ==========================
   
     // Reinicia carrito si venimos de index.html refrescando
@@ -88,7 +88,7 @@ $(document).ready(function(){
     }
   
     // ==========================
-    // 2️ Añadir y eliminar items
+    // Añadir y eliminar items
     // ==========================
   
     $(document).on("click",".add-to-cart", function(){
@@ -123,10 +123,10 @@ $(document).ready(function(){
     renderCheckout();
   
     // ==========================
-    // 3️ Productos dinámicos
+    // Productos dinámicos
     // ==========================
   
-    // Array de productos (puedes añadir artista, estilo, etc.)
+    // Array de productos
     const products = [
       {id:"p1", title:"Impresión, sol naciente", price:9.5, img:"img/LATA_NARANJA.jpg", artist:"Claude Monet", style:"impresionismo"},
       {id:"p2", title:"Baile en el Moulin Rouge", price:11, img:"img/LATA_ROSA.jpg", artist:"Toulouse-Lautrec", style:"impresionismo"},
@@ -181,7 +181,7 @@ $(document).ready(function(){
     renderProducts(products);
   
     // ==========================
-    // 4️ Filtros
+    // Filtros
     // ==========================
   
     $("#filterArtist, #artistFilter").on("change", function(){
@@ -197,7 +197,7 @@ $(document).ready(function(){
     });
   
     // ==========================
-    // 5️ Personalización (demo)
+    // Personalización
     // ==========================
   
     $("#addCustomBtn").on("click", function(){
@@ -211,7 +211,7 @@ $(document).ready(function(){
       const item = {
         id: artwork.id+"_custom",
         title: artwork.title + (text ? ` — "${text}"` : ""),
-        price: artwork.price + 2, // extra coste por personalización
+        price: artwork.price + 2,
         img: artwork.img
       };
       cart.push(item);
@@ -224,7 +224,7 @@ $(document).ready(function(){
     });
 
     // =====================================
-    // 6️ Fallback seguro clicks add-to-cart
+    // Clicks add-to-cart
     // =====================================
 
     function addToCartFromButton(el){
@@ -249,14 +249,14 @@ $(document).ready(function(){
     document.addEventListener('click', function(e){
         const target = e.target;
         if(target.closest && target.closest('.add-to-cart')){
-            e.stopPropagation();   // evita que Swiper bloquee
+            e.stopPropagation();
             addToCartFromButton(target);
-            e.preventDefault();    // opcional
+            e.preventDefault();
         }
     }, true);
 
     // =====================================
-    // 7️ Cerrar menú en móvil al abrir carrito
+    // Cerrar menú en móvil al abrir carrito
     // =====================================
 
     $('#cartBtn').click(function(e) {
@@ -277,7 +277,7 @@ $(document).ready(function(){
     });
 
     // ==========================
-    // 8️ Añadir a favoritos
+    // Añadir a favoritos
     // ==========================
 
     function markFavorites() {
@@ -324,7 +324,7 @@ $(document).ready(function(){
     });
 
     // ==========================
-    // 9️ Renderizar favoritos
+    // Renderizar favoritos
     // ==========================
 
     function renderFavorites() {
@@ -368,14 +368,14 @@ $(document).ready(function(){
       let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
       favoritos = favoritos.filter(item => item.id !== productId);
       localStorage.setItem("favoritos", JSON.stringify(favoritos));
-      markFavorites();   // refresca corazones en index
-      renderFavorites(); // refresca lista de favoritos
+      markFavorites();
+      renderFavorites();
     });
     
     // Marcar favoritos al cargar la página (index.html)
     $(document).ready(function(){
       markFavorites();
-      renderFavorites(); // para favoritos.html
+      renderFavorites();
     });
 
 });
