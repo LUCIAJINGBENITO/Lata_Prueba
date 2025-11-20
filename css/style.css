@@ -1298,16 +1298,37 @@ section.bg-accent .btn:hover {
     margin-bottom: 0;
 }
 
+.bnt-det {
+    border: 2px solid var(--purple);
+    color: var(--purple);
+    background-color: transparent;
+    border-radius: 50rem;     
+    cursor: pointer;
+    transition: all 0.25s ease;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.bnt-det:hover {
+    background-color: var(--purple);
+    color: var(--bg);
+    border-color: var(--purple);
+}
+
 /* SELECTOR CANTIDAD */
 .quantity-selector {
-    border: 2px solid #ddd;
+    border: 2px solid var(--purple);
     border-radius: 0.6rem;
     overflow: hidden;
-    height: 42px;
+    height: 3rem;
 }
 
 .qty-btn {
-    background: #f2f2f2;
+    background: #f3f3f3;
+    color: var(--purple);
     border: none;
     width: 40px;
     height: 100%;
