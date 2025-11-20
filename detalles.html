@@ -1,201 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>DETALLES</title>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>DETALLES</title>
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- AOS -->
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
-</head>
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- AOS -->
+        <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+        <!-- Bootstrap Icons -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
 
-<body>
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light">
-        <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
-                <img src="img/logo blanco.png" alt="ArtCans Logo" class="brand-logo">
-                <span class="d-flex align-items-center">AURA</span>
-            </a>
+    <body>
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light">
+            <div class="container">
+                <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+                    <img src="img/logo blanco.png" alt="ArtCans Logo" class="brand-logo">
+                    <span class="d-flex align-items-center">AURA</span>
+                </a>
 
-            <!-- BOTÓN HAMBURGUESA MINIMALISTA -->
-            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navMain">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
+                <!-- BOTÓN HAMBURGUESA MINIMALISTA -->
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navMain">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navMain">
-                <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link hover-line" href="index.html">Aura</a></li>
-                    <li class="nav-item"><a class="nav-link hover-line" href="sobrenosotros.html">Sobre Nosotros</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link hover-line" href="favoritos.html">Tus Favoritos</a></li>
-                    <li class="nav-item"><a class="nav-link hover-line" href="colecciones.html">Colecciones</a></li>
-                </ul>
-                <div class="cart-wrapper ms-lg-3 mt-3 mt-lg-0">
-                    <button class="btn btn-outline-light position-relative" id="cartBtn" data-bs-toggle="modal"
-                        data-bs-target="#cartModal">
-                        <i class="bi bi-cart3"></i>
-                        <span id="cartCountBadge"
-                            class="badge bg-danger rounded-pill position-absolute top-0 start-100 translate-middle">0</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <header class="hero-pop-header d-flex align-items-center justify-content-center">
-        <!-- Texto de fondo -->
-        <h1 class="hero-pop-text" data-mobile-text="DETALLES">AURA A FONDO</h1>
-    </header>
-
-    <!-- DETALLES -->
-
-    <section class="product-detail mb-5">
-        <div class="container">
-
-            <div class="row align-items-center">
-
-                <!-- IMAGEN -->
-                <div class="col-lg-6 d-flex mb-4 mb-lg-0">
-                    <div class="img-fluid">
-                        <img src="img/LATA_AMARILLA.jpg" alt="Los girasoles" class="img-fluid rounded-4">
-                    </div>
-                </div>
-
-                <!-- INFORMACIÓN -->
-                <div class="col-lg-6 px-5 mt-5">
-
-                    <!-- BOTONES -->
-                    <div class="d-flex gap-3 justify-content-end mb-4">
-                        <!-- Cantidad -->
-                        <div class="quantity-selector" data-id="p3">
-                            <button class="qty-btn" data-id="p3">-</button>
-
-                            <span class="qty-value" data-id="p3" data-title="Los girasoles" data-price="10"
-                                data-img="img/LATA_AMARILLA.jpg">0</span>
-
-                            <button class="qty-btn add-to-cart" data-id="p3" data-title="Los girasoles" data-price="10"
-                                data-img="img/LATA_AMARILLA.jpg">+</button>
-                        </div>
-
-                        <!-- Fav -->
-                        <button class="bnt-det fav-btn d-flex justify-content-center align-items-center" data-id="p3"
-                            data-title="Los girasoles" data-price="10" data-img="../img/LATA_AMARILLA.jpg">
-                            <i class="bi bi-heart"></i>
+                <div class="collapse navbar-collapse" id="navMain">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link hover-line" href="index.html">Aura</a></li>
+                        <li class="nav-item"><a class="nav-link hover-line" href="sobrenosotros.html">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link hover-line" href="favoritos.html">Tus Favoritos</a></li>
+                        <li class="nav-item"><a class="nav-link hover-line" href="colecciones.html">Colecciones</a></li>
+                    </ul>
+                    <div class="cart-wrapper ms-lg-3 mt-3 mt-lg-0">
+                        <button class="btn btn-outline-light position-relative" id="cartBtn" data-bs-toggle="modal"
+                            data-bs-target="#cartModal">
+                            <i class="bi bi-cart3"></i>
+                            <span id="cartCountBadge"
+                                class="badge bg-danger rounded-pill position-absolute top-0 start-100 translate-middle">0</span>
                         </button>
                     </div>
-
-                    <!-- TEXTO-->
-                    <h2>Los Girasoles-Vincent van Gogh</h2>
-                    <p class="detail">
-                        La esencia del sol capturada en una lata. Un sabor cálido y vibrante inspirado en la obra de Van
-                        Gogh.
-                    </p>
-
-                    <!-- PRECIO + STOCK -->
-                    <div class="d-flex flex-wrap align-items-center mb-4 gap-3">
-                        <span class="price h3">10€</span>
-
-                        <!-- Separador -->
-                        <span class="d-none d-md-inline-block border-start mx-2" style="height: 2rem;"></span>
-
-                        <span class="text-muted">Disponibles solo 27 unidades</span>
-                    </div>
-
-                    <!-- BADGES -->
-                    <div class="d-flex flex-wrap gap-2 mb-4">
-                        <span class="featured">Los girasoles</span>
-                        <span class="featured">Sabor limón</span>
-                        <span class="featured">Edición limitada</span>
-                        <span class="featured">★★★★★</span>
-                    </div>
-                    <!-- ACORDEÓN HORIZONTAL -->
-                    <div class="accordion" id="auraAccordion">
-
-                        <!-- Item 1 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="heading1">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-                                    Origen de esta AURA...
-                                </button>
-                            </h2>
-                            <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1"
-                                data-bs-parent="#auraAccordion">
-                                <div class="accordion-body">
-                                    Contenido de Ingredientes...
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 2 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="heading2">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                    El artista detrás...
-                                </button>
-                            </h2>
-                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
-                                data-bs-parent="#auraAccordion">
-                                <div class="accordion-body">
-                                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien
-                                    vitae pellent.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 3 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="heading3">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                    Entre lienzos...
-                                </button>
-                            </h2>
-                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
-                                data-bs-parent="#auraAccordion">
-                                <div class="accordion-body">
-                                    Contenido sobre el Artista...
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 4 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="heading4">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                    Valor en cada sorbo...
-                                </button>
-                            </h2>
-                            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
-                                data-bs-parent="#auraAccordion">
-                                <div class="accordion-body">
-                                    Curiosidades del producto...
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
                 </div>
             </div>
-        </div>
-    </section>
+        </nav>
 
-    
+        <!-- HERO -->
+        <header class="hero-pop-header d-flex align-items-center justify-content-center">
+            <!-- Texto de fondo -->
+            <h1 class="hero-pop-text" data-mobile-text="DETALLES">AURA A FONDO</h1>
+        </header>
+
+        <!-- DETALLES -->
+
+        <section class="product-detail mb-5">
+            <div class="container">
+
+                <div class="row align-items-center">
+
+                    <!-- IMAGEN -->
+                    <div class="col-lg-6 d-flex mb-4 mb-lg-0">
+                        <div class="img-fluid">
+                            <img src="img/LATA_AMARILLA.jpg" alt="Los girasoles" class="img-fluid rounded-4">
+                        </div>
+                    </div>
+
+                    <!-- INFORMACIÓN -->
+                    <div class="col-lg-6 px-5 mt-5">
+
+                        <!-- BOTONES -->
+                        <div class="d-flex gap-3 justify-content-end mb-4">
+
+                            <!-- Fav -->
+                            <button class="bnt-det fav-btn d-flex justify-content-center align-items-center" data-id="p3"
+                                data-title="Los girasoles" data-price="10" data-img="../img/LATA_AMARILLA.jpg">
+                                <i class="bi bi-heart"></i>
+                            </button>
+                        </div>
+
+                        <!-- TEXTO-->
+                        <h2>Los Girasoles - Vincent van Gogh</h2>
+                        <p class="detail">
+                            La esencia del sol capturada en una lata. Un sabor cálido y vibrante inspirado en la obra de Van
+                            Gogh.
+                        </p>
+
+                        <!-- PRECIO + STOCK -->
+                        <div class="d-flex flex-wrap align-items-center mb-4 gap-3">
+                            <span class="price h3">10€</span>
+
+                            <!-- Separador -->
+                            <span class="d-none d-md-inline-block border-start mx-2" style="height: 2rem;"></span>
+
+                            <span class="text-muted">Disponibles solo 27 unidades</span>
+                        </div>
+
+                        <!-- BADGES -->
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="featured">Los girasoles</span>
+                            <span class="featured">Sabor limón</span>
+                            <span class="featured">Edición limitada</span>
+                            <span class="featured">★★★★★</span>
+                        </div>
+                        <!-- ACORDEÓN HORIZONTAL -->
+                        <div class="accordion" id="auraAccordion">
+
+                            <!-- Item 1 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading1">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                        Origen de esta AURA...
+                                    </button>
+                                </h2>
+                                <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1"
+                                    data-bs-parent="#auraAccordion">
+                                    <div class="accordion-body">
+                                        Contenido de Ingredientes...
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading2">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                        El artista detrás...
+                                    </button>
+                                </h2>
+                                <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
+                                    data-bs-parent="#auraAccordion">
+                                    <div class="accordion-body">
+                                        Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien
+                                        vitae pellent.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading3">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                        Entre lienzos...
+                                    </button>
+                                </h2>
+                                <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
+                                    data-bs-parent="#auraAccordion">
+                                    <div class="accordion-body">
+                                        Contenido sobre el Artista...
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading4">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                        Valor en cada sorbo...
+                                    </button>
+                                </h2>
+                                <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
+                                    data-bs-parent="#auraAccordion">
+                                    <div class="accordion-body">
+                                        Curiosidades del producto...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- SECCIÓN: REVIEWS Y COMENTARIOS -->
         <section class="reviews-section py-5">
             <div class="container">
@@ -265,148 +252,109 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-    <!-- FOOTER -->
+        <!-- FOOTER -->
 
-    <footer class="aura-footer">
-        <div class="container">
-            <div class="row aura-footer-row text-center">
+        <footer class="aura-footer">
+            <div class="container">
+                <div class="row aura-footer-row text-center">
 
-                <!-- Col 1: Marca -->
-                <div class="col-sm-3 footer-col">
-                    <h1 class="footer-brand">AURA</h1>
-                    <p class="footer-desc">
-                        Arte embotellado en experiencias sensoriales.
-                    </p>
+                    <!-- Col 1: Marca -->
+                    <div class="col-sm-3 footer-col">
+                        <h1 class="footer-brand">AURA</h1>
+                        <p class="footer-desc">
+                            Arte embotellado en experiencias sensoriales.
+                        </p>
+                    </div>
+
+                    <!-- Col 2: Enlaces -->
+                    <div class="col-sm-3 footer-col">
+                        <h4 class="footer-title">Explorar</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Aura</a></li>
+                            <li><a href="sobrenosotros.html">Sobre nosotros</a></li>
+                            <li><a href="favoritos.html">Tus favoritos</a></li>
+                            <li><a href="colecciones.html">Colecciones</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 3: Contacto -->
+                    <div class="col-sm-3 footer-col">
+                        <h4 class="footer-title">Contacto</h4>
+                        <p class="footer-contact">info@auradrinks.com</p>
+                        <p class="footer-contact">+34 123 456 789</p>
+                    </div>
+
+                    <!-- Col 4: Social -->
+                    <div class="col-sm-3 footer-col">
+                        <h4 class="footer-title">Social</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="bi bi-instagram"></i></a>
+                            <a href="#"><i class="bi bi-tiktok"></i></a>
+                            <a href="#"><i class="bi bi-youtube"></i></a>
+                            <a href="#"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Col 2: Enlaces -->
-                <div class="col-sm-3 footer-col">
-                    <h4 class="footer-title">Explorar</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Aura</a></li>
-                        <li><a href="sobrenosotros.html">Sobre nosotros</a></li>
-                        <li><a href="favoritos.html">Tus favoritos</a></li>
-                        <li><a href="colecciones.html">Colecciones</a></li>
-                    </ul>
+                <div class="footer-bottom text-center">
+                    <p>© 2025 AURA — Art & Flavors</p>
                 </div>
+            </div>
+        </footer>
 
-                <!-- Col 3: Contacto -->
-                <div class="col-sm-3 footer-col">
-                    <h4 class="footer-title">Contacto</h4>
-                    <p class="footer-contact">info@auradrinks.com</p>
-                    <p class="footer-contact">+34 000 000 000</p>
-                </div>
 
-                <!-- Col 4: Social -->
-                <div class="col-sm-3 footer-col">
-                    <h4 class="footer-title">Social</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-tiktok"></i></a>
-                        <a href="#"><i class="bi bi-youtube"></i></a>
-                        <a href="#"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
+        <!-- CART MODAL -->
+        <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Tu carrito</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body" id="cartModalBody">
+                        <!-- contenido inyectado por JS -->
+                    </div>
+                    <div class="modal-footer">
+                        <a href="checkout.html" class="btn btn-primary">Ir a pagar</a>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Seguir
+                            comprando</button>
                     </div>
                 </div>
-
-            </div>
-
-            <div class="footer-bottom text-center">
-                <p>© 2025 AURA — Art & Flavors</p>
             </div>
         </div>
-    </footer>
 
+        <!-- SCRIPTS PRINCIPALES -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
-    <!-- CART MODAL (reutilizable en todas las páginas) -->
-    <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Tu carrito</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body" id="cartModalBody">
-                    <!-- contenido inyectado por JS -->
-                </div>
-                <div class="modal-footer">
-                    <a href="checkout.html" class="btn btn-primary">Ir a pagar</a>
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Seguir
-                        comprando</button>
-                </div>
-            </div>
-        </div>
-    </div>
+        <!-- LENIS -->
+        <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
 
-    <!-- SCRIPTS PRINCIPALES -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+        <!-- SCRIPTS LOCALES -->
+        <script src="js/script.js"></script>
+        <script src="js/animations.js"></script>
 
-    <!-- LENIS -->
-    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const toggler = document.querySelector(".custom-toggler");
+                const nav = document.getElementById("navMain");
 
-    <!-- SCRIPTS LOCALES -->
-    <script src="js/script.js"></script>
-    <script src="js/animations.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const toggler = document.querySelector(".custom-toggler");
-            const nav = document.getElementById("navMain");
-
-            nav.addEventListener("shown.bs.collapse", () => {
-                toggler.classList.add("active");
+                nav.addEventListener("shown.bs.collapse", () => {
+                    toggler.classList.add("active");
+                });
+                nav.addEventListener("hidden.bs.collapse", () => {
+                    toggler.classList.remove("active");
+                });
             });
-            nav.addEventListener("hidden.bs.collapse", () => {
-                toggler.classList.remove("active");
-            });
-        });
-    </script>
+        </script>
 
-    <!-- SCRIPTS DETALLES -->
-
-    <script>
-        /* SELECTOR CANTIDAD */
-        let qty = 1;
-        const qtyValue = document.getElementById("qty-value");
-
-        document.getElementById("qty-minus").onclick = () => {
-            if (qty > 1) qty--;
-            qtyValue.textContent = qty;
-        };
-        document.getElementById("qty-plus").onclick = () => {
-            qty++;
-            qtyValue.textContent = qty;
-        };
-
-        /* ACORDEÓN HORIZONTAL */
-        const tabs = document.querySelectorAll(".tab");
-        const contents = document.querySelectorAll(".tab-content");
-
-        tabs.forEach(tab => {
-            tab.addEventListener("click", () => {
-                tabs.forEach(t => t.classList.remove("active"));
-                tab.classList.add("active");
-
-                const id = tab.getAttribute("data-tab");
-
-                contents.forEach(c => c.style.display = "none");
-                document.getElementById(`tab-${id}`).style.display = "block";
-            });
-        });
-
-        /* Activar primera pestaña por defecto */
-        tabs[0].classList.add("active");
-        contents[0].style.display = "block";
-    </script>
-
-
-</body>
+    </body>
 
 </html>

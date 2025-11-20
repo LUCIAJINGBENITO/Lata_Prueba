@@ -1309,81 +1309,52 @@ section.bg-accent .btn:hover {
     border-color: var(--purple);
 }
 
-/* SELECTOR CANTIDAD */
-.quantity-selector {
-    border: 2px solid var(--purple);
-    border-radius: 0.6rem;
-    overflow: hidden;
-    height: 3rem;
-}
+.featured { 
+    border: 2px solid var(--purple); 
+    color: var(--bg); 
+    background-color: var(--purple); 
+    border-radius: 50rem; 
+    cursor: pointer; 
+    transition: all 0.25s ease; 
+    height: 3rem; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 0 1rem; }
 
-.qty-btn {
-    background: #f3f3f3;
-    color: var(--purple);
-    border: none;
-    width: 40px;
-    height: 100%;
-    font-size: 1.2rem;
+/* ACORDEÓN HORIZONTAL PERSONALIZADO */
+.tab {
+    padding: 0.6rem 1rem;
+    background: #eee;
+    border-radius: 6px;
     cursor: pointer;
+    transition: background .3s ease;
+    user-select: none;
 }
 
-.qty-value {
-    padding: 0 1rem;
-    min-width: 30px;
-    text-align: center;
+.tab:hover {
+    background: #ddd;
 }
 
-.featured {
-    border: 2px solid var(--purple);
-    color: var(--bg);
-    background-color: var(--purple);
-    border-radius: 50rem;     
-    cursor: pointer;
-    transition: all 0.25s ease;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1rem;
+.tab.active {
+    background: var(--purple, #6C1F41);
+    color: white;
 }
 
-/* ACORDEÓN HORIZONTAL */
-
-#auraAccordion .accordion-item {
-    background-color: var(--bg);
-    border-left: none;
-    border-right: none;
-    border-top: 2px solid var(--purple);
-    border-bottom: 2px solid var(--bg);
-    border-radius: 0;
+.tab-content {
+    display: none;
+    padding: 1rem;
+    background: #fafafa;
+    border-radius: 8px;
 }
 
-#auraAccordion .accordion-button {
-    background-color: var(--bg);
-    font-weight: bold;
-    border: none;
+/* RESPONSIVE: fallback vertical */
+@media (max-width: 768px) {
+    .tab {
+        flex: 1 1 100%;
+    }
 }
 
-#auraAccordion .accordion-button::after {
-    color: var(--purple); 
-    font-size: 1.2rem;
-}
-
-/* Línea superior solo cuando está cerrado */
-#auraAccordion .accordion-body {
-    border-top: 2px solid var(--purple);
-    border-bottom: 2px solid var(--bg);
-}
-
-/* Cuando el accordion está abierto, quitar la línea superior */
-#auraAccordion .accordion-button:not(.collapsed) + .accordion-collapse .accordion-body {
-    border-top: 2px solid var(--bg);
-}
-
-/* Opcional: espaciado interno */
-#auraAccordion .accordion-body {
-    padding: 1rem 1.5rem;
-}
 
 
 /* -------------------------------- PAGO -------------------------------- */
