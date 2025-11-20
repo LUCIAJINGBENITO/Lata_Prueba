@@ -5,10 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
        GSAP + ScrollTrigger (Sobre AURA)
     ------------------------------------- */
 
-    // Registrar plugin
     gsap.registerPlugin(ScrollTrigger);
 
-    // Seguridad: asegurar que los elementos estén visibles al cargar
     gsap.set([".about-text", ".about-img"], { opacity: 1 });
 
     // Animación de la sección "Sobre AURA"
@@ -39,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function() {
        Timeline evolución AURA
     ------------------------------------- */
 
-    // Animación Timeline evolución AURA
     gsap.utils.toArray(".timeline-card .card").forEach((card, i) => {
         gsap.from(card, {
             scrollTrigger: {
@@ -73,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const stars = document.querySelectorAll(".stars-select i");
     const starsInput = document.getElementById("reviewStars");
 
-    if (stars.length > 0) {  // Seguridad: solo ejecuta si existen
+    if (stars.length > 0) {
         stars.forEach(star => {
             star.addEventListener("click", () => {
                 const value = star.getAttribute("data-value");
@@ -90,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Validación + envío
     const reviewForm = document.getElementById("reviewForm");
 
-    if (reviewForm) { // seguridad también
+    if (reviewForm) {
         reviewForm.addEventListener("submit", function(e) {
             e.preventDefault();
 
@@ -143,7 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
         fadeInOut();
     };
 
-    // Inicializa el rotaterator en el contenedor con id "rotate"
     const rotateContainer = document.querySelector("#girando");
     if (rotateContainer) {
         rotaterator(rotateContainer, { fadeSpeed: 700, pauseSpeed: 600 });
