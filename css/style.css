@@ -1323,37 +1323,43 @@ section.bg-accent .btn:hover {
     padding: 0 1rem; }
 
 /* ACORDEÓN HORIZONTAL PERSONALIZADO */
-.tab {
-    padding: 0.6rem 1rem;
-    background: #eee;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background .3s ease;
-    user-select: none;
+
+:root {
+    --bs-accordion-active-bg: var(--purple) !important;
+    --bs-accordion-active-color: var(--bg) !important;
 }
 
-.tab:hover {
-    background: #ddd;
+#auraAccordion .accordion-item {
+    background-color: var(--bg);
+    border-left: none;
+    border-right: none;
+    border-top: 2px solid var(--purple);
+    border-bottom: 2px solid var(--bg);
+    border-radius: 0;
 }
 
-.tab.active {
-    background: var(--purple, #6C1F41);
-    color: white;
+#auraAccordion .accordion-button {
+    background-color: var(--bg);
+    border: none;
 }
 
-.tab-content {
-    display: none;
-    padding: 1rem;
-    background: #fafafa;
-    border-radius: 8px;
+#auraAccordion .accordion-button::after {
+    color: var(--purple); 
+    font-size: 1.2rem;
 }
 
-/* RESPONSIVE: fallback vertical */
-@media (max-width: 768px) {
-    .tab {
-        flex: 1 1 100%;
-    }
+/* Línea superior solo cuando está cerrado */
+#auraAccordion .accordion-body {
+    border-top: 2px solid var(--bg);
+    border-bottom: 2px solid var(--bg);
 }
+
+
+/* Opcional: espaciado interno */
+#auraAccordion .accordion-body {
+    padding: 1rem 1.5rem;
+}
+
 
 
 
