@@ -75,20 +75,20 @@
 
                 <!-- INFORMACIÓN -->
                 <div class="col-lg-6 px-5 mt-5">
-                
+
                     <!-- BOTONES -->
                     <div class="d-flex gap-3 justify-content-end mb-4">
                         <!-- Cantidad -->
                         <div class="quantity-selector" data-id="p3">
                             <button class="qty-btn" data-id="p3">-</button>
-                            
+
                             <span class="qty-value" data-id="p3" data-title="Los girasoles" data-price="10"
                                 data-img="img/LATA_AMARILLA.jpg">0</span>
 
                             <button class="qty-btn add-to-cart" data-id="p3" data-title="Los girasoles" data-price="10"
                                 data-img="img/LATA_AMARILLA.jpg">+</button>
                         </div>
-                
+
                         <!-- Fav -->
                         <button class="bnt-det fav-btn d-flex justify-content-center align-items-center" data-id="p3"
                             data-title="Los girasoles" data-price="10" data-img="../img/LATA_AMARILLA.jpg">
@@ -115,26 +115,78 @@
 
                     <!-- BADGES -->
                     <div class="d-flex flex-wrap gap-2 mb-4">
-                        <span class="badge bg-light text-dark">Los girasoles</span>
-                        <span class="badge bg-light text-dark">Sabor limón</span>
-                        <span class="badge bg-light text-dark">Edición limitada</span>
-                        <span class="badge bg-light text-dark">4.0 ★</span>
+                        <span class="featured">Los girasoles</span>
+                        <span class="featured">Sabor limón</span>
+                        <span class="featured">Edición limitada</span>
+                        <span class="featured">★★★★★</span>
                     </div>
-
                     <!-- ACORDEÓN HORIZONTAL -->
-                    <div class="accordion-h">
+                    <div class="accordion" id="auraAccordion">
 
-                        <div class="d-flex gap-2 flex-wrap">
-                            <div class="tab" data-tab="1">Ingredientes</div>
-                            <div class="tab" data-tab="2">Proceso</div>
-                            <div class="tab" data-tab="3">Artista</div>
-                            <div class="tab" data-tab="4">Curiosidades</div>
+                        <!-- Item 1 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading1">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                    Origen de esta AURA...
+                                </button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1"
+                                data-bs-parent="#auraAccordion">
+                                <div class="accordion-body">
+                                    Contenido de Ingredientes...
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="tab-content mt-3" id="tab-1">Contenido de Ingredientes...</div>
-                        <div class="tab-content mt-3" id="tab-2">Contenido de Proceso...</div>
-                        <div class="tab-content mt-3" id="tab-3">Contenido sobre el Artista...</div>
-                        <div class="tab-content mt-3" id="tab-4">Curiosidades del producto...</div>
+                        <!-- Item 2 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                    El artista detrás...
+                                </button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
+                                data-bs-parent="#auraAccordion">
+                                <div class="accordion-body">
+                                    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien
+                                    vitae pellent.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                    Entre lienzos...
+                                </button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
+                                data-bs-parent="#auraAccordion">
+                                <div class="accordion-body">
+                                    Contenido sobre el Artista...
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                    Valor en cada sorbo...
+                                </button>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
+                                data-bs-parent="#auraAccordion">
+                                <div class="accordion-body">
+                                    Curiosidades del producto...
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
 
@@ -142,6 +194,81 @@
             </div>
         </div>
     </section>
+
+    
+        <!-- SECCIÓN: REVIEWS Y COMENTARIOS -->
+        <section class="reviews-section py-5">
+            <div class="container">
+                <h3 class="reviews-title text-center fw-bold mb-5">Opiniones y comentarios</h3>
+
+                <div class="row reviews-row g-4">
+
+                    <!-- COLUMNA 1 -->
+                    <div class="col-md-4 review-column d-flex flex-column gap-4">
+                        <div class="review-item d-flex">
+                            <img src="https://picsum.photos/100/100?1" class="review-img" alt="">
+                            <div class="review-content">
+                                <h5 class="review-author">Marina López</h5>
+                                <div class="review-stars">★★★★☆</div>
+                                <p class="review-text">Me encanta la estética y la calidad de los productos. Se nota el cuidado detrás de cada pieza.</p>
+                            </div>
+                        </div>
+
+                        <div class="review-item d-flex">
+                            <img src="https://picsum.photos/100/100?2" class="review-img" alt="">
+                            <div class="review-content">
+                                <h5 class="review-author">Carlos Ruiz</h5>
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">La mejor experiencia de compra que he tenido últimamente. El diseño es impecable.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COLUMNA 2 -->
+                    <div class="col-md-4 review-column d-flex flex-column gap-4">
+                        <div class="review-item d-flex">
+                            <img src="https://picsum.photos/100/100?3" class="review-img" alt="">
+                            <div class="review-content">
+                                <h5 class="review-author">Lucía Fernández</h5>
+                                <div class="review-stars">★★★★☆</div>
+                                <p class="review-text">Entrega rápida y presentación espectacular. Sin duda volveré a comprar.</p>
+                            </div>
+                        </div>
+
+                        <div class="review-item d-flex">
+                            <img src="https://picsum.photos/100/100?4" class="review-img" alt="">
+                            <div class="review-content">
+                                <h5 class="review-author">Miguel</h5>
+                                <div class="review-stars">★★★★☆</div>
+                                <p class="review-text">Perfecto para regalar a alguien creativo.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COLUMNA 3 -->
+                    <div class="col-md-4 review-column d-flex flex-column gap-4">
+                        <div class="review-item d-flex">
+                            <img src="https://picsum.photos/100/100?5" class="review-img" alt="">
+                            <div class="review-content">
+                                <h5 class="review-author">Ana</h5>
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">Visualmente una pasada. Muy fan.</p>
+                            </div>
+                        </div>
+
+                        <div class="review-item d-flex">
+                            <img src="https://picsum.photos/100/100?6" class="review-img" alt="">
+                            <div class="review-content">
+                                <h5 class="review-author">Javi</h5>
+                                <div class="review-stars">★★★★☆</div>
+                                <p class="review-text">Te sorprende más de lo que esperas.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
     <!-- FOOTER -->
 
@@ -168,24 +295,24 @@
                     </ul>
                 </div>
 
-                    <!-- Col 3: Contacto -->
-                    <div class="col-sm-3 footer-col">
-                        <h4 class="footer-title">Contacto</h4>
-                        <p class="footer-contact">info@auradrinks.com</p>
-                        <p class="footer-contact">+34 000 000 000</p>
-                    </div>
+                <!-- Col 3: Contacto -->
+                <div class="col-sm-3 footer-col">
+                    <h4 class="footer-title">Contacto</h4>
+                    <p class="footer-contact">info@auradrinks.com</p>
+                    <p class="footer-contact">+34 000 000 000</p>
+                </div>
 
-                    <!-- Col 4: Social -->
-                    <div class="col-sm-3 footer-col">
-                        <h4 class="footer-title">Social</h4>
-                        <div class="social-icons">
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                            <a href="#"><i class="bi bi-tiktok"></i></a>
-                            <a href="#"><i class="bi bi-youtube"></i></a>
-                            <a href="#"><i class="bi bi-twitter-x"></i></a>
-                            <a href="#"><i class="bi bi-linkedin"></i></a>
-                        </div>
+                <!-- Col 4: Social -->
+                <div class="col-sm-3 footer-col">
+                    <h4 class="footer-title">Social</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-tiktok"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
                     </div>
+                </div>
 
             </div>
 
@@ -216,13 +343,13 @@
         </div>
     </div>
 
-        <!-- SCRIPTS PRINCIPALES -->
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- SCRIPTS PRINCIPALES -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
-        <!-- LENIS -->
-        <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
+    <!-- LENIS -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
 
     <!-- SCRIPTS LOCALES -->
     <script src="js/script.js"></script>
