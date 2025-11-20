@@ -1226,12 +1226,14 @@ section.bg-accent .btn:hover {
 .swiper-buttons-bajo {
     display: flex;
     gap: 10px;
-    justify-content: flex-start;
+    justify-content: flex-end;
     position: absolute;
     bottom: -50px;
     left: 0;
+    right: 0;
     z-index: 10;
-    width: max-content;
+    width: 100%;
+    padding-right: 1.5rem
 }
 
 .swiper-btn-prev,
@@ -1761,7 +1763,6 @@ select option:checked {
     }
 
     .swiper-buttons-bajo {
-        padding-left: 33rem;
         bottom: -50px;
         gap: 10px;
     }
@@ -2143,5 +2144,19 @@ select option:checked {
         max-width: 60% !important;
         margin: 0 auto;
         display: block;
+    }
+
+    .texto-izquierda {
+        font-size: 0.9rem;
+        flex: 1 1 100%;
+        padding: 1rem;
+        text-align: center;
+        margin-top: 17rem; 
+        margin-bottom: 1rem; 
+    }
+
+    .texto-izquierda h2.fw-bold {
+        font-size: 1.3rem;
+        line-height: 1.2;
     }
 }
