@@ -57,3 +57,12 @@ la del index
     color: var(--bg);
     border-color: var(--purple);
 }
+
+
+<div class="quantity-selector d-flex align-items-center gap-2" data-id="p3">
+    <button class="qty-btn btn btn-outline-secondary" data-id="p3">-</button>
+    <span id="qty-value">0</span>
+    <button class="qty-btn btn btn-outline-secondary add-to-cart" 
+            data-id="p3" data-title="Los girasoles" data-price="10"
+            data-img="img/LATA_AMARILLA.jpg">+</button>
+</div>

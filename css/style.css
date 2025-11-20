@@ -1336,7 +1336,7 @@ section.bg-accent .btn:hover {
     cursor: pointer;
 }
 
-#qty-value {
+.qty-value {
     padding: 0 1rem;
     min-width: 30px;
     text-align: center;
