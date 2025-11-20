@@ -355,6 +355,28 @@
             });
         </script>
 
+        <script>
+            /* ACORDEÓN HORIZONTAL */
+            const tabs = document.querySelectorAll(".tab");
+            const contents = document.querySelectorAll(".tab-content");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", () => {
+                    tabs.forEach(t => t.classList.remove("active"));
+                    tab.classList.add("active");
+
+                    const id = tab.getAttribute("data-tab");
+
+                    contents.forEach(c => c.style.display = "none");
+                    document.getElementById(`tab-${id}`).style.display = "block";
+                });
+            });
+
+            /* Activar primera pestaña por defecto */
+            tabs[0].classList.add("active");
+            contents[0].style.display = "block";
+        </script>
+
     </body>
 
 </html>
