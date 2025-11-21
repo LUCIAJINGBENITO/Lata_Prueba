@@ -348,7 +348,7 @@ section.py-5,
 
 /* Botón "Seguir comprando" en el modal del carrito */
 #cartModal .btn-outline-secondary {
-    background: white;
+    background: transparent;
     border: 2px solid var(--purple);
     color: var(--purple);
     border-radius: 50rem;
@@ -357,7 +357,7 @@ section.py-5,
 
 #cartModal .btn-outline-secondary:hover {
     background: var(--purple);
-    color: white;
+    color: var(--bg);
     border: 2px solid var(--purple);
 }
 
@@ -1417,14 +1417,14 @@ section.bg-accent .btn:hover {
 .form-card .form-select {
     border-radius: var(--card-radius);
     border: 2px solid var(--purple);
-    background: white;
+    background: var(--lavender);
     transition: 0.25s ease;
 }
 
 .form-card .form-control:focus,
 .form-card .form-select:focus {
-    border-color: var(--blue);
-    box-shadow: 4px 4px 0 var(--blue);
+    border-color: var(--purple);
+    box-shadow: 4px 4px 0 var(--purple);
     outline: none;
 }
 
@@ -1456,7 +1456,7 @@ section.bg-accent .btn:hover {
 
 /* Botón Seguir comprando */
 .form-card .btn-outline-secondary {
-    background: var(--bg);
+    background: transparent;
     border: 2px solid var(--purple);
     border-radius: 50rem;
     color: var(--purple);
@@ -1475,7 +1475,7 @@ section.bg-accent .btn:hover {
 
 /* Botón success del resumen */
 .form-card .btn-success {
-    background: var(--green);
+    background: transparent;
     border: 2px solid var(--green);
     border-radius: 50rem;
     color: black;
@@ -1488,8 +1488,8 @@ section.bg-accent .btn:hover {
 
 .form-card .btn-success:hover {
     background: var(--green);
-    border: 2px solid #D9E4A0;
-    color: black;
+    border: 2px solid var(--green);
+    color: var(--bg);
 }
 
 /* Contenedor de cada producto */
