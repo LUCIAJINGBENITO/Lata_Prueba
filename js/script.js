@@ -163,11 +163,10 @@ $(document).ready(function(){
                 <p class="small text-muted">Artista: ${product.artist}</p>
                 <div class="d-flex justify-content-between align-items-center mt-3">
                   <strong>€${product.price.toFixed(2)}</strong>
-                  <button class="btn btn-sm btn-primary add-to-cart" 
-                          data-id="${product.id}" 
-                          data-title="${product.title}" 
-                          data-price="${product.price}" 
-                          data-img="${product.img}">Detalles del producto ></button>
+                  <button class="btn btn-sm btn-outline-primary view-details"
+                      data-id="${product.id}">
+                    Ver detalles >
+                  </button>
                 </div>
               </div>
             </div>
@@ -179,6 +178,25 @@ $(document).ready(function(){
     }
   
     renderProducts(products);
+
+    const productPages = {
+      p1: "details-Impresión.html",
+      p2: "lata-rosa.html",
+      p3: "lata-amarilla.html",
+      p4: "lata-morada.html",
+      p5: "lata-azul.html",
+      p6: "lata-verde.html"
+    };
+  
+    $(document).on("click", ".view-details", function(){
+        const id = $(this).data("id");
+        const page = productPages[id];
+        if(page){
+            window.location.href = page;
+        } else {
+            console.warn("No hay página definida para", id);
+        }
+    });
   
     // ==========================
     // Filtros

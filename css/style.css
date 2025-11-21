@@ -1261,21 +1261,25 @@ section.bg-accent .btn:hover {
 }
 
 /* Botones de carrito inyectados por JS */
-#productsGrid .add-to-cart {
+#productsGrid .view-details {
     font-size: 0.80rem;
-    padding: 0.4rem 0.8rem;
-    width: 100%;
+    padding: 0.2rem 0.8rem;
+    width: 10%;
     min-width: 190px;
     transition: all 0.25s ease;
+    border: 2px solid var(--purple);
+    background: var(--purple);
+    color: var(--bg);
+    border-radius: 50rem;
 }
 
 /* Texto dentro del botón */
-#productsGrid .add-to-cart span {
+#productsGrid .view-details span {
     display: inline-block;
 }
 
 /* Flecha dentro del botón */
-#productsGrid .add-to-cart .arrow {
+#productsGrid .view-details .arrow {
     margin-left: 5px;
 }
 
