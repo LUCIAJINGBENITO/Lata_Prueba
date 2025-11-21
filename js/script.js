@@ -360,12 +360,12 @@ $(document).ready(function(){
     
       favoritos.forEach(product => {
         container.append(`
-          <div class="product-card" data-id="${product.id}">
+          <div class="product-card">
             <div class="product-visual">
               <img src="${product.img}" alt="${product.title}">
               <div class="product-buttons">
-                <button class="btn-remove-fav" data-id="${product.id}">
-                  <i class="bi bi-x-circle text-danger"></i>
+                <button class="fav-btn" data-id="${product.id}" data-title="${product.title}" data-price="${product.price}" data-img="${product.img}">
+                  <i class="bi bi-heart-fill text-danger"></i>
                 </button>
                 <button class="cart-btn add-to-cart" data-id="${product.id}" data-title="${product.title}" data-price="${product.price}" data-img="${product.img}">
                   <i class="bi bi-cart"></i>
@@ -375,11 +375,16 @@ $(document).ready(function(){
             <div class="product-info">
               <h5>${product.title}</h5>
               <p>Sabor AURA, diseñada para coleccionarse. Llévala a tu cesta y completa tu serie.</p>
+              <a class="btn-view-product" href="details-${product.title.replace(/\s/g,'')}.html" title="Ver producto">
+                <span>Ver Producto</span>
+                <span class="arrow">&gt;</span>
+              </a>
             </div>
           </div>
         `);
       });
     }
+    
     
     // Quitar favoritos desde favoritos.html
     $(document).on("click", ".btn-remove-fav", function(){
