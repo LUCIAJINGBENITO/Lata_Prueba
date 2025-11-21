@@ -163,9 +163,10 @@ $(document).ready(function(){
                 <p class="small text-muted">Artista: ${product.artist}</p>
                 <div class="d-flex justify-content-between align-items-center mt-3">
                   <strong>€${product.price.toFixed(2)}</strong>
-                  <button class="btn btn-sm btn-outline-primary view-details"
+                  <button class="btn btn-sm btn-primary view-details"
                       data-id="${product.id}">
-                    Ver detalles >
+                                <span>Ver Producto</span>
+                                <span class="arrow">&gt;</span>
                   </button>
                 </div>
               </div>
