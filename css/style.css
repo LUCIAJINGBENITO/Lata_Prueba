@@ -1773,6 +1773,13 @@ select option:checked {
     }
 }
 
+@media (max-width: 990px) {
+    #productsGrid .col-md-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
 @media (max-width: 991px) and (min-width: 768px) {
     #customize .col-md-2 {
         flex: 0 0 50%;
@@ -2174,5 +2181,10 @@ select option:checked {
     .texto-izquierda h2.fw-bold {
         font-size: 1.3rem;
         line-height: 1.2;
+    }
+
+    #productsGrid .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 }
