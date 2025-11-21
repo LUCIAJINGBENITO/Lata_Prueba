@@ -749,6 +749,9 @@ Forzar clickabilidad dentro de slides
 
 /* Contenido de la tarjeta: separar visual y texto */
 .product-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     overflow: hidden !important;
     flex-shrink: 0;
@@ -757,6 +760,7 @@ Forzar clickabilidad dentro de slides
 .product-visual img {
     width: 90%;
     height: 450px;
+    margin: 0 auto;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
@@ -1508,7 +1512,7 @@ section.bg-accent .btn:hover {
 .form-card .btn-success:hover {
     background: var(--green);
     border: 2px solid var(--green);
-    color: var(--bg);
+    color: black;
 }
 
 /* Contenedor de cada producto */
