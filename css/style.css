@@ -40,6 +40,7 @@ p {
     position: fixed;
     z-index: 1100;
     transition: background .3s ease;
+    overflow: hidden !important;
 }
 
 .navbar-nav {
@@ -191,7 +192,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center; 
-    overflow: hidden;
+    overflow: hidden !important;
     padding-top: var(--navbar-height, 5rem);
 }
 
@@ -293,7 +294,7 @@ section.py-5,
 
 .product-card .product-visual {
     position: relative;
-    overflow: hidden;
+    overflow: hidden !important;
 }
 .art-overlay {
     position: absolute;
@@ -373,20 +374,20 @@ section.py-5,
     position: relative;
     z-index: 1040;
     margin-top: -20rem; 
-    width: 100vw;
+    width: 100%;
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
     background: transparent !important;
-    overflow: visible;
+    overflow: hidden !important;
     padding-top: var(--hero-pop-header-height, 15rem);
     padding-bottom: 3rem;
 }
   
 .carousel-card {
     border-radius: var(--card-radius);
-    overflow: hidden;
+    overflow: hidden !important;
     background: var(--bg);
     padding: 1rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -425,7 +426,7 @@ section.py-5,
     display: flex;
     justify-content: center;
     align-items: stretch;
-    overflow: visible;
+    overflow: visible !important;
     padding-top: 1rem;
     padding-bottom: 1rem;
     transform-style: preserve-3d;
@@ -632,7 +633,7 @@ Forzar clickabilidad dentro de slides
 .product-card {
     background: #fff;
     border-radius: 14px;
-    overflow: hidden;
+    overflow: hidden !important;
     display: flex;
     flex-direction: column;
     box-shadow: 0 5px 20px rgba(0,0,0,0.06);
@@ -739,7 +740,7 @@ Forzar clickabilidad dentro de slides
     flex: 0 0 calc(25% - 0.75rem);
     background: #fff;
     border-radius: 14px;
-    overflow: hidden;
+    overflow: hidden !important;
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -749,7 +750,7 @@ Forzar clickabilidad dentro de slides
 /* Contenido de la tarjeta: separar visual y texto */
 .product-visual {
     position: relative;
-    overflow: hidden;
+    overflow: hidden !important;
     flex-shrink: 0;
 }
 
@@ -927,6 +928,7 @@ Forzar clickabilidad dentro de slides
 /* Colores distintos para que no se vea un bloque */
 .text-track {
     color: var(--bg);
+    overflow: hidden !important;
 }
 
 .bg-aura-1 {
@@ -946,7 +948,7 @@ Forzar clickabilidad dentro de slides
 }
 
 .marquee {
-  overflow: hidden;
+  overflow: hidden !important;
   position: relative;
 }
 
@@ -1219,7 +1221,7 @@ section.bg-accent .btn:hover {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    overflow: hidden;
+    overflow: hidden !important;
     position: relative;
     z-index: 1;
 }
@@ -1705,7 +1707,7 @@ select option:checked {
     background: var(--bg);
     margin: -4rem 6rem 0 0;
     position: relative;
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 /* Logo dentro del círculo */
@@ -2013,7 +2015,7 @@ select option:checked {
     [class*="col-"] {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
-        overflow: visible !important;
+        overflow: hidden !important;
     }
 
     body, html {
