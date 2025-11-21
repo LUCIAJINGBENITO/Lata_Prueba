@@ -1953,6 +1953,17 @@ select option:checked {
         display: block;
     }
 
+    #productsGrid .view-details {
+        font-size: 0.80rem;
+        padding: 0.2rem 0.8rem;
+        width: 63%;
+        min-width: 10px;
+        transition: all 0.25s ease;
+        border: 2px solid var(--purple);
+        background: var(--purple);
+        color: var(--bg);
+        border-radius: 50rem;
+    }
 }
 
 /* Tablet pequeña y móvil 576px–767px */
