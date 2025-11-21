@@ -180,12 +180,12 @@ $(document).ready(function(){
     renderProducts(products);
 
     const productPages = {
-      p1: "details-Impresión.html",
-      p2: "lata-rosa.html",
-      p3: "lata-amarilla.html",
-      p4: "lata-morada.html",
-      p5: "lata-azul.html",
-      p6: "lata-verde.html"
+      p1: "details-Impresion.html",
+      p2: "details-Baile.html",
+      p3: "details-LosGirasoles.html",
+      p4: "details-Nenufares.html",
+      p5: "details-Noche.html",
+      p6: "details-Almendro.html"
     };
   
     $(document).on("click", ".view-details", function(){
